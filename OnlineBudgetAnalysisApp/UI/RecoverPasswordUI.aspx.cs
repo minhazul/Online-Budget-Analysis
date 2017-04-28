@@ -47,7 +47,7 @@ namespace OnlineBudgetAnalysisApp
                           "<a href='" + activationUrl + "'>click here to reset password</a>. \nThanks!";
                         msg.IsBodyHtml = true;
 
-                        smtp.Credentials = new NetworkCredential("minhazcste14@gmail.com", "14tintumun44");
+                        smtp.Credentials = new NetworkCredential("minhazcste14@gmail.com", "");
                         smtp.Port = 587;
                         smtp.Host = "smtp.gmail.com";
                         smtp.EnableSsl = true;
