@@ -138,5 +138,22 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return isLogin;
         }
+
+        public int ResetPassword(string userName, string email, string password)
+        {
+            Query = "UPDATE Users SET Password=@Password WHERE UserName=@UserName and Email=@EmailId";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("Password", SqlDbType.VarChar);
+            Command.Parameters["Password"].Value = password;
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Command.Parameters.Add("EmailId", SqlDbType.VarChar);
+            Command.Parameters["EmailId"].Value = email;
+            Connection.Open();
+            int rowAffected = Command.ExecuteNonQuery();
+            Connection.Close();
+            return rowAffected;
+        }
     }
 }

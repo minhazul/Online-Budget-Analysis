@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\background.gif" />
+    <Content Include="UI\ResetPasswordUi.aspx" />
     <Content Include="UI\ActivateAccount.aspx" />
     <Content Include="UI\HomeUI.aspx" />
     <Content Include="UI\LoginUI.aspx" />
@@ -118,6 +119,13 @@
     <Compile Include="DAL\Gateway\Gateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
     <Compile Include="DAL\Model\Users.cs" />
+    <Compile Include="UI\ResetPasswordUi.aspx.cs">
+      <DependentUpon>ResetPasswordUi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ResetPasswordUi.aspx.designer.cs">
+      <DependentUpon>ResetPasswordUi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\ActivateAccount.aspx.cs">
       <DependentUpon>ActivateAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -74,5 +74,20 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aUsersGateway.Login(userName, password);
         }
+
+        public bool IsUserNameExists(string userName)
+        {
+            return _aUsersGateway.IsUserName(userName);
+        }
+
+        public bool IsEmailExists(string emailid)
+        {
+            return _aUsersGateway.IsEmailExists(emailid);
+        }
+
+        public int ResetPassword(string userName, string email, string password)
+        {
+            return _aUsersGateway.ResetPassword(userName, email, password);
+        }
     }
 }

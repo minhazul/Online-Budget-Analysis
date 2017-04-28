@@ -11,7 +11,7 @@ namespace OnlineBudgetAnalysisApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
