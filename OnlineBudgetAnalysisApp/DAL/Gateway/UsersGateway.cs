@@ -136,7 +136,25 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             Reader.Close();
             Connection.Close();
+            UpdateLastLoginDate(userName, password);
             return isLogin;
+        }
+
+        private void UpdateLastLoginDate(string userName, string password)
+        {
+            Query = "UPDATE Users SET LastLoginDate=@LastLoginDate WHERE UserName=@UserName and Password=@Password";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("LastLoginDate", SqlDbType.VarChar);
+            Command.Parameters["LastLoginDate"].Value = DateTime.Now;
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Command.Parameters.Add("Password", SqlDbType.VarChar);
+            Command.Parameters["Password"].Value = password;
+            Connection.Open();
+            Command.ExecuteNonQuery();
+            Connection.Close();
+
         }
 
         public int ResetPassword(string userName, string email, string password)
