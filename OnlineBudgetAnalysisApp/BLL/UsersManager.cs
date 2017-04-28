@@ -32,7 +32,7 @@ namespace OnlineBudgetAnalysisApp.BLL
                             int rowAffected = _aUsersGateway.RegisterUsers(aUsers);
                             if (rowAffected > 0)
                             {
-                                return "Success";
+                                return "success";
                             }
                             else
                             {
@@ -56,6 +56,23 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
            string email= _aUsersGateway.FetchUserId(emailId);
             return email;
+        }
+
+        public string DropData(string userName, string email)
+        {
+            if (_aUsersGateway.DropData(userName, email) > 0)
+            {
+                return "Registration failed. Please try again";
+            }
+            else
+            {
+                return "Please try with different username and emailid";
+            }
+        }
+
+        public bool Login(string userName, string password)
+        {
+            return _aUsersGateway.Login(userName, password);
         }
     }
 }

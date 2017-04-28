@@ -4,13 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OnlineBudgetAnalysisApp.BLL;
 
 namespace OnlineBudgetAnalysisApp
 {
     public partial class LoginUI : System.Web.UI.Page
     {
+        UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+            string userName = txtUsername.Value;
+            string password = txtPassword.Value;
+            bool isLogin = _aUsersManager.Login(userName,password);
+            if (isLogin == true)
+            {
+                Session["UserName"] = userName;
+                Response.Redirect("HomeUI.aspx");
+            }
+            else
+            {
+                msgLabel.Text = "UserName or Password doesn't match";
+            }
             
         }
     }

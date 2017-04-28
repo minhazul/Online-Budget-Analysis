@@ -35,37 +35,51 @@ namespace OnlineBudgetAnalysisApp
                 _aUsers.UserName = userNameTextBox.Text;
                 _aUsers.Email = txtEmail.Text;
                 _aUsers.Password = passTextBox.Text;
-                string registerUser = _aUsersManager.RegisterUser(_aUsers);
-               
-                //Sending activation link in the email
-                msg = new MailMessage();
-                SmtpClient smtp = new SmtpClient();
-                emailId = txtEmail.Text.Trim();
-                //sender email address
-                msg.From = new MailAddress("minhazcste14@gmail.com");
-                //Receiver email address
-                msg.To.Add(emailId);
-                msg.Subject = "Confirmation email for account activation";
-                string userId = FetchUserId(emailId);
-                //For testing replace the local host path with your lost host path and while making online replace with your website domain name
-                activationUrl = Server.HtmlEncode("http://localhost:9429/UI/ActivateAccount.aspx?EmailId=" + emailId+"&UserId="+userId);
                 
-                msg.Body = "Hi " + txtFullName.Text.Trim() + "!\n" +
-                      "Thanks for registring in Online Budget Analysis System " +
-                      " Please <a href='" + activationUrl + "'>click here to activate</a>  your account. \nThanks!";
-                msg.IsBodyHtml = true;
-                smtp.Credentials = new NetworkCredential("minhazcste14@gmail.com", "14tintumun44");
-                smtp.Port = 587;
-                smtp.Host = "smtp.gmail.com";
-                smtp.EnableSsl = true;
-                smtp.Send(msg);
-                //clear_controls();
-                msgLabel.Text = registerUser;
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Confirmation Link to activate your account has been sent to your email address');", true);
+                string registerUser = _aUsersManager.RegisterUser(_aUsers);
+                if (registerUser == "success")
+                {
+                    
+                    msgLabel.Text = "Registerd successfully";
+
+                    //Sending activation link in the email
+                    msg = new MailMessage();
+                    SmtpClient smtp = new SmtpClient();
+                    emailId = txtEmail.Text.Trim();
+
+                    //sender email address
+                    msg.From = new MailAddress("minhazcste14@gmail.com");
+
+                    //Receiver email address
+                    msg.To.Add(emailId);
+
+                    msg.Subject = "Confirmation email for account activation";
+                    
+                    string userId = FetchUserId(emailId);
+                 
+                    activationUrl = Server.HtmlEncode("http://localhost:9429/UI/ActivateAccount.aspx?EmailId=" + emailId + "&UserId=" + userId);
+
+                    msg.Body = "Hi " + txtFullName.Text.Trim() + "!\n" +
+                          "Thanks for registring in Online Budget Analysis System " +
+                          " Please <a href='" + activationUrl + "'>click here to activate</a>  your account. \nThanks!";
+                    msg.IsBodyHtml = true;
+
+                    smtp.Credentials = new NetworkCredential("minhazcste14@gmail.com", "14tintumun44");
+                    smtp.Port = 587;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+
+                    smtp.Send(msg);
+                    clear_controls();
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Confirmation Link to activate your account has been sent to your email address');", true);
+                }
+                
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Error occured : " + ex.Message.ToString() + "');", true);
+                string message = _aUsersManager.DropData(_aUsers.UserName, _aUsers.Email);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Error occured : " + message + "');", true);
                 return;
             }
             finally

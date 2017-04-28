@@ -46,10 +46,17 @@
                    <div style="margin-top:10px" class="form-group">
                      <!-- Button -->
 
-                     <div class="col-sm-12 controls">
-                          <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                     <div class="col-sm-12">
+                         <div class="col-sm-3 controls">
+                             <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-success" OnClick="btnLogin_Click" Text="Login" />
+                         </div>
+                         <div class="col-sm-9 controls" style="color: red">
+                             <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>
+                         </div>
+                         
                       </div>
                     </div>
+                                    
                    
                    <div class="form-group">
                         <div class="col-md-12 control">
