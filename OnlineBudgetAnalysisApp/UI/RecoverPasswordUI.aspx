@@ -4,10 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <title>Recover Password</title>
 </head>
-<body style="background: url(images/background.gif)">
+<body style="background: url(../images/background.gif)">
+        <div class="container">
+            <div class="page-header" style="color: white">
+                <h2 style="text-align: center">Online Budget Analysis System</h2>
+            </div>
+        </div>
 <div class="container">
     <div id="PasswordRecoveryBox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">

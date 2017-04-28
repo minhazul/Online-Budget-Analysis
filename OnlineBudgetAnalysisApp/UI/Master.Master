@@ -11,12 +11,12 @@
     <title>Online Budget Analysis System</title>
     
     <!-- core CSS -->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="Content/animate.min.css" rel="stylesheet" />
-    <link href="Content/prettyPhoto.css" rel="stylesheet" />
-    <link href="Content/main.css" rel="stylesheet" />
-    <link href="Content/responsive.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/animate.min.css" rel="stylesheet" />
+    <link href="../Content/prettyPhoto.css" rel="stylesheet" />
+    <link href="../Content/main.css" rel="stylesheet" />
+    <link href="../Content/responsive.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -95,5 +95,6 @@
         </div>
     </footer><!--/#footer-->
     </form>
+    
 </body>
 </html>

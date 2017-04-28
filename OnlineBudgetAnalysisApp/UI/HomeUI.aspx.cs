@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OnlineBudgetAnalysisApp
+namespace OnlineBudgetAnalysisApp.UI
 {
     public partial class HomeUI : System.Web.UI.Page
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineBudgetAnalysisApp
+namespace OnlineBudgetAnalysisApp.UI
 {
 
 
