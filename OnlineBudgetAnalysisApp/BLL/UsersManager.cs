@@ -94,5 +94,10 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aUsersGateway.ResetPassword(userName, email, password);
         }
+
+        public int GetRoleId(string roleName)
+        {
+            return _aUsersGateway.GetRoleId(roleName);
+        }
     }
 }

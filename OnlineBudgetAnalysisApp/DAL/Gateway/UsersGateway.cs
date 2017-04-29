@@ -11,21 +11,10 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
     public class UsersGateway:Gateway
     {
         public int RegisterUsers(Users aUser)
-        {
-        //    Query = "INSERT INTO Users (UserName,FullName,Email,Password) VALUES (@UserName, @FullName, @Email, @Password";
-        //    Command = new SqlCommand(Query, Connection);
-        //    Command.Parameters.Clear();
-        //    Command.Parameters.Add("UserName", SqlDbType.VarChar);
-        //    Command.Parameters["UserName"].Value = aUser.UserName;
-        //    Command.Parameters.Add("FullName", SqlDbType.VarChar);
-        //    Command.Parameters["FullName"].Value = aUser.FullName;
-        //    Command.Parameters.Add("Email", SqlDbType.VarChar);
-        //    Command.Parameters["Email"].Value = aUser.Email;
-        //    Command.Parameters.Add("Password", SqlDbType.VarChar);
-        //    Command.Parameters["Password"].Value = aUser.Password;
+        {       
 
-            Query = "insert into Users(UserName,FullName,Email,Password) values('" + aUser.UserName + "','" +
-                    aUser.FullName + "','" + aUser.Email + "','" + aUser.Password + "')";
+            Query = "insert into Users(UserName,FullName,Email,Password,RoleId) values('" + aUser.UserName + "','" +
+                    aUser.FullName + "','" + aUser.Email + "','" + aUser.Password + "','"+aUser.RoleId+"')";
             Command=new SqlCommand(Query,Connection);
             
             Connection.Open();
@@ -171,6 +160,29 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             int rowAffected = Command.ExecuteNonQuery();
             Connection.Close();
             return rowAffected;
+        }
+
+        public int GetRoleId(string roleName)
+        {
+            int roleId = 0;
+            Query = "SELECT * FROM tblRole WHERE RoleName=@RoleName";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("RoleName", SqlDbType.VarChar);
+            Command.Parameters["RoleName"].Value = roleName;
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    roleId = Convert.ToInt32(Reader["Roleid"]);
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return roleId;
         }
     }
 }

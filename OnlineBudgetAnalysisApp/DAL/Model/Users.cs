@@ -14,6 +14,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Model
         public string Password { get; set; }
         public bool Is_Approved { get; set; }
         public DateTime LastLoginDate { get; set; }
+        public int RoleId { get; set; }
 
     }
 }

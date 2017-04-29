@@ -35,6 +35,8 @@ namespace OnlineBudgetAnalysisApp
                 _aUsers.UserName = userNameTextBox.Text;
                 _aUsers.Email = txtEmail.Text;
                 _aUsers.Password = passTextBox.Text;
+                string RoleName = "Normal";
+                _aUsers.RoleId = _aUsersManager.GetRoleId(RoleName);
                 
                 string registerUser = _aUsersManager.RegisterUser(_aUsers);
                 if (registerUser == "success")
