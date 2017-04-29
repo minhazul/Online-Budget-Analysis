@@ -62,9 +62,9 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#">Edit Account</a></li>                               
                                 <li runat="server" id="dashBoardLi"><a href="#">Dashboard</a></li>
+                                <li><a href="#">LogOut</a></li> 
                             </ul>
-                        </li> 
-                        <li><a href="#">LogOut</a></li>                        
+                        </li>                                               
                     </ul>
                 </div>
             </div><!--/.container-->
