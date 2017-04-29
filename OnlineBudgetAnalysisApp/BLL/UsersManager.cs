@@ -109,5 +109,23 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aUsersGateway.GetUserRoleId(userName);
         }
+
+        public string FindOldPass(string userName)
+        {
+            return _aUsersGateway.FindOldPass(userName);
+        }
+
+        public string ChangePassword(string userName, string findOldPass, string newPass)
+        {
+            int rowAffected = _aUsersGateway.ChangePassword(userName, findOldPass, newPass);
+            if (rowAffected > 0)
+            {
+                return "Password changed successfully";
+            }
+            else
+            {
+                return "Password changed failed. Please reload the page page and try again";
+            }
+        }
     }
 }

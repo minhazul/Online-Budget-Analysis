@@ -13,7 +13,8 @@ namespace OnlineBudgetAnalysisApp
         UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userName = Session["UserName"].ToString();
+            //string userName = Session["UserName"].ToString();
+            string userName = "minhazul-abir";
             int roleId = _aUsersManager.GetUserRoleId(userName);
             string roleName = _aUsersManager.GetRoleName(roleId);
             MyMenuControl(roleName);            
@@ -37,7 +38,9 @@ namespace OnlineBudgetAnalysisApp
             }
             else
             {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Login failed. Please try to relogin');", true);
                 Response.Redirect("LoginUI.aspx");
+                
             }
         }
     }

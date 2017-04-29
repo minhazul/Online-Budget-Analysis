@@ -230,5 +230,45 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return roleId;
         }
+
+        public string FindOldPass(string userName)
+        {
+            string pass = null;
+            Query = "SELECT * FROM Users WHERE UserName=@UserName";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    pass = Reader["Password"].ToString();
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return pass;
+        }
+
+        public int ChangePassword(string userName, string findOldPass, string newPass)
+        {
+            Query = "UPDATE Users SET Password=@NewPassword WHERE UserName=@UserName and Password=@OldPassword";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("NewPassword", SqlDbType.VarChar);
+            Command.Parameters["NewPassword"].Value = newPass;
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Command.Parameters.Add("OldPassword", SqlDbType.VarChar);
+            Command.Parameters["OldPassword"].Value = findOldPass;
+            Connection.Open();
+            int rowAffected = Command.ExecuteNonQuery();
+            Connection.Close();
+            return rowAffected;
+        }
     }
 }
