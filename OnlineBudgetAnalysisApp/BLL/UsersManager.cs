@@ -99,5 +99,15 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aUsersGateway.GetRoleId(roleName);
         }
+
+        public string GetRoleName(int roleId)
+        {
+            return _aUsersGateway.GetRoleName(roleId);
+        }
+
+        public int GetUserRoleId(string userName)
+        {
+            return _aUsersGateway.GetUserRoleId(userName);
+        }
     }
 }

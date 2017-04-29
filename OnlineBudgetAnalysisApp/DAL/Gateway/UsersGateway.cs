@@ -184,5 +184,51 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return roleId;
         }
+
+        public string GetRoleName(int roleId)
+        {
+            string roleName = null;
+            Query = "SELECT * FROM tblRole WHERE Roleid=@RoleId";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("RoleId", SqlDbType.Int);
+            Command.Parameters["RoleId"].Value = roleId;
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    roleName = Reader["RoleName"].ToString();
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return roleName;
+        }
+
+        public int GetUserRoleId(string userName)
+        {
+            int roleId = 0;
+            Query = "SELECT * FROM Users WHERE UserName=@UserName";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    roleId = Convert.ToInt32(Reader["Roleid"]);
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return roleId;
+        }
     }
 }
