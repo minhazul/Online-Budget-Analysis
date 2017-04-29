@@ -62,7 +62,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#">Edit Account</a></li>                               
                                 <li runat="server" id="dashBoardLi"><a href="#">Dashboard</a></li>
-                                <li><a href="#">LogOut</a></li> 
+                                <li><a href="LogoutUI.aspx">LogOut</a></li> 
                             </ul>
                         </li>                                               
                     </ul>
