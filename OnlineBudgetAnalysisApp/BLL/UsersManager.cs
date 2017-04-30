@@ -127,5 +127,28 @@ namespace OnlineBudgetAnalysisApp.BLL
                 return "Password changed failed. Please reload the page page and try again";
             }
         }
+
+        public Users GetUserInformation(string userName)
+        {
+            return _aUsersGateway.GetUserInformation(userName);
+        }
+
+        public string UpdateUserInfo(string userName, string password, Users aUsers)
+        {
+            int rowAffected = _aUsersGateway.UpdateUserInfo(userName, password, aUsers);
+            if (rowAffected > 0)
+            {
+                return "Account information updated successfully";
+            }
+            else
+            {
+                return "Update failed. Please try again";
+            }
+        }
+
+        public string GetUserPassword(string userName)
+        {
+            return _aUsersGateway.GetUserPass(userName);
+        }
     }
 }

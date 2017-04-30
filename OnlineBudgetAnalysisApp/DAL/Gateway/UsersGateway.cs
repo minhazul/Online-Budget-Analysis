@@ -133,7 +133,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Query = "UPDATE Users SET LastLoginDate=@LastLoginDate WHERE UserName=@UserName and Password=@Password";
             Command = new SqlCommand(Query, Connection);
             Command.Parameters.Clear();
-            Command.Parameters.Add("LastLoginDate", SqlDbType.VarChar);
+            Command.Parameters.Add("LastLoginDate", SqlDbType.DateTime);
             Command.Parameters["LastLoginDate"].Value = DateTime.Now;
             Command.Parameters.Add("UserName", SqlDbType.VarChar);
             Command.Parameters["UserName"].Value = userName;
@@ -269,6 +269,82 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             int rowAffected = Command.ExecuteNonQuery();
             Connection.Close();
             return rowAffected;
+        }
+
+        public Users GetUserInformation(string userName)
+        {
+            Query = "SELECT * FROM Users WHERE UserName=@UserName";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+
+            Users aUsers=new Users();
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    aUsers.UserName = Reader["UserName"].ToString();
+                    aUsers.FullName = Reader["FullName"].ToString();
+                    aUsers.Email = Reader["Email"].ToString();
+                    aUsers.Password = Reader["Password"].ToString();
+                    aUsers.LastLoginDate = Convert.ToDateTime(Reader["LastLoginDate"]);
+                }
+            }
+            
+            Reader.Close();
+            Connection.Close();
+            return aUsers;
+        }
+
+        public int UpdateUserInfo(string userName, string password, Users aUsers)
+        {
+            Query = "UPDATE Users SET UserName=@UserName,FullName=@FullName,Email=@Email WHERE UserName=@OldUserName and Password=@Password";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = aUsers.UserName;
+            Command.Parameters.Add("FullName", SqlDbType.VarChar);
+            Command.Parameters["FullName"].Value = aUsers.FullName;
+            Command.Parameters.Add("Email", SqlDbType.VarChar);
+            Command.Parameters["Email"].Value = aUsers.Email;
+            Command.Parameters.Add("OldUserName", SqlDbType.VarChar);
+            Command.Parameters["OldUserName"].Value = userName;
+            Command.Parameters.Add("Password", SqlDbType.VarChar);
+            Command.Parameters["Password"].Value = password;
+            Connection.Open();
+            int rowAffected = Command.ExecuteNonQuery();
+            Connection.Close();
+            return rowAffected;
+        }
+
+        public string GetUserPass(string userName)
+        {
+            string password=null;
+            Query = "SELECT Password FROM Users WHERE UserName=@UserName";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+
+            Users aUsers = new Users();
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    password = Reader["Password"].ToString();
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return password;
         }
     }
 }

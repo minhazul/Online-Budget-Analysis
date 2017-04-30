@@ -40,9 +40,7 @@ namespace OnlineBudgetAnalysisApp
                 
                 string registerUser = _aUsersManager.RegisterUser(_aUsers);
                 if (registerUser == "success")
-                {
-                    
-                    msgLabel.Text = "Registerd successfully";
+                {                                       
 
                     //Sending activation link in the email
                     msg = new MailMessage();
@@ -75,6 +73,7 @@ namespace OnlineBudgetAnalysisApp
                     clear_controls();
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Confirmation Link to activate your account has been sent to your email address');", true);
+                    msgLabel.Text = "Registerd successfully";
                 }
                 
             }
