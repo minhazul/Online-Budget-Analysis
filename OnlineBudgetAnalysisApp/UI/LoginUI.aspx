@@ -4,8 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    
+    <title>Login here</title>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <title>Login | Register here</title>
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/responsive.css" rel="stylesheet" />
 </head>
 <body style="background: url(../images/background.gif)">
     <form id="loginform" class="form-horizontal" role="form" runat="server">
@@ -73,5 +80,7 @@
        </div>
    </div>
     </form>
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
 </body>
 </html>

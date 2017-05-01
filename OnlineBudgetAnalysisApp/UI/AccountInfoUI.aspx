@@ -67,7 +67,7 @@
                                     <asp:Label ID="passLabel" Visible="False" runat="server" Text="Enter Password"></asp:Label>
                                 </div>
                                 <div class="col-sm-7">                    
-                                    <asp:TextBox ID="txtPassword" Visible="False" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" TextMode="Password" Visible="False" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                         </div>

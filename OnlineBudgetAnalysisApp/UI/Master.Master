@@ -38,7 +38,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="HomeUI.aspx">Home</a></li>
                         <li><a href="#">Projects</a></li>
                         <li><a href="#">Product Lists</a></li>
                         <li class="dropdown" runat="server" id="uploadLi">
@@ -71,13 +71,13 @@
             </div><!--/.container-->
         </nav><!--/nav-->
         </header><!--/header-->
-        <section>
+        <%--<section>--%>
             <div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
                 </asp:ContentPlaceHolder>
             </div>
-        </section>
+       <%-- </section>--%>
         <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -86,9 +86,9 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="HomeUI.aspx">Home</a></li>
                         <li><a href="#">Settings</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="LogoutUI.aspx">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -97,6 +97,10 @@
     </form>
     <script src="../Scripts/jquery-1.9.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
+    <%--<script src="../Scripts/jquery.prettyPhoto.js"></script>
+    <script src="../Scripts/jquery.isotope.min.js"></script>--%>
     <script src="../Scripts/main.js"></script>
+    <%--<script src="../Scripts/wow.min.js"></script>--%>
+
 </body>
 </html>

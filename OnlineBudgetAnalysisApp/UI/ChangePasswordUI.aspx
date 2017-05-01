@@ -3,11 +3,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid" style="background: url(../images/background.gif)">
+        <div class="container">
+            <div class="page-header">
+                <h2 style="text-align: center;color: white">Change Password</h2>
+            </div>
+        </div>
         <div class="container" style="color: white">
             <div id="ChangePasswordBox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <div class="panel-title">&nbsp;&nbsp;&nbsp;Change Password</div>
+                        <div class="panel-title">&nbsp;&nbsp;&nbsp;Change Password here</div>
                     </div>
                     
                     <div class="form-horizontal" style="padding: 20px">

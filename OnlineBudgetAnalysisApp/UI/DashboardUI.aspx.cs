@@ -14,7 +14,7 @@ namespace OnlineBudgetAnalysisApp.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             string userName = Session["UserName"].ToString();
-            //string userName = "minhazul-abir";
+            //string userName = "minhaz-abir";
             int roleId = _aUsersManager.GetUserRoleId(userName);
             string roleName = _aUsersManager.GetRoleName(roleId);
             if(roleName!="SuperAdmin")
