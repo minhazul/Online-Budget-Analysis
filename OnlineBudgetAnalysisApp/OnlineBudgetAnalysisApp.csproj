@@ -115,13 +115,17 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="UI\UploadUI.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\UsersManager.cs" />
     <Compile Include="DAL\Gateway\Gateway.cs" />
+    <Compile Include="DAL\Gateway\ProductGateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
+    <Compile Include="DAL\Model\ProductInfo.cs" />
     <Compile Include="DAL\Model\Users.cs" />
     <Compile Include="UI\AccountInfoUI.aspx.cs">
       <DependentUpon>AccountInfoUI.aspx</DependentUpon>
@@ -201,8 +205,17 @@
     <Compile Include="UI\RegistrationUi.aspx.designer.cs">
       <DependentUpon>RegistrationUi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\UploadUI.aspx.cs">
+      <DependentUpon>UploadUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UploadUI.aspx.designer.cs">
+      <DependentUpon>UploadUI.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UI\uploads\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

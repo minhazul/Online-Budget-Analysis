@@ -13,8 +13,8 @@ namespace OnlineBudgetAnalysisApp
         UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string userName = Session["UserName"].ToString();
-            string userName = "minhaz-abir";
+            string userName = Session["UserName"].ToString();
+            //string userName = "minhaz-abir";
             int roleId = _aUsersManager.GetUserRoleId(userName);
             string roleName = _aUsersManager.GetRoleName(roleId);
             MyMenuControl(roleName);            
