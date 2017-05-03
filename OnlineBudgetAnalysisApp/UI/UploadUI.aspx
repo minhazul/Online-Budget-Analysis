@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>
-        <div class="container-fluid" style="background: url(../images/background.gif)">
+        <div class="container-fluid" style="background: url(../pictures/background.gif)">
             <div class="container">
             <div class="page-header">
                 <h2 style="text-align: center;color: white">Upload File</h2>
@@ -56,8 +56,16 @@
                                             <h3><b>Upload Daily Inventory file here</b></h3>
                                         </div>        
                                     </div>
+                                    <div class="col-sm-10" style="padding-bottom: 4px">
+                                        <div class="col-sm-4" style="color: black;padding-left: 6px">
+                                            <asp:Label ID="Label3" runat="server" Text=""><b>Select Project</b></asp:Label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <asp:DropDownList ID="ddlpjcts" runat="server" CssClass="dropdown"></asp:DropDownList>
+                                        </div>
+                                    </div>
                                     <div class="col-sm-10">
-                                        <div class="col-sm-3" style="color: black;padding-left: 6px">
+                                        <div class="col-sm-4" style="color: black;padding-left: 6px">
                                             <asp:Label ID="Label2" runat="server" Text=""><b>Choose file</b></asp:Label>
                                         </div>
                                         <div class="col-sm-6">                    
@@ -65,9 +73,9 @@
                                         </div>                        
                                     </div>
                                     <div class="col-sm-10">
-                                        <div class="col-sm-3" style="color: black;padding: 0px"></div>
+                                        <div class="col-sm-4" style="color: black;padding: 0px"></div>
                                         <div class="col-sm-2" style="padding-top: 3px;padding-left: 16px">
-                                            <asp:Button ID="btnDailyInventoryUpload" CssClass="btn btn-success" runat="server" Text="Upload" />
+                                            <asp:Button ID="btnDailyInventoryUpload" CssClass="btn btn-success" runat="server" Text="Upload" OnClick="btnDailyInventoryUpload_Click" />
                                         </div>
                                         <div class="col-sm-5">
                                             

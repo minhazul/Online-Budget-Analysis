@@ -76,5 +76,35 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return rowAffected;
         }
+
+        public int DailyInventoryEntries(List<Inventory> inventories)
+        {
+            int rowAffected = 0;
+            Query =
+                "INSERT INTO Inventory(SKU,Sold,Prices,ProjectName,Date) VALUES(@SKU,@Sold,@Prices,@ProjectName,@Date)";
+            Command = new SqlCommand(Query, Connection);
+            Connection.Open();
+            foreach (var ainventory in inventories)
+            {
+                Command.Parameters.Clear();
+                Command.Parameters.Add("SKU", SqlDbType.VarChar);
+                Command.Parameters["SKU"].Value = ainventory.Sku;
+                Command.Parameters.Add("Sold", SqlDbType.Decimal);
+                Command.Parameters["Sold"].Value = ainventory.Sold;
+                Command.Parameters.Add("Prices", SqlDbType.Decimal);
+                Command.Parameters["Prices"].Value = ainventory.Prices;
+                Command.Parameters.Add("ProjectName", SqlDbType.VarChar);
+                Command.Parameters["ProjectName"].Value = ainventory.ProjectName;
+                Command.Parameters.Add("Date", SqlDbType.Date);
+                Command.Parameters["Date"].Value = DateTime.Now;                              
+
+                rowAffected = Command.ExecuteNonQuery();
+
+            }
+
+            Connection.Close();
+
+            return rowAffected;
+        }
     }
 }

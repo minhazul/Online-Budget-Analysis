@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="OnlineBudgetAnalysisApp.Master"%>\
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="OnlineBudgetAnalysisApp.Master"%>
 <%@ Register TagPrefix="CKEditor" Namespace="CKEditor.NET" Assembly="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999" %>
 <%@ Import Namespace="CKEditor.NET" %>
 
@@ -12,13 +12,14 @@
     <meta name="author" content=""/>
     <title>Online Budget Analysis System</title>
     
+    
     <!-- core CSS -->
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Content/animate.min.css" rel="stylesheet" />
-    <link href="../Content/prettyPhoto.css" rel="stylesheet" />
-    <link href="../Content/main.css" rel="stylesheet" />
-    <link href="../Content/responsive.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../Content/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../Content/animate.min.css" rel="stylesheet"/>
+    <link href="../Content/prettyPhoto.css" rel="stylesheet"/>
+    <link href="../Content/main.css" rel="stylesheet"/>
+    <link href="../Content/responsive.css" rel="stylesheet"/>
     
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -98,6 +99,7 @@
         </div>
     </footer><!--/#footer-->
     </form>
+    
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
     <%--<script src="../Scripts/jquery.prettyPhoto.js"></script>

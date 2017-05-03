@@ -483,6 +483,7 @@
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
     <Compile Include="DAL\Gateway\ProjectGateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
+    <Compile Include="DAL\Model\Inventory.cs" />
     <Compile Include="DAL\Model\ProductInfo.cs" />
     <Compile Include="DAL\Model\Projects.cs" />
     <Compile Include="DAL\Model\Users.cs" />

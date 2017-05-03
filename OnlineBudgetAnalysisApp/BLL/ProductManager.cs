@@ -31,5 +31,18 @@ namespace OnlineBudgetAnalysisApp.BLL
                 return "Upload successfull but failed to clear previous data. Please try to upload again";
             }
         }
+
+        public string DailyInventoryEntries(List<Inventory> inventories)
+        {
+            int rowAffected = _aProductGateway.DailyInventoryEntries(inventories);
+            if (rowAffected > 0)
+            {
+                return "Upload successfully";
+            }
+            else
+            {
+                return "Upload failed";
+            }
+        }
     }
 }

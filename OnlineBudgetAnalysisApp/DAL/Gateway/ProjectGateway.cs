@@ -58,5 +58,29 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return isExists;
         }
+
+        public List<Projects> GetAllProjects()
+        {
+            Query = "SELECT ProjectName FROM Projects";
+            Command = new SqlCommand(Query, Connection);
+            
+            List<Projects> projects=new List<Projects>();
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                Projects aProjects=new Projects();
+                aProjects.ProjectName = Reader["ProjectName"].ToString();
+
+                projects.Add(aProjects);
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return projects;
+        }
     }
 }

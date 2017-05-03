@@ -53,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="row" style="padding-top: 8px">
+            <div class="row" style="padding-top: 8px;padding-bottom: 15px">
                 <div class="col-sm-12">
                     <div class="col-sm-1">
                         <asp:Button ID="btnCreate" CssClass="btn btn-success" runat="server" Text="Create" OnClick="btnCreate_Click" />
