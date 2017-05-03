@@ -56,7 +56,7 @@
             <div class="row" style="padding-top: 8px">
                 <div class="col-sm-12">
                     <div class="col-sm-1">
-                        <asp:Button ID="btnCreate" CssClass="btn btn-success" runat="server" Text="Button" OnClick="btnCreate_Click" />
+                        <asp:Button ID="btnCreate" CssClass="btn btn-success" runat="server" Text="Create" OnClick="btnCreate_Click" />
                     </div>
                     <div class="col-sm-11">
                         <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>
