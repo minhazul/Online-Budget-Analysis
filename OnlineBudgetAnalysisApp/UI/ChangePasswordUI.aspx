@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid" style="background: url(../images/background.gif)">
+    <div class="container-fluid" style="background: url(../pictures/background.gif)">
         <div class="container">
             <div class="page-header">
                 <h2 style="text-align: center;color: white">Change Password</h2>

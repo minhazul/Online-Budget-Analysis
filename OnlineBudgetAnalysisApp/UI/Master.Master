@@ -1,4 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="OnlineBudgetAnalysisApp.Master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="OnlineBudgetAnalysisApp.Master"%>\
+<%@ Register TagPrefix="CKEditor" Namespace="CKEditor.NET" Assembly="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999" %>
+<%@ Import Namespace="CKEditor.NET" %>
 
 <!DOCTYPE html>
 
@@ -17,6 +19,7 @@
     <link href="../Content/prettyPhoto.css" rel="stylesheet" />
     <link href="../Content/main.css" rel="stylesheet" />
     <link href="../Content/responsive.css" rel="stylesheet" />
+    
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -39,7 +42,13 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="HomeUI.aspx">Home</a></li>
-                        <li><a href="#">Projects</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ProjectsUI.aspx">Create Project</a></li>
+                                <li><a href="#">Project Lists</a></li>                                
+                            </ul>
+                        </li>
                         <li><a href="#">Product Lists</a></li>
                         <li runat="server" id="uploadLi"><a href="UploadUI.aspx">Upload</a></li>
                         <li class="dropdown">
@@ -89,7 +98,7 @@
         </div>
     </footer><!--/#footer-->
     </form>
-    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
     <%--<script src="../Scripts/jquery.prettyPhoto.js"></script>
     <script src="../Scripts/jquery.isotope.min.js"></script>--%>

@@ -14,7 +14,7 @@
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="../Content/responsive.css" rel="stylesheet" />
 </head>
-<body style="background: url(../images/background.gif)">
+<body style="background: url(../pictures/background.gif)">
     <div class="container">
             <div class="page-header" style="color: white">
                 <h2 style="text-align: center">Online Budget Analysis System</h2>
