@@ -106,5 +106,38 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return rowAffected;
         }
+
+        public List<ProductInfo> GetAllProductLists()
+        {
+            Query = "SELECT * FROM ProductInfo";
+            Command = new SqlCommand(Query, Connection);
+
+            List<ProductInfo> productInfos = new List<ProductInfo>();
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+              
+
+            while (Reader.Read())
+            {
+                ProductInfo aProductInfo = new ProductInfo();
+                aProductInfo.Id = Convert.ToInt32(Reader["Id"]);
+                aProductInfo.Sku = Reader["SKU"].ToString();
+                aProductInfo.Category = Reader["Category"].ToString();
+                aProductInfo.Name = Reader["Category"].ToString();
+                aProductInfo.UnitCost = Convert.ToDouble(Reader["UnitCost"]);
+                aProductInfo.PackagingCost = Convert.ToDouble(Reader["PackagingCost"]);
+                aProductInfo.ActualShippingCost = Convert.ToDouble(Reader["ActualShippingCost"]);
+                aProductInfo.MarketFee = Convert.ToDouble(Reader["MarketFee"]);
+                aProductInfo.Vat = Convert.ToDouble(Reader["VAT"]);
+
+                productInfos.Add(aProductInfo);
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return productInfos;
+        }
     }
 }

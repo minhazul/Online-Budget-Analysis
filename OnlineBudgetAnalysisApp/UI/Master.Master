@@ -12,15 +12,16 @@
     <meta name="author" content=""/>
     <title>Online Budget Analysis System</title>
     
-    
+    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- core CSS -->
     <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="../Content/font-awesome.min.css" rel="stylesheet"/>
     <link href="../Content/animate.min.css" rel="stylesheet"/>
-    <link href="../Content/prettyPhoto.css" rel="stylesheet"/>
+    <%--<link href="../Content/prettyPhoto.css" rel="stylesheet"/>--%>
     <link href="../Content/main.css" rel="stylesheet"/>
-    <link href="../Content/responsive.css" rel="stylesheet"/>
+   <link href="../Content/responsive.css" rel="stylesheet"/>
     
+     
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -47,10 +48,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="ProjectsUI.aspx">Create Project</a></li>
-                                <li><a href="#">Project Lists</a></li>                                
+                                <li><a href="ProjectListUI.aspx">Project Lists</a></li>                                
                             </ul>
                         </li>
-                        <li><a href="#">Product Lists</a></li>
+                        <li><a href="ProductListUI.aspx">Product Lists</a></li>
                         <li runat="server" id="uploadLi"><a href="UploadUI.aspx">Upload</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <i class="fa fa-angle-down"></i></a>
@@ -98,14 +99,24 @@
             </div>
         </div>
     </footer><!--/#footer-->
+   
     </form>
     
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    
     <script src="../Scripts/bootstrap.min.js"></script>
     <%--<script src="../Scripts/jquery.prettyPhoto.js"></script>
     <script src="../Scripts/jquery.isotope.min.js"></script>--%>
     <script src="../Scripts/main.js"></script>
     <%--<script src="../Scripts/wow.min.js"></script>--%>
+
+   <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dataTablePrjctList').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+            $('.dataTablePrdctList').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+    </script>
 
 </body>
 </html>

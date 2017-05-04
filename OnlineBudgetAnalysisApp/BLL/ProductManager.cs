@@ -44,5 +44,10 @@ namespace OnlineBudgetAnalysisApp.BLL
                 return "Upload failed";
             }
         }
+
+        public List<ProductInfo> GetAllProducts()
+        {
+            return _aProductGateway.GetAllProductLists();
+        }
     }
 }

@@ -36,5 +36,10 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aProjectGateway.GetAllProjects();
         }
+
+        public List<Projects> GetAllProjectLists()
+        {
+            return _aProjectGateway.GetAllProjectLists();
+        }
     }
 }
