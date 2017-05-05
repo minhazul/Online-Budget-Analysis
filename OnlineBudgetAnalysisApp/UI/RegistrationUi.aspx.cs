@@ -18,8 +18,26 @@ namespace OnlineBudgetAnalysisApp
     {
         Users _aUsers=new Users();
         UsersManager _aUsersManager=new UsersManager();
+        DesignationManager _aDesignationManager=new DesignationManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                GetAllDesignations();
+            }
+            
+        }
+
+        private void GetAllDesignations()
+        {
+            List<Designation> listsDesignations=new List<Designation>();
+            listsDesignations = _aDesignationManager.GetAllDesignation();
+
+            
+            dropDownDesignation.DataSource = listsDesignations;           
+            dropDownDesignation.DataTextField = "DesignationName";
+            dropDownDesignation.DataValueField = "Id";            
+            dropDownDesignation.DataBind();
 
         }
 
@@ -33,6 +51,8 @@ namespace OnlineBudgetAnalysisApp
             {
                 _aUsers.FullName = txtFullName.Text;
                 _aUsers.UserName = userNameTextBox.Text;
+
+                _aUsers.DesignationId =Convert.ToInt32(dropDownDesignation.SelectedValue);
                 _aUsers.Email = txtEmail.Text;
                 _aUsers.Password = passTextBox.Text;
                 string RoleName = "Normal";

@@ -701,13 +701,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DesignationManager.cs" />
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\ProjectManager.cs" />
     <Compile Include="BLL\UsersManager.cs" />
+    <Compile Include="DAL\Gateway\DesignationGateway.cs" />
     <Compile Include="DAL\Gateway\Gateway.cs" />
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
     <Compile Include="DAL\Gateway\ProjectGateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
+    <Compile Include="DAL\Model\Designation.cs" />
     <Compile Include="DAL\Model\Inventory.cs" />
     <Compile Include="DAL\Model\ProductInfo.cs" />
     <Compile Include="DAL\Model\Projects.cs" />

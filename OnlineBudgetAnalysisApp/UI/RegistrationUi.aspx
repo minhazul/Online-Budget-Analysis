@@ -41,6 +41,16 @@
                         </asp:TextBox>
                     </div>
                   </div>
+                   <div class="form-group">
+                    <div class="col-sm-10">
+                        <div class="col-sm-5">
+                            <asp:Label ID="Label1" runat="server" Text="Choose Designation"></asp:Label>
+                        </div>
+                        <div class="col-sm-5">
+                            <asp:DropDownList ID="dropDownDesignation" runat="server"></asp:DropDownList>
+                        </div>
+                    </div>
+                  </div>
                   <div class="form-group">
                     <div class="col-sm-10">
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" Placeholder="Enter your emailid">

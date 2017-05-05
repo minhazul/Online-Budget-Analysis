@@ -44,7 +44,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="ProjectsUI.aspx">Create Project</a></li>
+                                <li id="prjctListLi" runat="server"><a href="ProjectsUI.aspx">Create Project</a></li>
                                 <li><a href="ProjectListUI.aspx">Project Lists</a></li>                                
                             </ul>
                         </li>

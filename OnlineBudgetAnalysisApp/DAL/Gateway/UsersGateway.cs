@@ -13,8 +13,8 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public int RegisterUsers(Users aUser)
         {       
 
-            Query = "insert into Users(UserName,FullName,Email,Password,RoleId) values('" + aUser.UserName + "','" +
-                    aUser.FullName + "','" + aUser.Email + "','" + aUser.Password + "','"+aUser.RoleId+"')";
+            Query = "insert into Users(UserName,FullName,Designationid,Email,Password,RoleId) values('" + aUser.UserName + "','" +
+                    aUser.FullName + "','"+aUser.DesignationId+"','" + aUser.Email + "','" + aUser.Password + "','"+aUser.RoleId+"')";
             Command=new SqlCommand(Query,Connection);
             
             Connection.Open();
