@@ -11,20 +11,37 @@ namespace OnlineBudgetAnalysisApp.UI
 {
     public partial class ProjectListUI : System.Web.UI.Page
     {
-        readonly ProjectManager _aProjectManager=new ProjectManager();
+        private string userName;
+        UsersManager _aUsersManager=new UsersManager();
+        ProjectManager _aProjectManager=new ProjectManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            PopulateProjectListGridView();
+            userName = Session["UserName"].ToString();
+            PopulateProjectListGridViewi();
         }
 
-        private void PopulateProjectListGridView()
+        private void PopulateProjectListGridViewi()
         {
-            List<Projects> projects = _aProjectManager.GetAllProjectLists();
+            string fullName = _aUsersManager.GetFullName(userName);
 
-            prjctListsGridView.DataSource = projects;
-            prjctListsGridView.DataBind();
+            List<Projects> aProjects = new List<Projects>();
+            aProjects = _aProjectManager.GetAllProjectLists();
 
+            if (aProjects.Count == 0)
+            {
+                Response.Write("Project list is empty");
+            }
+            else
+            {
+                msgFullName.Text = fullName;
+                prjctListGridview.DataSource = aProjects;
+                prjctListGridview.DataBind();
+            }           
+        }
 
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomeUI.aspx");
         }
     }
 }

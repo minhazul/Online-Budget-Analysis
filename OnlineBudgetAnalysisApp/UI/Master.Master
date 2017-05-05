@@ -11,17 +11,14 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>Online Budget Analysis System</title>
-    
-    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <!-- core CSS -->
+        
     <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="../Content/font-awesome.min.css" rel="stylesheet"/>
     <link href="../Content/animate.min.css" rel="stylesheet"/>
     <%--<link href="../Content/prettyPhoto.css" rel="stylesheet"/>--%>
     <link href="../Content/main.css" rel="stylesheet"/>
    <link href="../Content/responsive.css" rel="stylesheet"/>
-    
-     
+        
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -109,14 +106,6 @@
     <script src="../Scripts/jquery.isotope.min.js"></script>--%>
     <script src="../Scripts/main.js"></script>
     <%--<script src="../Scripts/wow.min.js"></script>--%>
-
-   <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.dataTablePrjctList').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-            $('.dataTablePrdctList').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        });
-    </script>
 
 </body>
 </html>

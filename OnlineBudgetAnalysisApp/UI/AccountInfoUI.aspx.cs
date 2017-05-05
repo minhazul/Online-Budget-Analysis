@@ -87,7 +87,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
         protected void btnCancelPass_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomeUI.aspx");
+            Response.Redirect("AccountInfoUI.aspx");
         }
     }
 }

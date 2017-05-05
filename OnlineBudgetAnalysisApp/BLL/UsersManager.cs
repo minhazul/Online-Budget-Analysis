@@ -150,5 +150,10 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aUsersGateway.GetUserPass(userName);
         }
+
+        public string GetFullName(string userName)
+        {
+            return _aUsersGateway.GetFullName(userName);
+        }
     }
 }

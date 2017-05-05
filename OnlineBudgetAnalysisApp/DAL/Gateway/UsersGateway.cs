@@ -346,5 +346,31 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return password;
         }
+
+        public string GetFullName(string userName)
+        {
+
+            Query = "SELECT FullName FROM Users WHERE UserName=@UserName";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+
+            string fullName = null;
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                { 
+                    fullName = Reader["FullName"].ToString();
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return fullName;
+        }
     }
 }
