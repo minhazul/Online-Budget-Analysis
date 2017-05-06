@@ -11,7 +11,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Model
         public string Sku { get; set; }
         public double Sold { get; set; }
         public double Prices { get; set; }
-        public string ProjectName { get; set; }
+        public int ProjectId { get; set; }
         public DateTime Date { get; set; }
 
     }

@@ -81,7 +81,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         {
             int rowAffected = 0;
             Query =
-                "INSERT INTO Inventory(SKU,Sold,Prices,ProjectName,Date) VALUES(@SKU,@Sold,@Prices,@ProjectName,@Date)";
+                "INSERT INTO Inventory(SKU,Sold,Prices,ProjectId,Date) VALUES(@SKU,@Sold,@Prices,@ProjectId,@Date)";
             Command = new SqlCommand(Query, Connection);
             Connection.Open();
             foreach (var ainventory in inventories)
@@ -93,8 +93,8 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
                 Command.Parameters["Sold"].Value = ainventory.Sold;
                 Command.Parameters.Add("Prices", SqlDbType.Decimal);
                 Command.Parameters["Prices"].Value = ainventory.Prices;
-                Command.Parameters.Add("ProjectName", SqlDbType.VarChar);
-                Command.Parameters["ProjectName"].Value = ainventory.ProjectName;
+                Command.Parameters.Add("ProjectId", SqlDbType.Int);
+                Command.Parameters["ProjectId"].Value = ainventory.ProjectId;
                 Command.Parameters.Add("Date", SqlDbType.Date);
                 Command.Parameters["Date"].Value = DateTime.Now;                              
 

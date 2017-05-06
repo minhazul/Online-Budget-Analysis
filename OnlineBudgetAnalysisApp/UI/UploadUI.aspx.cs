@@ -32,8 +32,17 @@ namespace OnlineBudgetAnalysisApp.UI
 
             ddlpjcts.DataSource = projects;
             ddlpjcts.DataTextField = "ProjectName";
-            ddlpjcts.DataValueField = "ProjectName";
+            ddlpjcts.DataValueField = "Id";
             ddlpjcts.DataBind();
+
+            if (ddlpjcts.Items.Count > 1)
+            {
+                ddlpjcts.Enabled = true;
+            }
+            else
+            {
+                ddlpjcts.Enabled = false;
+            }
         }
 
         protected void btnPrdctInfoUpload_Click(object sender, EventArgs e)
@@ -126,7 +135,7 @@ namespace OnlineBudgetAnalysisApp.UI
                         String pr = myDataRow[2].ToString();
                         aInventory.Sold= Double.Parse(sd);
                         aInventory.Prices = Double.Parse(pr);
-                        aInventory.ProjectName = ddlpjcts.SelectedValue;
+                        aInventory.ProjectId = Convert.ToInt32(ddlpjcts.SelectedValue);
 
                         inventories.Add(aInventory);
                     }

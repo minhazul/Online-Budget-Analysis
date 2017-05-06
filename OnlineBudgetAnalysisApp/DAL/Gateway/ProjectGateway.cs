@@ -61,17 +61,22 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
         public List<Projects> GetAllProjects()
         {
-            Query = "SELECT ProjectName FROM Projects";
+            Query = "SELECT Id,ProjectName FROM Projects";
             Command = new SqlCommand(Query, Connection);
             
             List<Projects> projects=new List<Projects>();
+            Projects aProjects=new Projects();
+            aProjects.Id = -3;
+            aProjects.ProjectName = "--Select One--";
+            projects.Add(aProjects);
 
             Connection.Open();
             Reader = Command.ExecuteReader();
 
             while (Reader.Read())
             {
-                Projects aProjects=new Projects();
+                aProjects=new Projects();
+                aProjects.Id = Convert.ToInt32(Reader["Id"]);
                 aProjects.ProjectName = Reader["ProjectName"].ToString();
 
                 projects.Add(aProjects);
