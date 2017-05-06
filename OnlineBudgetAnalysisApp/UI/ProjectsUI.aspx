@@ -16,7 +16,7 @@
         <div class="container" style="color: black">
             <h2><b>Create new project</b></h2>
             <hr/>
-            <div class="row" style="padding: 2px">
+            <div class="row" style="padding: 3px">
                 <div class="col-sm-12">
                     <div class="col-sm-2">
                          <label>Project Name</label>
@@ -27,13 +27,24 @@
                 </div>               
             </div>
             
-            <div class="row" style="padding: 2px">
+            <div class="row" style="padding: 3px">
+                <div class="col-sm-12">
+                    <div class="col-sm-2">
+                        <label>Designation</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <asp:DropDownList ID="dropDownDesignation" AutoPostBack="True" OnSelectedIndexChanged="dropDownDesignation_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="padding: 3px">
                 <div class="col-sm-12">
                     <div class="col-sm-2">
                         <label>Project Head</label>
                     </div>
                     <div class="col-sm-3">
-                        <asp:TextBox ID="txtProjectHead" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="dropDownProjectHead" runat="server"></asp:DropDownList>
                     </div>
                 </div>
             </div>

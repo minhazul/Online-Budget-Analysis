@@ -372,5 +372,33 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return fullName;
         }
+
+        public List<Users> GetUsersByDesignationId(int designationId)
+        {
+            Query = "SELECT Id,FullName FROM Users WHERE Designationid=@DesignationId";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("DesignationId", SqlDbType.Int);
+            Command.Parameters["DesignationId"].Value = designationId;
+
+            List<Users> listUsers=new List<Users>();
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                Users aUsers=new Users();
+                if (Reader.HasRows)
+                {
+                    aUsers.Id = Convert.ToInt32(Reader["Id"]);
+                    aUsers.FullName = Reader["FullName"].ToString();
+                }
+                listUsers.Add(aUsers);
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return listUsers;
+        }
     }
 }

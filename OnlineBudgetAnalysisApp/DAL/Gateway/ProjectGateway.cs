@@ -14,7 +14,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         {
             int rowAffected = 0;
             Query =
-                "INSERT INTO Projects(ProjectName,ProjectHead,Date,Description) VALUES(@ProjectName,@ProjectHead,@Date,@Description)";
+                "INSERT INTO Projects(ProjectName,ProjectHeadId,Date,Description) VALUES(@ProjectName,@ProjectHeadId,@Date,@Description)";
             Command = new SqlCommand(Query, Connection);
 
             Connection.Open();
@@ -22,8 +22,8 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Command.Parameters.Clear();
             Command.Parameters.Add("ProjectName", SqlDbType.VarChar);
             Command.Parameters["ProjectName"].Value = aProjects.ProjectName;
-            Command.Parameters.Add("ProjectHead", SqlDbType.VarChar);
-            Command.Parameters["ProjectHead"].Value = aProjects.ProjectHead;
+            Command.Parameters.Add("ProjectHeadId", SqlDbType.Int);
+            Command.Parameters["ProjectHeadId"].Value = aProjects.ProjectHeadId;
             Command.Parameters.Add("Date", SqlDbType.DateTime);
             Command.Parameters["Date"].Value = DateTime.Now;
             Command.Parameters.Add("Description", SqlDbType.NChar);
@@ -98,7 +98,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
                 Projects aProjects = new Projects();
                 aProjects.Id = Convert.ToInt32(Reader["Id"]);
                 aProjects.ProjectName = Reader["ProjectName"].ToString();
-                aProjects.ProjectHead = Reader["ProjectHead"].ToString();
+                aProjects.ProjectHeadId = Convert.ToInt32(Reader["ProjectHead"]);
                 aProjects.Date = Convert.ToDateTime(Reader["Date"]);
                 aProjects.Description = Reader["Description"].ToString();
                 aProjects.Status = Reader["Status"].ToString();

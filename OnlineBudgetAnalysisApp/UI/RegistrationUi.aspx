@@ -47,7 +47,7 @@
                             <asp:Label ID="Label1" runat="server" Text="Choose Designation"></asp:Label>
                         </div>
                         <div class="col-sm-5">
-                            <asp:DropDownList ID="dropDownDesignation" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="dropDownDesignation" runat="server"></asp:DropDownList>                            
                         </div>
                     </div>
                   </div>

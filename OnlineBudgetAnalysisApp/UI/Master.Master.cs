@@ -25,6 +25,7 @@ namespace OnlineBudgetAnalysisApp
             if (roleName == "Normal")
             {
                 prjctListLi.Visible = false;
+                prjctAngleDown.Visible = false;
                 dashBoardLi.Visible = false;
                 uploadLi.Visible = false;
             }

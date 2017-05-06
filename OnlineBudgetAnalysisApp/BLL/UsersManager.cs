@@ -155,5 +155,10 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aUsersGateway.GetFullName(userName);
         }
+
+        public List<Users> GetUserByDesignationId(int designationId)
+        {
+            return _aUsersGateway.GetUsersByDesignationId(designationId);
+        }
     }
 }
