@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using OnlineBudgetAnalysisApp.DAL.Model;
+using OnlineBudgetAnalysisApp.DAL.ViewModel;
 
 namespace OnlineBudgetAnalysisApp.DAL.Gateway
 {
@@ -103,7 +104,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
                 Projects aProjects = new Projects();
                 aProjects.Id = Convert.ToInt32(Reader["Id"]);
                 aProjects.ProjectName = Reader["ProjectName"].ToString();
-                aProjects.ProjectHeadId = Convert.ToInt32(Reader["ProjectHead"]);
+                aProjects.ProjectHeadId = Convert.ToInt32(Reader["ProjectHeadId"]);
                 aProjects.Date = Convert.ToDateTime(Reader["Date"]);
                 aProjects.Description = Reader["Description"].ToString();
                 aProjects.Status = Reader["Status"].ToString();
@@ -116,5 +117,6 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return projects;
         }
+
     }
 }

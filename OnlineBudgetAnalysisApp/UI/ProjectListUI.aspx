@@ -48,7 +48,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Project Head">
                             <ItemTemplate>
-                                <asp:Label runat="server" Text='<%#Eval("ProjectHead") %>'></asp:Label>
+                                <asp:Label runat="server" Text='<%#Eval("ProjectHeadId") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Date">
