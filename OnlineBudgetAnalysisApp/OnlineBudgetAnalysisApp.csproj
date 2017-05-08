@@ -719,6 +719,7 @@
     <Content Include="UI\AccountInfoUI.aspx" />
     <Content Include="UI\ChangePasswordUI.aspx" />
     <Content Include="UI\DashboardUI.aspx" />
+    <Content Include="UI\DateWiseReportUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
     <Content Include="UI\ProductListUI.aspx" />
     <Content Include="UI\ProjectListUI.aspx" />
@@ -785,11 +786,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DateManager.cs" />
     <Compile Include="BLL\DesignationManager.cs" />
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\ProjectManager.cs" />
     <Compile Include="BLL\ReportManager.cs" />
     <Compile Include="BLL\UsersManager.cs" />
+    <Compile Include="DAL\Gateway\DateGateway.cs" />
     <Compile Include="DAL\Gateway\DesignationGateway.cs" />
     <Compile Include="DAL\Gateway\Gateway.cs" />
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
@@ -822,6 +825,13 @@
     </Compile>
     <Compile Include="UI\DashboardUI.aspx.designer.cs">
       <DependentUpon>DashboardUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DateWiseReportUI.aspx.cs">
+      <DependentUpon>DateWiseReportUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DateWiseReportUI.aspx.designer.cs">
+      <DependentUpon>DateWiseReportUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\LogoutUI.aspx.cs">
       <DependentUpon>LogoutUI.aspx</DependentUpon>

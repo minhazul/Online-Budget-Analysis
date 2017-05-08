@@ -14,5 +14,10 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aReportGateway.GetProjectWiseReport(projectId);
         }
+
+        public List<Report> GetReportByDate(string startDate, string endDate)
+        {
+            return _aReportGateway.GetReportByDate(startDate, endDate);
+        }
     }
 }

@@ -1,29 +1,27 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProjectWiseReportsUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.ProjectWiseReportsUI" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DateWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.DateWiseReportUI" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8"/>
-    
-    
+        
     <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="../Content/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="../Content/responsive.css" rel="stylesheet" />
-
-    <title>ProjectWise Report</title>
+    <title>DateWise Report</title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="container">
+   <div class="container">
         <div class="row">
-                <div class="col-sm-4">
-                    <asp:Button ID="btnBack" runat="server" CssClass="btn btn-danger" Text="Back to Home" OnClick="btnBack_Click"/>
+            <div class="col-sm-4">
+                    <asp:Button ID="btnBack" runat="server" CssClass="btn btn-danger" Text="Back to Home"/>
                 </div>
                 <div class="col-sm-4" style="text-align: center">
-                    <h2>ProjectWise Report</h2>
+                    <h2>Standard Deviations of Sales Data</h2>
                 </div>
             <div class="col-sm-4"></div>
         </div>
@@ -36,22 +34,33 @@
             </div>
             <div class="col-sm-4"></div>
         </div>
-
-        <div class="row" style="padding-bottom: 50px">
-            <div class="col-sm-4"></div> 
-            <div class="col-sm-1">
-                <label><b>Select Project</b></label>
-            </div>
-            <div class="col-sm-4">
-                <asp:DropDownList ID="dropDownProjectList" AutoPostBack="True" OnSelectedIndexChanged="dropDownProjectList_SelectedIndexChanged" runat="server"></asp:DropDownList>
-            </div> 
-            <div class="col-sm-3"></div>
-        </div>
         
         <div class="row">
             <div class="col-sm-12">
-                <asp:GridView ID="prjctWiseRepotGridView" CssClass="prjctWiseDatatable" AutoGenerateColumns="False" runat="server">
-                    <Columns>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-1" style="padding: 2px;padding-right: 1px">
+                    <label><b>Start Date</b></label>
+                </div>
+                <div class="col-sm-4" style="padding: 2px">                   
+                    <asp:TextBox ID="StartTextBox" runat="server" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
+                </div>
+                <div class="col-sm-1" style="padding: 2px;padding-right: 3px">
+                    <label><b>End Date</b></label>
+                </div>
+                <div class="col-sm-4" style="padding: 2px">              
+                    <asp:TextBox ID="EndTextBox" runat="server" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" style="text-align: center; padding-top: 20px;padding-bottom: 50px">
+            <asp:Button ID="btnGenerate" runat="server" CssClass="btn btn-success" Text="Generate" OnClick="btnGenerate_Click" />&nbsp;&nbsp;
+            <asp:Label ID="msgError" runat="server" Text=""></asp:Label>
+        </div>
+        
+        <div class="row">
+            <asp:GridView ID="DateWiseReportGridView" AutoGenerateColumns="False" CssClass="DateWiseDataTable" runat="server">
+                <Columns>
                          <asp:TemplateField HeaderText="SL#">
                             <ItemTemplate>
                                 <%#Container.DataItemIndex+1 %>
@@ -133,20 +142,35 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                </asp:GridView>
-            </div>
+            </asp:GridView>
         </div>
     </div>
     </form>
     
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/respond.min.js"></script>
+    <script src="../Scripts/bootstrap-datepicker.min.js"></script>
     <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
-            $('.prjctWiseDatatable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+            var dp = $("#<%=StartTextBox.ClientID%>");
+            dp.datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "yyyy-mm-dd",
+                autoclose: true,
+                todayHighlight: true
+            });
 
+            var ds = $("#<%=EndTextBox.ClientID%>");
+            ds.datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "yyyy-mm-dd",
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('.DateWiseDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
         });
     </script>
 </body>

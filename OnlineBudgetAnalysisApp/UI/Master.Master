@@ -54,7 +54,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="ProjectWiseReportsUI.aspx">Project Wise Reports</a></li>
-                                <li><a href="#">Standard Deviations of<br> Sales Data</a></li>
+                                <li><a href="DateWiseReportUI.aspx">Standard Deviations of<br/> Sales Data</a></li>
                                 <li><a href="#">Gross Monthly Depiction <br/>Policy</a></li>
                                 <li><a href="#">Yearly Gross Rollback</a></li>
                             </ul>
