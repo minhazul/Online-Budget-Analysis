@@ -735,6 +735,7 @@
     <Content Include="Scripts\ckeditor\ckeditor_php4.php" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="UI\YearWiseReportUI.aspx" />
     <Content Include="Upload.ashx" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
@@ -927,6 +928,13 @@
     </Compile>
     <Compile Include="UI\RegistrationUi.aspx.designer.cs">
       <DependentUpon>RegistrationUi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\YearWiseReportUI.aspx.cs">
+      <DependentUpon>YearWiseReportUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\YearWiseReportUI.aspx.designer.cs">
+      <DependentUpon>YearWiseReportUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="Upload.ashx.cs">
       <DependentUpon>Upload.ashx</DependentUpon>
