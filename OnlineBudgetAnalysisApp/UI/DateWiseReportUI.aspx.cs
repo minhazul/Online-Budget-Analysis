@@ -48,5 +48,10 @@ namespace OnlineBudgetAnalysisApp.UI
             DateWiseReportGridView.DataSource = reports;
             DateWiseReportGridView.DataBind();
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomeUI.aspx");
+        }
     }
 }

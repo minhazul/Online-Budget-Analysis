@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DateWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.DateWiseReportUI" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MonthWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.MonthWiseReportUI" %>
 
 <!DOCTYPE html>
 
@@ -11,17 +11,17 @@
     <link href="../Content/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="../Content/responsive.css" rel="stylesheet" />
-    <title>DateWise Report</title>
+    <title>MonthWise Report</title>
 </head>
 <body>
     <form id="form1" runat="server">
-   <div class="container">
-        <div class="row">
+    <div class="container">
+    <div class="row">
             <div class="col-sm-4">
                     <asp:Button ID="btnBack" runat="server" CssClass="btn btn-danger" Text="Back to Home" OnClick="btnBack_Click"/>
                 </div>
                 <div class="col-sm-4" style="text-align: center">
-                    <h2>Standard Deviations of Sales Data</h2>
+                    <h2>Gross Monthly Depiction Policy</h2>
                 </div>
             <div class="col-sm-4"></div>
         </div>
@@ -36,30 +36,27 @@
         </div>
         
         <div class="row">
-            <div class="col-sm-12">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-1" style="padding: 2px;padding-right: 1px">
-                    <label><b>Start Date</b></label>
-                </div>
-                <div class="col-sm-4" style="padding: 2px">                   
-                    <asp:TextBox ID="StartTextBox" runat="server" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
-                </div>
-                <div class="col-sm-1" style="padding: 2px;padding-right: 3px">
-                    <label><b>End Date</b></label>
-                </div>
-                <div class="col-sm-4" style="padding: 2px">              
-                    <asp:TextBox ID="EndTextBox" runat="server" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
-                </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-1">
+                <label><b>Select Month</b></label>
+            </div>
+            <div class="col-sm-4">
+                <asp:DropDownList ID="monthDropDownList" runat="server"></asp:DropDownList>
+            </div>
+            <div class="col-sm-1">
+                <label><b>Select Year</b></label>
+            </div>
+            <div class="col-sm-4">
+                <asp:DropDownList ID="yearDropDownList" runat="server"></asp:DropDownList>
             </div>
         </div>
         
         <div class="row" style="text-align: center; padding-top: 20px;padding-bottom: 50px">
-            <asp:Button ID="btnGenerate" runat="server" CssClass="btn btn-success" Text="Generate" OnClick="btnGenerate_Click" />&nbsp;&nbsp;
-            <asp:Label ID="msgError" runat="server" Text=""></asp:Label>
+            <asp:Button ID="btnGenerate" CssClass="btn btn-success" runat="server" Text="Generate" OnClick="btnGenerate_Click" />
         </div>
         
         <div class="row">
-            <asp:GridView ID="DateWiseReportGridView" AutoGenerateColumns="False" CssClass="DateWiseDataTable" runat="server">
+            <asp:GridView ID="MonthWiseReportGridView" CssClass="MonthWiseDataTable" AutoGenerateColumns="False" runat="server">
                 <Columns>
                          <asp:TemplateField HeaderText="SL#">
                             <ItemTemplate>
@@ -152,25 +149,7 @@
     <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var dp = $("#<%=StartTextBox.ClientID%>");
-            dp.datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "yyyy-mm-dd",
-                autoclose: true,
-                todayHighlight: true
-            });
-
-            var ds = $("#<%=EndTextBox.ClientID%>");
-            ds.datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "yyyy-mm-dd",
-                autoclose: true,
-                todayHighlight: true
-            });
-
-            $('.DateWiseDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+            $('.MonthWiseDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
         });
     </script>
 </body>

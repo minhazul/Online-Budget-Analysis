@@ -19,5 +19,10 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aReportGateway.GetReportByDate(startDate, endDate);
         }
+
+        public List<Report> GetReportByMonth(int month, int year)
+        {
+            return _aReportGateway.GetreportByMonth(month, year);
+        }
     }
 }

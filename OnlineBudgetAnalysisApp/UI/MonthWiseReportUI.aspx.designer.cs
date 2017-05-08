@@ -10,7 +10,7 @@
 namespace OnlineBudgetAnalysisApp.UI {
     
     
-    public partial class DateWiseReportUI {
+    public partial class MonthWiseReportUI {
         
         /// <summary>
         /// form1 control.
@@ -40,22 +40,22 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.Label msgFullName;
         
         /// <summary>
-        /// StartTextBox control.
+        /// monthDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox StartTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList monthDropDownList;
         
         /// <summary>
-        /// EndTextBox control.
+        /// yearDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EndTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList yearDropDownList;
         
         /// <summary>
         /// btnGenerate control.
@@ -67,21 +67,12 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.Button btnGenerate;
         
         /// <summary>
-        /// msgError control.
+        /// MonthWiseReportGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgError;
-        
-        /// <summary>
-        /// DateWiseReportGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DateWiseReportGridView;
+        protected global::System.Web.UI.WebControls.GridView MonthWiseReportGridView;
     }
 }
