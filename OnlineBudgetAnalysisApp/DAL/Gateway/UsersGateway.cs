@@ -11,10 +11,10 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
     public class UsersGateway:Gateway
     {
         public int RegisterUsers(Users aUser)
-        {       
+        {
 
-            Query = "insert into Users(UserName,FullName,Designationid,Email,Password,RoleId) values('" + aUser.UserName + "','" +
-                    aUser.FullName + "','"+aUser.DesignationId+"','" + aUser.Email + "','" + aUser.Password + "','"+aUser.RoleId+"')";
+            Query = "insert into Users(UserName,FullName,Designationid,Email,Password,RoleId,Registration_Date) values('" + aUser.UserName + "','" +
+                    aUser.FullName + "','"+aUser.DesignationId+"','" + aUser.Email + "','" + aUser.Password + "','"+aUser.RoleId+"','"+DateTime.Now+"')";
             Command=new SqlCommand(Query,Connection);
             
             Connection.Open();
@@ -111,8 +111,9 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Command.Parameters["UserName"].Value = userName;
             Command.Parameters.Add("Password", SqlDbType.VarChar);
             Command.Parameters["Password"].Value = password;
-            Command.Parameters.Add("Is_Approved", SqlDbType.VarChar);
+            Command.Parameters.Add("Is_Approved", SqlDbType.Bit);
             Command.Parameters["Is_Approved"].Value = true;
+            
             Connection.Open();
             Reader = Command.ExecuteReader();
             while (Reader.Read())

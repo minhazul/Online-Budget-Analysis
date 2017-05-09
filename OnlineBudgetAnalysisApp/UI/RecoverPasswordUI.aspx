@@ -40,8 +40,8 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-10">
-                        <div class="col-sm-3">
-                            <asp:Button ID="btnRecoverPass" runat="server" CssClass="btn btn-default" Text="Submit" OnClick="btnRecoverPass_Click" />
+                        <div class="col-sm-2">
+                            <asp:Button ID="btnRecoverPass" runat="server" CssClass="btn btn-success" Text="Submit" OnClick="btnRecoverPass_Click" />
                         </div>
                       <div class="col-sm-7">
                           <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>
@@ -52,7 +52,7 @@
         </div>
     </div>
 </div>
-    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 </body>
 </html>

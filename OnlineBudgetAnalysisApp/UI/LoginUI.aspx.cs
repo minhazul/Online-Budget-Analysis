@@ -22,7 +22,7 @@ namespace OnlineBudgetAnalysisApp
             string userName = txtUsername.Value;
             string password = txtPassword.Value;
             bool isLogin = _aUsersManager.Login(userName,password);
-            if (isLogin == true)
+            if (isLogin)
             {
                 Session["UserName"] = userName;
                 Response.Redirect("HomeUI.aspx");

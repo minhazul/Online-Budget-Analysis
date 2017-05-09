@@ -73,7 +73,7 @@ namespace OnlineBudgetAnalysisApp.BLL
         public bool Login(string userName, string password)
         {
             bool isLogin= _aUsersGateway.Login(userName, password);
-            if (isLogin==true)
+            if (isLogin)
             {
                 _aUsersGateway.UpdateLastLoginDate(userName,password);
             }

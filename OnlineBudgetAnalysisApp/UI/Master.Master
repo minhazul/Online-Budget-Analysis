@@ -22,6 +22,7 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body class="homepage">
     <form id="form1" runat="server">
@@ -64,7 +65,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="AccountInfoUI.aspx">Edit Account</a></li>
                                 <li><a href="ChangePasswordUI.aspx">Change Password</a></li>                               
-                                <li runat="server" id="dashBoardLi"><a href="DashboardUI.aspx">Dashboard</a></li>
+                                <li runat="server" id="dashBoardLi"><a href="DashboardUI.aspx">Dashboard</a></li>                                                             
                                 <li><a href="LogoutUI.aspx">LogOut</a></li> 
                             </ul>
                         </li>                                               
