@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using OnlineBudgetAnalysisApp.BLL;
 using OnlineBudgetAnalysisApp.DAL.Model;
+using OnlineBudgetAnalysisApp.DAL.ViewModel;
 
 namespace OnlineBudgetAnalysisApp.UI
 {
@@ -24,17 +25,20 @@ namespace OnlineBudgetAnalysisApp.UI
         {
             string fullName = _aUsersManager.GetFullName(userName);
 
-            List<Projects> aProjects = new List<Projects>();
-            aProjects = _aProjectManager.GetAllProjectLists();
+            //List<Projects> aProjects = new List<Projects>();
+            //aProjects = _aProjectManager.GetAllProjectLists();
 
-            if (aProjects.Count == 0)
+            List<ProjectListShow> aProjectListShows=new List<ProjectListShow>();
+            aProjectListShows = _aProjectManager.GetAllProjectListsWithProjectHeadName();
+
+            if (aProjectListShows.Count == 0)
             {
                 Response.Write("Project list is empty");
             }
             else
             {
                 msgFullName.Text = fullName;
-                prjctListGridview.DataSource = aProjects;
+                prjctListGridview.DataSource = aProjectListShows;
                 prjctListGridview.DataBind();
             }           
         }

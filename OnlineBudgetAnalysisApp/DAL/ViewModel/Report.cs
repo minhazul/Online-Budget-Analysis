@@ -7,8 +7,9 @@ namespace OnlineBudgetAnalysisApp.DAL.ViewModel
 {
     public class Report
     {
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public int ProjectId { get; set; }
+        public string ProjectName { get; set; }
         public string Sku { get; set; }
         public string Category { get; set; }
         public string Name { get; set; }

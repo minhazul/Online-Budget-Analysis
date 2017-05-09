@@ -29,7 +29,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             {
                 Report aReport = new Report();
 
-                aReport.Date = Convert.ToDateTime(Reader["Date"]);
+                aReport.Date = Reader["Date"].ToString();
                 aReport.Sku = Reader["SKU"].ToString();
                 aReport.Category = Reader["Category"].ToString();
                 aReport.Name = Reader["Name"].ToString();
@@ -57,7 +57,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetReportByDate(string startDate, string endDate)
         {
             Query =
-                "SELECT CONVERT(CHAR(11), Date, 106) as Date, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where Date Between @StartDate AND @EndDate Order by Date";
+                "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where Date Between @StartDate AND @EndDate Order by Date";
             Command = new SqlCommand(Query, Connection);
 
             Command.Parameters.Clear();
@@ -75,7 +75,8 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             {
                 Report aReport = new Report();
 
-                aReport.Date = Convert.ToDateTime(Reader["Date"]);
+                aReport.Date = Reader["Date"].ToString();
+                aReport.ProjectName = Reader["ProjectName"].ToString();
                 aReport.Sku = Reader["SKU"].ToString();
                 aReport.Category = Reader["Category"].ToString();
                 aReport.Name = Reader["Name"].ToString();
@@ -103,7 +104,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetreportByMonth(int month, int year)
         {
             Query =
-                "SELECT CONVERT(CHAR(11), Date, 106) as Date, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where ( Year(Date)=@Year and Month(Date)=@Month) Order by Date";
+                "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where ( Year(Date)=@Year and Month(Date)=@Month) Order by Date";
 
             Command = new SqlCommand(Query, Connection);
 
@@ -122,7 +123,8 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             {
                 Report aReport = new Report();
 
-                aReport.Date = Convert.ToDateTime(Reader["Date"]);
+                aReport.Date = Reader["Date"].ToString();
+                aReport.ProjectName = Reader["ProjectName"].ToString();
                 aReport.Sku = Reader["SKU"].ToString();
                 aReport.Category = Reader["Category"].ToString();
                 aReport.Name = Reader["Name"].ToString();
@@ -150,7 +152,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetReportByYear(int year)
         {
             Query =
-               "SELECT CONVERT(CHAR(11), Date, 106) as Date, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where (Year(Date)=@Year) Order by Date";
+               "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where (Year(Date)=@Year) Order by Date";
 
             Command = new SqlCommand(Query, Connection);
 
@@ -167,7 +169,8 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             {
                 Report aReport = new Report();
 
-                aReport.Date = Convert.ToDateTime(Reader["Date"]);
+                aReport.Date = Reader["Date"].ToString();
+                aReport.ProjectName = Reader["ProjectName"].ToString();
                 aReport.Sku = Reader["SKU"].ToString();
                 aReport.Category = Reader["Category"].ToString();
                 aReport.Name = Reader["Name"].ToString();

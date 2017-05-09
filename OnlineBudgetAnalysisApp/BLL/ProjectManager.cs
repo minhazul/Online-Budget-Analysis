@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using OnlineBudgetAnalysisApp.DAL.Gateway;
 using OnlineBudgetAnalysisApp.DAL.Model;
+using OnlineBudgetAnalysisApp.DAL.ViewModel;
 
 namespace OnlineBudgetAnalysisApp.BLL
 {
@@ -40,6 +41,11 @@ namespace OnlineBudgetAnalysisApp.BLL
         public List<Projects> GetAllProjectLists()
         {
             return _aProjectGateway.GetAllProjectLists();
+        }
+
+        public List<ProjectListShow> GetAllProjectListsWithProjectHeadName()
+        {
+            return _aProjectGateway.GetAllProjectListsWithProjectHeadName();
         }
     }
 }

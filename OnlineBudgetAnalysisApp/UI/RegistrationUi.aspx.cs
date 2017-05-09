@@ -97,8 +97,8 @@ namespace OnlineBudgetAnalysisApp
                 }
                 
             }
-            catch (Exception ex)
-            {
+            catch (Exception)
+            {               
                 string message = _aUsersManager.DropData(_aUsers.UserName, _aUsers.Email);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Error occured : " + message + "');", true);
                 return;

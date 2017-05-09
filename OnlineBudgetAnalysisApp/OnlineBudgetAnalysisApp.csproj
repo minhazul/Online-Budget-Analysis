@@ -809,6 +809,7 @@
     <Compile Include="DAL\Model\Projects.cs" />
     <Compile Include="DAL\Model\Users.cs" />
     <Compile Include="DAL\Model\Year.cs" />
+    <Compile Include="DAL\ViewModel\ProjectListShow.cs" />
     <Compile Include="DAL\ViewModel\Report.cs" />
     <Compile Include="UI\AccountInfoUI.aspx.cs">
       <DependentUpon>AccountInfoUI.aspx</DependentUpon>

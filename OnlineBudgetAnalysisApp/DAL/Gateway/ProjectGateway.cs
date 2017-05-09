@@ -118,5 +118,34 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             return projects;
         }
 
+        public List<ProjectListShow> GetAllProjectListsWithProjectHeadName()
+        {
+            Query = "SELECT * FROM ProjectListShow";
+            Command = new SqlCommand(Query, Connection);
+
+            List<ProjectListShow> projectListShows=new List<ProjectListShow>();
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                ProjectListShow aProjectListShow=new ProjectListShow();
+
+                aProjectListShow.Id = Convert.ToInt32(Reader["Id"]);
+                aProjectListShow.ProjectName = Reader["ProjectName"].ToString();
+                aProjectListShow.ProjectHeadName = Reader["ProjectHeadName"].ToString();
+                aProjectListShow.Date = Convert.ToDateTime(Reader["Date"]);
+                aProjectListShow.Description = Reader["Description"].ToString();
+                aProjectListShow.Status = Reader["Status"].ToString();
+
+                projectListShows.Add(aProjectListShow);
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return projectListShows;
+        }
     }
 }

@@ -43,7 +43,7 @@
                                 <%#Container.DataItemIndex+1 %>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Project Name">
+                        <asp:TemplateField HeaderText="SKU">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Sku") %>'></asp:Label>
                             </ItemTemplate>

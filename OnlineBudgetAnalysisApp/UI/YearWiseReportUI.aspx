@@ -61,6 +61,11 @@
                                 <asp:Label runat="server" Text='<%#Eval("Date") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Project Name">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("ProjectName") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="SKU">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Sku") %>'></asp:Label>
