@@ -401,5 +401,33 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return listUsers;
         }
+
+        public bool IsAdminApproved(string userName, string password)
+        {
+            bool isAdminApproved = false;
+            Query = "SELECT * FROM Users WHERE UserName=@UserName and Password=@Password and IsAdmin_Approved=@IsAdmin_Approved";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Command.Parameters.Add("Password", SqlDbType.VarChar);
+            Command.Parameters["Password"].Value = password;
+            Command.Parameters.Add("IsAdmin_Approved", SqlDbType.Bit);
+            Command.Parameters["IsAdmin_Approved"].Value = true;
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    isAdminApproved = true;
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+            return isAdminApproved;
+        }
     }
 }

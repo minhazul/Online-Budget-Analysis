@@ -24,8 +24,16 @@ namespace OnlineBudgetAnalysisApp
             bool isLogin = _aUsersManager.Login(userName,password);
             if (isLogin)
             {
-                Session["UserName"] = userName;
-                Response.Redirect("HomeUI.aspx");
+                bool isAdminApproved = _aUsersManager.IsAdminApproved(userName, password);
+                if (isAdminApproved)
+                {
+                    Session["UserName"] = userName;
+                    Response.Redirect("HomeUI.aspx");
+                }
+                else
+                {
+                    msgLabel.Text = "You are not approved by Admin";
+                }
             }
             else
             {

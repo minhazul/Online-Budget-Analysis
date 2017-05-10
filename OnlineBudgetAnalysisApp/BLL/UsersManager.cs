@@ -72,11 +72,7 @@ namespace OnlineBudgetAnalysisApp.BLL
 
         public bool Login(string userName, string password)
         {
-            bool isLogin= _aUsersGateway.Login(userName, password);
-            if (isLogin)
-            {
-                _aUsersGateway.UpdateLastLoginDate(userName,password);
-            }
+            bool isLogin= _aUsersGateway.Login(userName, password);           
             return isLogin;
         }
 
@@ -159,6 +155,16 @@ namespace OnlineBudgetAnalysisApp.BLL
         public List<Users> GetUserByDesignationId(int designationId)
         {
             return _aUsersGateway.GetUsersByDesignationId(designationId);
+        }
+
+        public bool IsAdminApproved(string userName, string password)
+        {
+            bool isAdminApproved = _aUsersGateway.IsAdminApproved(userName, password);
+            if (isAdminApproved)
+            {
+                _aUsersGateway.UpdateLastLoginDate(userName, password);
+            }
+            return isAdminApproved;
         }
     }
 }
