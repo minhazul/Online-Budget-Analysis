@@ -13,7 +13,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetProjectWiseReport(int projectId)
         {
             Query =
-                "SELECT CONVERT(CHAR(11), Date, 106) as Date, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where ProjectId=@ProjectId Order by Date";
+                "SELECT CONVERT(CHAR(11), Date, 106) as Date, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where ProjectId=@ProjectId Order by Year(Date) DESC, Month(Date) DESC, Day(Date) DESC";
             Command = new SqlCommand(Query, Connection);
 
             Command.Parameters.Clear();
@@ -57,7 +57,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetReportByDate(string startDate, string endDate)
         {
             Query =
-                "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where Date Between @StartDate AND @EndDate Order by Date";
+                "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where Date Between @StartDate AND @EndDate Order by Year(Date) DESC, Month(Date) DESC, Day(Date) DESC";
             Command = new SqlCommand(Query, Connection);
 
             Command.Parameters.Clear();
@@ -104,7 +104,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetreportByMonth(int month, int year)
         {
             Query =
-                "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where ( Year(Date)=@Year and Month(Date)=@Month) Order by Date";
+                "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where ( Year(Date)=@Year and Month(Date)=@Month) Order by Year(Date) DESC, Month(Date) DESC, Day(Date) DESC";
 
             Command = new SqlCommand(Query, Connection);
 
@@ -152,7 +152,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
         public List<Report> GetReportByYear(int year)
         {
             Query =
-               "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where (Year(Date)=@Year) Order by Date";
+               "SELECT CONVERT(CHAR(11), Date, 106) as Date, ProjectName, SKU, Category, Name, Sold, Prices, Total, PackagingCost, ActualShippingCost, UnitCost, MarketFee, VAT, TotalProductionCost, TotalCost, TotalEarning FROM Reports Where (Year(Date)=@Year) Order by Year(Date) DESC, Month(Date) DESC, Day(Date) DESC";
 
             Command = new SqlCommand(Query, Connection);
 
