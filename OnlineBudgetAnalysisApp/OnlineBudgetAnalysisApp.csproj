@@ -722,6 +722,7 @@
     <Content Include="UI\DateWiseReportUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
     <Content Include="UI\MonthWiseReportUI.aspx" />
+    <Content Include="UI\PendingApprovalUI.aspx" />
     <Content Include="UI\ProductListUI.aspx" />
     <Content Include="UI\ProjectListUI.aspx" />
     <Content Include="UI\ProjectsUI.aspx" />
@@ -791,6 +792,7 @@
   <ItemGroup>
     <Compile Include="BLL\DateManager.cs" />
     <Compile Include="BLL\DesignationManager.cs" />
+    <Compile Include="BLL\PendingUserManager.cs" />
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\ProjectManager.cs" />
     <Compile Include="BLL\ReportManager.cs" />
@@ -798,6 +800,7 @@
     <Compile Include="DAL\Gateway\DateGateway.cs" />
     <Compile Include="DAL\Gateway\DesignationGateway.cs" />
     <Compile Include="DAL\Gateway\Gateway.cs" />
+    <Compile Include="DAL\Gateway\PendingUserGateway.cs" />
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
     <Compile Include="DAL\Gateway\ProjectGateway.cs" />
     <Compile Include="DAL\Gateway\ReportGateway.cs" />
@@ -809,6 +812,8 @@
     <Compile Include="DAL\Model\Projects.cs" />
     <Compile Include="DAL\Model\Users.cs" />
     <Compile Include="DAL\Model\Year.cs" />
+    <Compile Include="DAL\ViewModel\ApproveDelete.cs" />
+    <Compile Include="DAL\ViewModel\PendingUsers.cs" />
     <Compile Include="DAL\ViewModel\ProjectListShow.cs" />
     <Compile Include="DAL\ViewModel\Report.cs" />
     <Compile Include="UI\AccountInfoUI.aspx.cs">
@@ -852,6 +857,13 @@
     </Compile>
     <Compile Include="UI\MonthWiseReportUI.aspx.designer.cs">
       <DependentUpon>MonthWiseReportUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PendingApprovalUI.aspx.cs">
+      <DependentUpon>PendingApprovalUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PendingApprovalUI.aspx.designer.cs">
+      <DependentUpon>PendingApprovalUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ProductListUI.aspx.cs">
       <DependentUpon>ProductListUI.aspx</DependentUpon>

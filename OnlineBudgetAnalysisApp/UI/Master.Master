@@ -10,8 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
+
     <title>Online Budget Analysis System</title>
-        
+
+    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />    
     <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="../Content/font-awesome.min.css" rel="stylesheet"/>
     <link href="../Content/animate.min.css" rel="stylesheet"/>
@@ -65,7 +67,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="AccountInfoUI.aspx">Edit Account</a></li>
                                 <li><a href="ChangePasswordUI.aspx">Change Password</a></li>                               
-                                <li runat="server" id="dashBoardLi"><a href="DashboardUI.aspx">Dashboard</a></li>                                                             
+                                <li runat="server" id="dashBoardLi"><a href="PendingApprovalUI.aspx">Dashboard</a></li>                                                             
                                 <li><a href="LogoutUI.aspx">LogOut</a></li> 
                             </ul>
                         </li>                                               
@@ -107,6 +109,16 @@
     <script src="../Scripts/jquery.isotope.min.js"></script>--%>
     <script src="../Scripts/main.js"></script>
     <%--<script src="../Scripts/wow.min.js"></script>--%>
+    
+    <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.pendingUserDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+                reponsive: true
+        });
+
+        });
+    </script>
 
 </body>
 </html>

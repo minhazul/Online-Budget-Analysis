@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" MasterPageFile="Master.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+
   <style>
       
        @media (min-width: 768px) {
@@ -19,7 +19,7 @@
                display: block;
            }
            .sidebar-nav .navbar li a {
-               padding-top: 12px;
+               padding-top: 22px;
                padding-bottom: 12px;
            }
        }
@@ -49,12 +49,12 @@
                 </div>
                 <div class="navbar-collapse collapse sidebar-navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Menu Item 1</a></li>
-                        <li><a href="#">Menu Item 2</a></li>
-                        <li><a href="#">Menu Item 2</a></li>
+                        <li class="active"><a href="PendingApprovalUI.aspx">User Approval</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Menu Item 1</a></li>
                         <li><a href="#">Menu Item 2</a></li>
                         <li><a href="#">Menu Item 4</a></li>
-                        <li><a href="#">Reviews <span class="badge">1,118</span></a></li>
+                        
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
