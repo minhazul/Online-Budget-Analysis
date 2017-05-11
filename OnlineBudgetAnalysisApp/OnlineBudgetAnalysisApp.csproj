@@ -722,7 +722,6 @@
     <Content Include="UI\DateWiseReportUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
     <Content Include="UI\MonthWiseReportUI.aspx" />
-    <Content Include="UI\PendingApprovalUI.aspx" />
     <Content Include="UI\ProductListUI.aspx" />
     <Content Include="UI\ProjectListUI.aspx" />
     <Content Include="UI\ProjectsUI.aspx" />
@@ -736,11 +735,11 @@
     <Content Include="Scripts\ckeditor\ckeditor_php4.php" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="UI\UserAccessControl.aspx" />
     <Content Include="UI\YearWiseReportUI.aspx" />
     <Content Include="Upload.ashx" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <Content Include="UI\MasterDashBoard.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -796,6 +795,7 @@
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\ProjectManager.cs" />
     <Compile Include="BLL\ReportManager.cs" />
+    <Compile Include="BLL\UserAccessControlManager.cs" />
     <Compile Include="BLL\UsersManager.cs" />
     <Compile Include="DAL\Gateway\DateGateway.cs" />
     <Compile Include="DAL\Gateway\DesignationGateway.cs" />
@@ -804,6 +804,7 @@
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
     <Compile Include="DAL\Gateway\ProjectGateway.cs" />
     <Compile Include="DAL\Gateway\ReportGateway.cs" />
+    <Compile Include="DAL\Gateway\UserAccessControlGateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
     <Compile Include="DAL\Model\Designation.cs" />
     <Compile Include="DAL\Model\Inventory.cs" />
@@ -857,13 +858,6 @@
     </Compile>
     <Compile Include="UI\MonthWiseReportUI.aspx.designer.cs">
       <DependentUpon>MonthWiseReportUI.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\PendingApprovalUI.aspx.cs">
-      <DependentUpon>PendingApprovalUI.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\PendingApprovalUI.aspx.designer.cs">
-      <DependentUpon>PendingApprovalUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ProductListUI.aspx.cs">
       <DependentUpon>ProductListUI.aspx</DependentUpon>
@@ -942,6 +936,13 @@
     </Compile>
     <Compile Include="UI\RegistrationUi.aspx.designer.cs">
       <DependentUpon>RegistrationUi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserAccessControl.aspx.cs">
+      <DependentUpon>UserAccessControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UserAccessControl.aspx.designer.cs">
+      <DependentUpon>UserAccessControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\YearWiseReportUI.aspx.cs">
       <DependentUpon>YearWiseReportUI.aspx</DependentUpon>

@@ -47,7 +47,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down" id="prjctAngleDown" runat="server"></i></a>
                             <ul class="dropdown-menu">
-                                <li id="prjctListLi" runat="server"><a href="ProjectsUI.aspx">Create Project</a></li>
+                                <li id="prjctCreateLi" runat="server"><a href="ProjectsUI.aspx">Create Project</a></li>
                                 <li><a href="ProjectListUI.aspx">Project Lists</a></li>                                
                             </ul>
                         </li>
@@ -67,14 +67,16 @@
                             <ul class="dropdown-menu">
                                 <li><a href="AccountInfoUI.aspx">Edit Account</a></li>
                                 <li><a href="ChangePasswordUI.aspx">Change Password</a></li>                               
-                                <li runat="server" id="dashBoardLi"><a href="PendingApprovalUI.aspx">Dashboard</a></li>                                                             
-                                <li><a href="LogoutUI.aspx">LogOut</a></li> 
+                                <li runat="server" id="userAccessLi"><a href="UserAccessControl.aspx">User Access Control</a></li>
+                                <li runat="server" id="systemSettingsLi"><a href="#">System Settings</a></li>
+                                <li><a href="LogoutUI.aspx">LogOut</a></li>                               
                             </ul>
                         </li>                                               
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
+          
         </header><!--/header-->
         <%--<section>--%>
             <div>

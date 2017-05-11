@@ -24,18 +24,17 @@ namespace OnlineBudgetAnalysisApp
         {
             if (roleName == "Normal")
             {
-                prjctListLi.Visible = false;
+                prjctCreateLi.Visible = false;
                 prjctAngleDown.Visible = false;
-                dashBoardLi.Visible = false;
                 uploadLi.Visible = false;
             }
             else if (roleName == "CoAdmin")
             {
-                dashBoardLi.Visible = false;
+                prjctCreateLi.Visible = false;
+                prjctAngleDown.Visible = false;
             }
             else if (roleName == "SuperAdmin")
             {
-                dashBoardLi.Visible = true;
                 uploadLi.Visible = true;
             }
             else

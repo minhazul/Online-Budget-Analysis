@@ -7,81 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineBudgetAnalysisApp {
+namespace OnlineBudgetAnalysisApp.UI {
     
     
-    public partial class Master {
+    public partial class UserAccessControl {
         
         /// <summary>
-        /// head control.
+        /// txtNoTotalUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox txtNoTotalUser;
         
         /// <summary>
-        /// form1 control.
+        /// txtNoCoAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txtNoCoAdmin;
         
         /// <summary>
-        /// prjctAngleDown control.
+        /// txtNoNormal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prjctAngleDown;
+        protected global::System.Web.UI.WebControls.TextBox txtNoNormal;
         
         /// <summary>
-        /// prjctCreateLi control.
+        /// txtNoPendingUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prjctCreateLi;
+        protected global::System.Web.UI.WebControls.TextBox txtNoPendingUsers;
         
         /// <summary>
-        /// uploadLi control.
+        /// btnPendingUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl uploadLi;
+        protected global::System.Web.UI.WebControls.Button btnPendingUsers;
         
         /// <summary>
-        /// userAccessLi control.
+        /// btnAllUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userAccessLi;
+        protected global::System.Web.UI.WebControls.Button btnAllUsers;
         
         /// <summary>
-        /// systemSettingsLi control.
+        /// btnChangeUserAccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl systemSettingsLi;
+        protected global::System.Web.UI.WebControls.Button btnChangeUserAccess;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// btnBlockedUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnBlockedUsers;
+        
+        /// <summary>
+        /// btnUserActivity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUserActivity;
     }
 }
