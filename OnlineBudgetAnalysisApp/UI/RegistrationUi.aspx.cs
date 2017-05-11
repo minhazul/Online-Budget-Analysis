@@ -49,6 +49,10 @@ namespace OnlineBudgetAnalysisApp
 
             try
             {
+                Email aEmail=new Email();
+                EmailManager aEmailManager = new EmailManager();
+                aEmail = aEmailManager.GetEmailAndPass();
+
                 _aUsers.FullName = txtFullName.Text;
                 _aUsers.UserName = userNameTextBox.Text;
 
@@ -84,7 +88,7 @@ namespace OnlineBudgetAnalysisApp
                           " Please <a href='" + activationUrl + "'>click here to activate</a>  your account. \nThanks!";
                     msg.IsBodyHtml = true;
 
-                    smtp.Credentials = new NetworkCredential("minhazcste14@gmail.com", "");
+                    smtp.Credentials = new NetworkCredential(aEmail.EmailName, aEmail.Password);
                     smtp.Port = 587;
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;

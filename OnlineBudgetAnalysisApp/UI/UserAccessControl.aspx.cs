@@ -32,5 +32,10 @@ namespace OnlineBudgetAnalysisApp.UI
             int noOfPendingUsers = _accessControlManager.GetNoOfPendingUsers();
             txtNoPendingUsers.Text = noOfPendingUsers.ToString();
         }
+
+        protected void btnPendingUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PendingApprovalUI.aspx");
+        }
     }
 }

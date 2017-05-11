@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using OnlineBudgetAnalysisApp.BLL;
+using OnlineBudgetAnalysisApp.DAL.Model;
 
 namespace OnlineBudgetAnalysisApp
 {
@@ -31,7 +32,11 @@ namespace OnlineBudgetAnalysisApp
             {
                 string activationUrl;
                 try
-                {                                      
+                {
+                        Email aEmail = new Email();
+                        EmailManager aEmailManager = new EmailManager();
+                        aEmail = aEmailManager.GetEmailAndPass();
+                  
                         var msg = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
                         emailid = txtEmail.Value.Trim();
@@ -47,7 +52,7 @@ namespace OnlineBudgetAnalysisApp
                           "<a href='" + activationUrl + "'>click here to reset password</a>. \nThanks!";
                         msg.IsBodyHtml = true;
 
-                        smtp.Credentials = new NetworkCredential("minhazcste14@gmail.com", "");
+                        smtp.Credentials = new NetworkCredential(aEmail.EmailName, aEmail.Password);
                         smtp.Port = 587;
                         smtp.Host = "smtp.gmail.com";
                         smtp.EnableSsl = true;

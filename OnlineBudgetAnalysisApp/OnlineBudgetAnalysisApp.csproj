@@ -722,6 +722,7 @@
     <Content Include="UI\DateWiseReportUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
     <Content Include="UI\MonthWiseReportUI.aspx" />
+    <Content Include="UI\PendingApprovalUI.aspx" />
     <Content Include="UI\ProductListUI.aspx" />
     <Content Include="UI\ProjectListUI.aspx" />
     <Content Include="UI\ProjectsUI.aspx" />
@@ -791,6 +792,7 @@
   <ItemGroup>
     <Compile Include="BLL\DateManager.cs" />
     <Compile Include="BLL\DesignationManager.cs" />
+    <Compile Include="BLL\EmailManager.cs" />
     <Compile Include="BLL\PendingUserManager.cs" />
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\ProjectManager.cs" />
@@ -799,6 +801,7 @@
     <Compile Include="BLL\UsersManager.cs" />
     <Compile Include="DAL\Gateway\DateGateway.cs" />
     <Compile Include="DAL\Gateway\DesignationGateway.cs" />
+    <Compile Include="DAL\Gateway\EmailGateway.cs" />
     <Compile Include="DAL\Gateway\Gateway.cs" />
     <Compile Include="DAL\Gateway\PendingUserGateway.cs" />
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
@@ -807,6 +810,7 @@
     <Compile Include="DAL\Gateway\UserAccessControlGateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
     <Compile Include="DAL\Model\Designation.cs" />
+    <Compile Include="DAL\Model\Email.cs" />
     <Compile Include="DAL\Model\Inventory.cs" />
     <Compile Include="DAL\Model\Month.cs" />
     <Compile Include="DAL\Model\ProductInfo.cs" />
@@ -858,6 +862,13 @@
     </Compile>
     <Compile Include="UI\MonthWiseReportUI.aspx.designer.cs">
       <DependentUpon>MonthWiseReportUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PendingApprovalUI.aspx.cs">
+      <DependentUpon>PendingApprovalUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PendingApprovalUI.aspx.designer.cs">
+      <DependentUpon>PendingApprovalUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ProductListUI.aspx.cs">
       <DependentUpon>ProductListUI.aspx</DependentUpon>

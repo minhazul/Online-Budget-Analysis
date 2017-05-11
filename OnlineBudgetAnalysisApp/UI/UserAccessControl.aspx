@@ -42,7 +42,7 @@
         </div>
         
         <div class="row" style="padding: 5px">
-            <asp:Button ID="btnPendingUsers" runat="server" CssClass="btn btn-info" Text="Pending Approvals" />
+            <asp:Button ID="btnPendingUsers" runat="server" CssClass="btn btn-info" Text="Pending Approvals" OnClick="btnPendingUsers_Click" />
         </div>
         
         <div class="row" style="padding: 5px">
