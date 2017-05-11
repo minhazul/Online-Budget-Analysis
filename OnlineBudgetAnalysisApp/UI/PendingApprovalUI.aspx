@@ -21,7 +21,7 @@
         
         <div class="row" style="width: 1000px">
             
-                <asp:GridView ID="pendingApprovalGridView" AutoGenerateColumns="False" OnRowDataBound="pendingApprovalGridView_RowCommand" CssClass="pendingUserDataTable" runat="server">
+                <asp:GridView ID="pendingApprovalGridView" AutoGenerateColumns="False" OnRowDataBound="pendingApprovalGridView_RowCommand" CssClass="manageDataTable" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
                             <ItemTemplate>

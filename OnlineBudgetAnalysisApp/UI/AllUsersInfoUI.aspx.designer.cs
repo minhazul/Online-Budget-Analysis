@@ -10,24 +10,15 @@
 namespace OnlineBudgetAnalysisApp.UI {
     
     
-    public partial class ProjectListUI {
+    public partial class AllUsersInfoUI {
         
         /// <summary>
-        /// msgFullName control.
+        /// allUsersInfoGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgFullName;
-        
-        /// <summary>
-        /// prjctListGridview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView prjctListGridview;
+        protected global::System.Web.UI.WebControls.GridView allUsersInfoGridView;
     }
 }

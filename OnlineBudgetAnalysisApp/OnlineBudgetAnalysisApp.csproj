@@ -717,6 +717,7 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="UI\AccountInfoUI.aspx" />
+    <Content Include="UI\AllUsersInfoUI.aspx" />
     <Content Include="UI\ChangePasswordUI.aspx" />
     <Content Include="UI\DashboardUI.aspx" />
     <Content Include="UI\DateWiseReportUI.aspx" />
@@ -790,6 +791,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AllUsersInfoViewManager.cs" />
     <Compile Include="BLL\DateManager.cs" />
     <Compile Include="BLL\DesignationManager.cs" />
     <Compile Include="BLL\EmailManager.cs" />
@@ -799,6 +801,7 @@
     <Compile Include="BLL\ReportManager.cs" />
     <Compile Include="BLL\UserAccessControlManager.cs" />
     <Compile Include="BLL\UsersManager.cs" />
+    <Compile Include="DAL\Gateway\AllUsersInfoViewGateway.cs" />
     <Compile Include="DAL\Gateway\DateGateway.cs" />
     <Compile Include="DAL\Gateway\DesignationGateway.cs" />
     <Compile Include="DAL\Gateway\EmailGateway.cs" />
@@ -817,6 +820,7 @@
     <Compile Include="DAL\Model\Projects.cs" />
     <Compile Include="DAL\Model\Users.cs" />
     <Compile Include="DAL\Model\Year.cs" />
+    <Compile Include="DAL\ViewModel\AllUsersInfo.cs" />
     <Compile Include="DAL\ViewModel\ApproveDelete.cs" />
     <Compile Include="DAL\ViewModel\PendingUsers.cs" />
     <Compile Include="DAL\ViewModel\ProjectListShow.cs" />
@@ -827,6 +831,13 @@
     </Compile>
     <Compile Include="UI\AccountInfoUI.aspx.designer.cs">
       <DependentUpon>AccountInfoUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AllUsersInfoUI.aspx.cs">
+      <DependentUpon>AllUsersInfoUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AllUsersInfoUI.aspx.designer.cs">
+      <DependentUpon>AllUsersInfoUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ChangePasswordUI.aspx.cs">
       <DependentUpon>ChangePasswordUI.aspx</DependentUpon>

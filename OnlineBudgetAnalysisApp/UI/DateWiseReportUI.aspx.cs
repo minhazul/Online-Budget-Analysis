@@ -21,7 +21,6 @@ namespace OnlineBudgetAnalysisApp.UI
                 userName = Session["UserName"].ToString();
                 string fullName = _aUsersManager.GetFullName(userName);
                 msgFullName.Text = fullName;
-                
             }
         }
 
@@ -37,21 +36,16 @@ namespace OnlineBudgetAnalysisApp.UI
             else
             {
                 msgError.Text = "Please select start date and end date";
-            }            
+            }
         }
 
         private void PopulateDateWiseDridView(string startDate, string endDate)
         {
-            List<Report> reports=new List<Report>();
+            List<Report> reports = new List<Report>();
             reports = _aReportManager.GetReportByDate(startDate, endDate);
 
             DateWiseReportGridView.DataSource = reports;
             DateWiseReportGridView.DataBind();
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("HomeUI.aspx");
         }
     }
 }

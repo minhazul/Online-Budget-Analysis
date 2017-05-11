@@ -13,7 +13,7 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         private string userName = null;
         UsersManager _aUsersManager = new UsersManager();
-        ProductManager _aProductManager=new ProductManager();
+        ProductManager _aProductManager = new ProductManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             userName = Session["UserName"].ToString();
@@ -37,12 +37,6 @@ namespace OnlineBudgetAnalysisApp.UI
                 prdctListGridview.DataSource = prdctLists;
                 prdctListGridview.DataBind();
             }
-        
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("HomeUI.aspx");
         }
     }
 }

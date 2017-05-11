@@ -13,9 +13,9 @@ namespace OnlineBudgetAnalysisApp.UI
     public partial class ProjectWiseReportsUI : System.Web.UI.Page
     {
         string userName;
-        ProjectManager _aProjectManager=new ProjectManager();
-        UsersManager _aUsersManager=new UsersManager();
-        ReportManager _aReportManager=new ReportManager();
+        ProjectManager _aProjectManager = new ProjectManager();
+        UsersManager _aUsersManager = new UsersManager();
+        ReportManager _aReportManager = new ReportManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -29,7 +29,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateProjectDropdown()
         {
-            List<Projects> projects=new List<Projects>();
+            List<Projects> projects = new List<Projects>();
             projects = _aProjectManager.GetAllProjects();
 
             dropDownProjectList.DataSource = projects;
@@ -43,7 +43,6 @@ namespace OnlineBudgetAnalysisApp.UI
             }
             else
                 dropDownProjectList.Enabled = false;
-
         }
 
         protected void dropDownProjectList_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,17 +53,11 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateProjectWiseReportGridView(int projectId)
         {
-            
-            List<Report> projectWiseReports=new List<Report>();
+            List<Report> projectWiseReports = new List<Report>();
             projectWiseReports = _aReportManager.GetProjectWiseReport(projectId);
 
             prjctWiseRepotGridView.DataSource = projectWiseReports;
             prjctWiseRepotGridView.DataBind();
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("HomeUI.aspx");
         }
     }
 }

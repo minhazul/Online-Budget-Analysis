@@ -14,11 +14,10 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         string userName;
         UsersManager _aUsersManager = new UsersManager();
-        DateManager _aDateManager=new DateManager();
+        DateManager _aDateManager = new DateManager();
         ReportManager _aReportManager = new ReportManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 userName = Session["UserName"].ToString();
@@ -32,7 +31,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateYearDropDown()
         {
-            List<Year> years=new List<Year>();
+            List<Year> years = new List<Year>();
             years = _aDateManager.GetYears();
 
             yearDropDownList.DataSource = years;
@@ -43,7 +42,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateMonthDropDown()
         {
-            List<Month> months=new List<Month>();
+            List<Month> months = new List<Month>();
             months = _aDateManager.GetMonths();
 
             monthDropDownList.DataSource = months;
@@ -52,18 +51,13 @@ namespace OnlineBudgetAnalysisApp.UI
             monthDropDownList.DataBind();
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("HomeUI.aspx");
-        }
-
         protected void btnGenerate_Click(object sender, EventArgs e)
         {
             int month = Convert.ToInt32(monthDropDownList.SelectedValue);
             int year = Convert.ToInt32(yearDropDownList.SelectedValue);
 
-            List<Report> reports=new List<Report>();
-            reports = _aReportManager.GetReportByMonth(month,year);
+            List<Report> reports = new List<Report>();
+            reports = _aReportManager.GetReportByMonth(month, year);
 
             MonthWiseReportGridView.DataSource = reports;
             MonthWiseReportGridView.DataBind();

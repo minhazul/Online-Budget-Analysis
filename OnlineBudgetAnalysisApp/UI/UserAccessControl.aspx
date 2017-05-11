@@ -46,7 +46,7 @@
         </div>
         
         <div class="row" style="padding: 5px">
-            <asp:Button ID="btnAllUsers" runat="server" CssClass="btn btn-info" Text="All Users" />
+            <asp:Button ID="btnAllUsers" runat="server" CssClass="btn btn-info" Text="All Users" OnClick="btnAllUsers_Click" />
         </div>
         
         <div class="row" style="padding: 5px">

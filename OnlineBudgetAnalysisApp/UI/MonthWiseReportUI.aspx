@@ -1,25 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MonthWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.MonthWiseReportUI" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8"/>
-        
-    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/bootstrap-datepicker.min.css" rel="stylesheet" />
-    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Content/responsive.css" rel="stylesheet" />
-    <title>MonthWise Report</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div class="container">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="MonthWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.MonthWiseReportUI" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
     <div class="row">
-            <div class="col-sm-4">
-                    <asp:Button ID="btnBack" runat="server" CssClass="btn btn-danger" Text="Back to Home" OnClick="btnBack_Click"/>
-                </div>
+            <div class="col-sm-4"></div>
                 <div class="col-sm-4" style="text-align: center">
                     <h2>Gross Monthly Depiction Policy</h2>
                 </div>
@@ -38,15 +23,14 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-1">
-                <label><b>Select Month</b></label>
+                
             </div>
             <div class="col-sm-4">
+                <label style="padding-right: 2px"><b>Select Month</b></label>
                 <asp:DropDownList ID="monthDropDownList" runat="server"></asp:DropDownList>
             </div>
-            <div class="col-sm-1">
-                <label><b>Select Year</b></label>
-            </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
+                <label style="padding-right: 2px"><b>Select Year</b></label>
                 <asp:DropDownList ID="yearDropDownList" runat="server"></asp:DropDownList>
             </div>
         </div>
@@ -56,13 +40,8 @@
         </div>
         
         <div class="row">
-            <asp:GridView ID="MonthWiseReportGridView" CssClass="MonthWiseDataTable" AutoGenerateColumns="False" runat="server">
+            <asp:GridView ID="MonthWiseReportGridView" CssClass="manageDataTable" AutoGenerateColumns="False" runat="server">
                 <Columns>
-                         <asp:TemplateField HeaderText="SL#">
-                            <ItemTemplate>
-                                <%#Container.DataItemIndex+1 %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Date">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Date") %>'></asp:Label>
@@ -77,12 +56,7 @@
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Sku") %>'></asp:Label>
                             </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Category">
-                            <ItemTemplate>
-                                <asp:Label runat="server" Text='<%#Eval("Category") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField>                       
                         <asp:TemplateField HeaderText="Name">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
@@ -147,15 +121,4 @@
             </asp:GridView>
         </div>
     </div>
-    </form>
-    
-    <script src="../Scripts/jquery-3.1.1.min.js"></script>
-    <script src="../Scripts/bootstrap-datepicker.min.js"></script>
-    <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.MonthWiseDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        });
-    </script>
-</body>
-</html>
+</asp:Content>

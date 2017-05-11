@@ -1,25 +1,33 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DateWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.DateWiseReportUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="DateWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.DateWiseReportUI" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../Scripts/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var dp = $("#<%=StartTextBox.ClientID%>");
+            dp.datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "yyyy-mm-dd",
+                autoclose: true,
+                todayHighlight: true
+            });
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8"/>
-        
-    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/bootstrap-datepicker.min.css" rel="stylesheet" />
-    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Content/responsive.css" rel="stylesheet" />
-    <title>DateWise Report</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-   <div class="container">
+            var ds = $("#<%=EndTextBox.ClientID%>");
+            ds.datepicker({
+                changeMonth: true,
+                changeYear: true,
+                format: "yyyy-mm-dd",
+                autoclose: true,
+                todayHighlight: true
+            });
+        });
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4">
-                    <asp:Button ID="btnBack" runat="server" CssClass="btn btn-danger" Text="Back to Home" OnClick="btnBack_Click"/>
-                </div>
+            <div class="col-sm-4"></div>
                 <div class="col-sm-4" style="text-align: center">
                     <h2>Standard Deviations of Sales Data</h2>
                 </div>
@@ -59,13 +67,8 @@
         </div>
         
         <div class="row">
-            <asp:GridView ID="DateWiseReportGridView" AutoGenerateColumns="False" CssClass="DateWiseDataTable" runat="server">
+            <asp:GridView ID="DateWiseReportGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
                 <Columns>
-                         <asp:TemplateField HeaderText="SL#">
-                            <ItemTemplate>
-                                <%#Container.DataItemIndex+1 %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Date">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Date") %>'></asp:Label>
@@ -79,11 +82,6 @@
                         <asp:TemplateField HeaderText="SKU">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Sku") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Category">
-                            <ItemTemplate>
-                                <asp:Label runat="server" Text='<%#Eval("Category") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Name">
@@ -150,33 +148,4 @@
             </asp:GridView>
         </div>
     </div>
-    </form>
-    
-    <script src="../Scripts/jquery-3.1.1.min.js"></script>
-    <script src="../Scripts/bootstrap-datepicker.min.js"></script>
-    <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var dp = $("#<%=StartTextBox.ClientID%>");
-            dp.datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "yyyy-mm-dd",
-                autoclose: true,
-                todayHighlight: true
-            });
-
-            var ds = $("#<%=EndTextBox.ClientID%>");
-            ds.datepicker({
-                changeMonth: true,
-                changeYear: true,
-                format: "yyyy-mm-dd",
-                autoclose: true,
-                todayHighlight: true
-            });
-
-            $('.DateWiseDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        });
-    </script>
-</body>
-</html>
+</asp:Content>

@@ -19,7 +19,8 @@
     <link href="../Content/animate.min.css" rel="stylesheet"/>
     <%--<link href="../Content/prettyPhoto.css" rel="stylesheet"/>--%>
     <link href="../Content/main.css" rel="stylesheet"/>
-   <link href="../Content/responsive.css" rel="stylesheet"/>
+    <link href="../Content/responsive.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap-datepicker.min.css" rel="stylesheet" />
         
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -113,12 +114,10 @@
     <%--<script src="../Scripts/wow.min.js"></script>--%>
     
     <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script>
+    <script src="../Scripts/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
         $(document).ready(function () {
-            $('.pendingUserDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
-                reponsive: true
-        });
-
+            $('.manageDataTable').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
         });
     </script>
 

@@ -37,5 +37,10 @@ namespace OnlineBudgetAnalysisApp.UI
         {
             Response.Redirect("PendingApprovalUI.aspx");
         }
+
+        protected void btnAllUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AllUsersInfoUI.aspx");
+        }
     }
 }

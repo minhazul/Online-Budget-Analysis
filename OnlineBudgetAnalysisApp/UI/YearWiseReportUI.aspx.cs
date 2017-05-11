@@ -14,7 +14,7 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         string userName;
         UsersManager _aUsersManager = new UsersManager();
-        DateManager _aDateManager=new DateManager();
+        DateManager _aDateManager = new DateManager();
         ReportManager _aReportManager = new ReportManager();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateYearDropDown()
         {
-            List<Year> years=new List<Year>();
+            List<Year> years = new List<Year>();
             years = _aDateManager.GetYears();
 
             yearDropDownList.DataSource = years;
@@ -55,16 +55,11 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateYearWiseReportGridView(int year)
         {
-            List<Report> reports=new List<Report>();
+            List<Report> reports = new List<Report>();
             reports = _aReportManager.GetReportByYear(year);
 
             YearWiseGridView.DataSource = reports;
             YearWiseGridView.DataBind();
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("HomeUI.aspx");
         }
     }
 }
