@@ -719,6 +719,7 @@
     <Content Include="UI\AccountInfoUI.aspx" />
     <Content Include="UI\AllUsersInfoUI.aspx" />
     <Content Include="UI\ChangePasswordUI.aspx" />
+    <Content Include="UI\ChangeUserAccessUI.aspx" />
     <Content Include="UI\DashboardUI.aspx" />
     <Content Include="UI\DateWiseReportUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
@@ -822,6 +823,7 @@
     <Compile Include="DAL\Model\Year.cs" />
     <Compile Include="DAL\ViewModel\AllUsersInfo.cs" />
     <Compile Include="DAL\ViewModel\ApproveDelete.cs" />
+    <Compile Include="DAL\ViewModel\ChangeAccess.cs" />
     <Compile Include="DAL\ViewModel\PendingUsers.cs" />
     <Compile Include="DAL\ViewModel\ProjectListShow.cs" />
     <Compile Include="DAL\ViewModel\Report.cs" />
@@ -845,6 +847,13 @@
     </Compile>
     <Compile Include="UI\ChangePasswordUI.aspx.designer.cs">
       <DependentUpon>ChangePasswordUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangeUserAccessUI.aspx.cs">
+      <DependentUpon>ChangeUserAccessUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChangeUserAccessUI.aspx.designer.cs">
+      <DependentUpon>ChangeUserAccessUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\DashboardUI.aspx.cs">
       <DependentUpon>DashboardUI.aspx</DependentUpon>

@@ -42,5 +42,10 @@ namespace OnlineBudgetAnalysisApp.UI
         {
             Response.Redirect("AllUsersInfoUI.aspx");
         }
+
+        protected void btnChangeUserAccess_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ChangeUserAccessUI.aspx");
+        }
     }
 }

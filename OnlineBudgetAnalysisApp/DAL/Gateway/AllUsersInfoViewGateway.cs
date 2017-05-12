@@ -12,7 +12,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
     {
         public List<AllUsersInfo> GetAllUsersInfo()
         {
-            Query = "Select Id, UserName, FullName, Email, Designation, Role, CONVERT(CHAR(11), RegistrationDate, 106) as RegistrationDate, CONVERT(CHAR(11), LastLoginDate, 106) as LastLoginDate From UsersInfo";
+            Query = "Select Id, UserName, FullName, Email, Designation, Role, RegistrationDate, LastLoginDate From UsersInfo";
 
             Command=new SqlCommand(Query,Connection);
 
@@ -24,7 +24,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             while (Reader.Read())
             {
-                AllUsersInfo allUsersInfo=new AllUsersInfo();
+                AllUsersInfo allUsersInfo = new AllUsersInfo();
 
                 allUsersInfo.Id = Convert.ToInt32(Reader["Id"]);
                 allUsersInfo.UserName = Reader["UserName"].ToString();

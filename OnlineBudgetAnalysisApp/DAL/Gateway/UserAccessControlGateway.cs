@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using OnlineBudgetAnalysisApp.DAL.ViewModel;
+using OnlineBudgetAnalysisApp.UI;
 
 namespace OnlineBudgetAnalysisApp.DAL.Gateway
 {
@@ -123,6 +125,88 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
 
             return noOfPendingUsers;
+        }
+
+        public int ChangeToNormal(int userId, int roleId)
+        {
+            Query = "Update users Set RoleId=@RoleId Where Id=@Id";
+
+            Command=new SqlCommand(Query,Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("RoleId", SqlDbType.Int);
+            Command.Parameters["RoleId"].Value = roleId;
+            Command.Parameters.Add("Id", SqlDbType.Int);
+            Command.Parameters["Id"].Value = userId;
+
+            Connection.Open();
+
+            int rowAffected=Command.ExecuteNonQuery();
+
+            Connection.Close();
+
+            return rowAffected;
+        }
+
+        public int BlockUserById(int userId)
+        {
+            Query = "Update Users Set BlockedByAdmin=@BlockedByAdmin Where Id=@Id";
+
+            Command=new SqlCommand(Query,Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("BlockedByAdmin", SqlDbType.Bit);
+            Command.Parameters["BlockedByAdmin"].Value = true;
+            Command.Parameters.Add("Id", SqlDbType.Int);
+            Command.Parameters["Id"].Value = userId;
+
+            Connection.Open();
+
+            int rowAffected=Command.ExecuteNonQuery();
+
+            Connection.Close();
+
+            return rowAffected;
+        }
+
+        public List<AllUsersInfo> GetAllCoAdminsInfo()
+        {
+            Query = "Select * From UsersInfo Where Role=@Role";
+
+            Command=new SqlCommand(Query,Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("Role", SqlDbType.VarChar);
+            Command.Parameters["Role"].Value = "CoAdmin";
+
+            Connection.Open();
+
+            Reader = Command.ExecuteReader();
+
+            List<AllUsersInfo> allUsersInfos=new List<AllUsersInfo>();
+
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    AllUsersInfo allUsersInfo=new AllUsersInfo();
+
+                    allUsersInfo.Id = Convert.ToInt32(Reader["Id"]);
+                    allUsersInfo.UserName = Reader["UserName"].ToString();
+                    allUsersInfo.FullName = Reader["FullName"].ToString();
+                    allUsersInfo.Email = Reader["Email"].ToString();
+                    allUsersInfo.Designation = Reader["Designation"].ToString();
+                    allUsersInfo.RegistrationDate = Reader["RegistrationDate"].ToString();
+                    allUsersInfo.LastLoginDate = Reader["LastloginDate"].ToString();
+
+                    allUsersInfos.Add(allUsersInfo);
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return allUsersInfos;
         }
     }
 }

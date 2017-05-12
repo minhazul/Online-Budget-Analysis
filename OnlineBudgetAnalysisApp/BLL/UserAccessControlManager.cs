@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using OnlineBudgetAnalysisApp.DAL.Gateway;
+using OnlineBudgetAnalysisApp.DAL.ViewModel;
+using OnlineBudgetAnalysisApp.UI;
 
 namespace OnlineBudgetAnalysisApp.BLL
 {
@@ -34,6 +36,42 @@ namespace OnlineBudgetAnalysisApp.BLL
         public int GetNoOfPendingUsers()
         {
             return _aUserAccessControlGateway.GetNoOfPendingUsers();
+        }
+
+
+        public string ChangeToNormal(int userId, string changedRole)
+        {
+            int roleId = _aUsersManager.GetRoleId(changedRole);
+
+            int rowAffected = _aUserAccessControlGateway.ChangeToNormal(userId, roleId);
+
+            if (rowAffected > 0)
+            {
+                return "Access changed successfully";
+            }
+            else
+            {
+                return "Access change failed. Try again";
+            }
+        }
+
+        public string BlockUserById(int userId)
+        {
+            int rowAffected = _aUserAccessControlGateway.BlockUserById(userId);
+
+            if (rowAffected > 0)
+            {
+                return "Selected user is blocked succefully.";
+            }               
+            else
+            {
+                return "Blocked process failed";
+            }
+        }
+
+        public List<AllUsersInfo> GetAllCoAdminsInfo()
+        {
+            return _aUserAccessControlGateway.GetAllCoAdminsInfo();
         }
     }
 }

@@ -50,7 +50,7 @@
         </div>
         
         <div class="row" style="padding: 5px">
-            <asp:Button ID="btnChangeUserAccess" CssClass="btn btn-warning" runat="server" Text="Change User Access" />
+            <asp:Button ID="btnChangeUserAccess" CssClass="btn btn-warning" runat="server" Text="Change User Access" OnClick="btnChangeUserAccess_Click" />
         </div>
         
         <div class="row" style="padding: 5px">
