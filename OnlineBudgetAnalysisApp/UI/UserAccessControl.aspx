@@ -40,17 +40,17 @@
                 <asp:TextBox ID="txtNoPendingUsers" ReadOnly="True" runat="server"></asp:TextBox>
             </div>
         </div>
-        
-        <div class="row" style="padding: 5px">
-            <asp:Button ID="btnPendingUsers" runat="server" CssClass="btn btn-info" Text="Pending Approvals" OnClick="btnPendingUsers_Click" />
-        </div>
+  
         
         <div class="row" style="padding: 5px">
             <asp:Button ID="btnAllUsers" runat="server" CssClass="btn btn-info" Text="All Users" OnClick="btnAllUsers_Click" />
         </div>
         
         <div class="row" style="padding: 5px">
-            <asp:Button ID="btnChangeUserAccess" CssClass="btn btn-warning" runat="server" Text="Change User Access" OnClick="btnChangeUserAccess_Click" />
+            <asp:Button ID="btnCoAdminUserAccess" CssClass="btn btn-warning" runat="server" Text="Change CoAdmin User Access" OnClick="btnCoAdminUserAccess_Click" />
+        </div>
+        <div class="row" style="padding: 5px">
+            <asp:Button ID="btnNormalUsers" CssClass="btn btn-warning" runat="server" Text="Change Normal User Access" OnClick="btnNormalUsers_Click" />
         </div>
         
         <div class="row" style="padding: 5px">

@@ -39,7 +39,7 @@ namespace OnlineBudgetAnalysisApp.BLL
         }
 
 
-        public string ChangeToNormal(int userId, string changedRole)
+        public string ChangeRole(int userId, string changedRole)
         {
             int roleId = _aUsersManager.GetRoleId(changedRole);
 
@@ -72,6 +72,11 @@ namespace OnlineBudgetAnalysisApp.BLL
         public List<AllUsersInfo> GetAllCoAdminsInfo()
         {
             return _aUserAccessControlGateway.GetAllCoAdminsInfo();
+        }
+
+        public List<AllUsersInfo> GetAllNormalUsersInfo()
+        {
+            return _aUserAccessControlGateway.GetAllNormalUsersInfo();
         }
     }
 }

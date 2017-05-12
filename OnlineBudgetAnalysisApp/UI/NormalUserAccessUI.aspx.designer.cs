@@ -10,24 +10,24 @@
 namespace OnlineBudgetAnalysisApp.UI {
     
     
-    public partial class ChangeUserAccessUI {
+    public partial class NormalUserAccessUI {
         
         /// <summary>
-        /// msgLabel control.
+        /// msgNormalLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgLabel;
+        protected global::System.Web.UI.WebControls.Label msgNormalLabel;
         
         /// <summary>
-        /// CoAdminTableGridView control.
+        /// normalUserGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView CoAdminTableGridView;
+        protected global::System.Web.UI.WebControls.GridView normalUserGridView;
     }
 }

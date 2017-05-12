@@ -49,15 +49,6 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.TextBox txtNoPendingUsers;
         
         /// <summary>
-        /// btnPendingUsers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPendingUsers;
-        
-        /// <summary>
         /// btnAllUsers control.
         /// </summary>
         /// <remarks>
@@ -67,13 +58,22 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.Button btnAllUsers;
         
         /// <summary>
-        /// btnChangeUserAccess control.
+        /// btnCoAdminUserAccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChangeUserAccess;
+        protected global::System.Web.UI.WebControls.Button btnCoAdminUserAccess;
+        
+        /// <summary>
+        /// btnNormalUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNormalUsers;
         
         /// <summary>
         /// btnBlockedUsers control.

@@ -208,5 +208,45 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return allUsersInfos;
         }
+
+        public List<AllUsersInfo> GetAllNormalUsersInfo()
+        {
+            Query = "Select * From UsersInfo Where Role=@Role";
+
+            Command = new SqlCommand(Query, Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("Role", SqlDbType.VarChar);
+            Command.Parameters["Role"].Value = "Normal";
+
+            Connection.Open();
+
+            Reader = Command.ExecuteReader();
+
+            List<AllUsersInfo> allUsersInfos = new List<AllUsersInfo>();
+
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    AllUsersInfo allUsersInfo = new AllUsersInfo();
+
+                    allUsersInfo.Id = Convert.ToInt32(Reader["Id"]);
+                    allUsersInfo.UserName = Reader["UserName"].ToString();
+                    allUsersInfo.FullName = Reader["FullName"].ToString();
+                    allUsersInfo.Email = Reader["Email"].ToString();
+                    allUsersInfo.Designation = Reader["Designation"].ToString();
+                    allUsersInfo.RegistrationDate = Reader["RegistrationDate"].ToString();
+                    allUsersInfo.LastLoginDate = Reader["LastloginDate"].ToString();
+
+                    allUsersInfos.Add(allUsersInfo);
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return allUsersInfos;
+        }
     }
 }

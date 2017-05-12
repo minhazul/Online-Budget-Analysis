@@ -1,12 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="ChangeUserAccessUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.ChangeUserAccessUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="NormalUserAccessUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.NormalUserAccessUI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
+        
         <div class="row" style="padding-bottom: 20px;padding-top: 20px">
             <div class="col-sm-3"></div>
             <div class="col-sm-4" style="text-align: center">
-                <h2>Co-Admin Table</h2>
+                <h2>Normal User Table</h2>
             </div>
             <div class="col-sm-5"></div>
         </div>
@@ -14,13 +15,13 @@
         <div class="row" style="padding-bottom: 10px">
             <div class="col-sm-3"></div>
             <div class="col-sm-4" style="text-align: center">
-                <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>
+                <asp:Label ID="msgNormalLabel" runat="server" Text=""></asp:Label>
             </div>
             <div class="col-sm-5"></div>           
         </div>
         
         <div class="row">
-            <asp:GridView ID="CoAdminTableGridView" AutoGenerateColumns="False" CssClass="manageDataTable" OnRowDataBound="CoAdminTableGridView_RowCommand" runat="server">
+            <asp:GridView ID="normalUserGridView" AutoGenerateColumns="False" CssClass="manageDataTable" OnRowDataBound="normalUserGridView_RowCommand" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
                             <ItemTemplate>
@@ -60,7 +61,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Change Access">
                         <ItemTemplate>
-                            <asp:DropDownList ID="CoAdminTableDropDownList" AutoPostBack="True" OnSelectedIndexChanged="CoAdminTableDropDownList_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="normalUserDropDownList" AutoPostBack="True" OnSelectedIndexChanged="normalUserDropDownList_SelectedIndexChanged" runat="server"></asp:DropDownList>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

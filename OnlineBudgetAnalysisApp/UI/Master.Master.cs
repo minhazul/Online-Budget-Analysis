@@ -27,6 +27,7 @@ namespace OnlineBudgetAnalysisApp
                 prjctCreateLi.Visible = false;
                 prjctAngleDown.Visible = false;
                 uploadLi.Visible = false;
+                pendingApprovalsLi.Visible = false;
             }
             else if (roleName == "CoAdmin")
             {

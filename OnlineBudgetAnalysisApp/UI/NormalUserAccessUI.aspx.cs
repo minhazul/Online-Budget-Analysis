@@ -9,51 +9,51 @@ using OnlineBudgetAnalysisApp.DAL.ViewModel;
 
 namespace OnlineBudgetAnalysisApp.UI
 {
-    public partial class ChangeUserAccessUI : System.Web.UI.Page
+    public partial class NormalUserAccessUI : System.Web.UI.Page
     {
-        UserAccessControlManager _accessControlManager=new UserAccessControlManager();
+        UserAccessControlManager _accessControlManager = new UserAccessControlManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                PopulateCoAdminTableGridview();
+                PopulateNormalUsersGridView();
             }
         }
 
-        private void PopulateCoAdminTableGridview()
+        private void PopulateNormalUsersGridView()
         {
-            List<AllUsersInfo> allUsersInfos=new List<AllUsersInfo>();
-            allUsersInfos = _accessControlManager.GetAllCoAdminsInfo();
+            List<AllUsersInfo> allUsersInfos = new List<AllUsersInfo>();
+            allUsersInfos = _accessControlManager.GetAllNormalUsersInfo();
 
-            if (allUsersInfos.Count==0)
+            if (allUsersInfos.Count == 0)
             {
-                msgLabel.Text = "Co-Admin list is empty";
+                msgNormalLabel.Text = "Normal User List is empty";
             }
 
-            CoAdminTableGridView.DataSource = allUsersInfos;
-            CoAdminTableGridView.DataBind();
+            normalUserGridView.DataSource = allUsersInfos;
+            normalUserGridView.DataBind();
         }
 
-        protected void CoAdminTableGridView_RowCommand(object sender, GridViewRowEventArgs e)
+        protected void normalUserGridView_RowCommand(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                Control ctrl = e.Row.FindControl("CoAdminTableDropDownList");
+                Control ctrl = e.Row.FindControl("normalUserDropDownList");
 
-                if(ctrl != null)
+                if (ctrl != null)
                 {
                     DropDownList aDropDownList = ctrl as DropDownList;
 
-                    List<ChangeAccess> changeAccesses=new List<ChangeAccess>();
+                    List<ChangeAccess> changeAccesses = new List<ChangeAccess>();
 
                     for (int i = 0; i < 3; i++)
                     {
-                        ChangeAccess aChangeAccess=new ChangeAccess();
+                        ChangeAccess aChangeAccess = new ChangeAccess();
 
                         if (i == 1)
                         {
                             aChangeAccess.Id = i;
-                            aChangeAccess.Action = "Normal";
+                            aChangeAccess.Action = "CoAdmin";
                             changeAccesses.Add(aChangeAccess);
                         }
                         else if (i == 2)
@@ -81,13 +81,13 @@ namespace OnlineBudgetAnalysisApp.UI
             }
         }
 
-        protected void CoAdminTableDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void normalUserDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList aDropDownList = sender as DropDownList;
 
-            foreach (GridViewRow row in CoAdminTableGridView.Rows)
+            foreach (GridViewRow row in normalUserGridView.Rows)
             {
-                Control ctrl = row.FindControl("CoAdminTableDropDownList") as DropDownList;
+                Control ctrl = row.FindControl("normalUserDropDownList") as DropDownList;
 
                 if (ctrl != null)
                 {
@@ -104,21 +104,22 @@ namespace OnlineBudgetAnalysisApp.UI
 
                         if (selectId == 1)
                         {
-                            string changedRole = "Normal";
-                            string message = _accessControlManager.ChangeToNormal(userId,changedRole);
-                            msgLabel.Text = message;
+                            string changedRole = "CoAdmin";
+                            string message = _accessControlManager.ChangeRole(userId, changedRole);
+                            msgNormalLabel.Text = message;
 
-                            PopulateCoAdminTableGridview();
+                            PopulateNormalUsersGridView();
                         }
                         else if (selectId == 2)
                         {
                             string message = _accessControlManager.BlockUserById(userId);
+                            msgNormalLabel.Text = message;
 
-                            PopulateCoAdminTableGridview();
+                            PopulateNormalUsersGridView();
                         }
                         else
                         {
-                            msgLabel.Text = "Please select a valid action from CoAdmin Table";
+                            msgNormalLabel.Text = "Please select a valid action from CoAdmin Table";
                         }
                     }
                 }

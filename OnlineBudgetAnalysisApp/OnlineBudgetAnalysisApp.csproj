@@ -719,11 +719,12 @@
     <Content Include="UI\AccountInfoUI.aspx" />
     <Content Include="UI\AllUsersInfoUI.aspx" />
     <Content Include="UI\ChangePasswordUI.aspx" />
-    <Content Include="UI\ChangeUserAccessUI.aspx" />
+    <Content Include="UI\CoAdminUserAccessUI.aspx" />
     <Content Include="UI\DashboardUI.aspx" />
     <Content Include="UI\DateWiseReportUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
     <Content Include="UI\MonthWiseReportUI.aspx" />
+    <Content Include="UI\NormalUserAccessUI.aspx" />
     <Content Include="UI\PendingApprovalUI.aspx" />
     <Content Include="UI\ProductListUI.aspx" />
     <Content Include="UI\ProjectListUI.aspx" />
@@ -848,12 +849,12 @@
     <Compile Include="UI\ChangePasswordUI.aspx.designer.cs">
       <DependentUpon>ChangePasswordUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\ChangeUserAccessUI.aspx.cs">
-      <DependentUpon>ChangeUserAccessUI.aspx</DependentUpon>
+    <Compile Include="UI\CoAdminUserAccessUI.aspx.cs">
+      <DependentUpon>CoAdminUserAccessUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\ChangeUserAccessUI.aspx.designer.cs">
-      <DependentUpon>ChangeUserAccessUI.aspx</DependentUpon>
+    <Compile Include="UI\CoAdminUserAccessUI.aspx.designer.cs">
+      <DependentUpon>CoAdminUserAccessUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\DashboardUI.aspx.cs">
       <DependentUpon>DashboardUI.aspx</DependentUpon>
@@ -882,6 +883,13 @@
     </Compile>
     <Compile Include="UI\MonthWiseReportUI.aspx.designer.cs">
       <DependentUpon>MonthWiseReportUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NormalUserAccessUI.aspx.cs">
+      <DependentUpon>NormalUserAccessUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\NormalUserAccessUI.aspx.designer.cs">
+      <DependentUpon>NormalUserAccessUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\PendingApprovalUI.aspx.cs">
       <DependentUpon>PendingApprovalUI.aspx</DependentUpon>

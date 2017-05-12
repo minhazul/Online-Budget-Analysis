@@ -33,19 +33,21 @@ namespace OnlineBudgetAnalysisApp.UI
             txtNoPendingUsers.Text = noOfPendingUsers.ToString();
         }
 
-        protected void btnPendingUsers_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("PendingApprovalUI.aspx");
-        }
 
         protected void btnAllUsers_Click(object sender, EventArgs e)
         {
             Response.Redirect("AllUsersInfoUI.aspx");
         }
 
-        protected void btnChangeUserAccess_Click(object sender, EventArgs e)
+        protected void btnCoAdminUserAccess_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ChangeUserAccessUI.aspx");
+            Response.Redirect("CoAdminUserAccessUI.aspx");
         }
+
+        protected void btnNormalUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NormalUserAccessUI.aspx");
+        }
+
     }
 }

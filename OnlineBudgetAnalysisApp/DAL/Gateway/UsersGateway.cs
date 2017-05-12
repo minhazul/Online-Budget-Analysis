@@ -429,5 +429,38 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Connection.Close();
             return isAdminApproved;
         }
+
+        public bool IsBlockedByAdmin(string userName, string password)
+        {
+            bool isBlockedByAdmin = true;
+
+            Query = "SELECT * FROM Users WHERE UserName=@UserName and Password=@Password and BlockedByAdmin=@BlockedByAdmin";
+
+            Command = new SqlCommand(Query, Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+            Command.Parameters.Add("Password", SqlDbType.VarChar);
+            Command.Parameters["Password"].Value = password;
+            Command.Parameters.Add("BlockedByAdmin", SqlDbType.Bit);
+            Command.Parameters["BlockedByAdmin"].Value = false;
+
+            Connection.Open();
+            Reader = Command.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    isBlockedByAdmin = false;
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return isBlockedByAdmin;
+        }
     }
 }

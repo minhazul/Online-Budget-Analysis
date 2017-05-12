@@ -160,12 +160,19 @@ namespace OnlineBudgetAnalysisApp.BLL
         public bool IsAdminApproved(string userName, string password)
         {
             bool isAdminApproved = _aUsersGateway.IsAdminApproved(userName, password);
-            if (isAdminApproved)
-            {
-                _aUsersGateway.UpdateLastLoginDate(userName, password);
-            }
+            
             return isAdminApproved;
         }
 
+        public bool IsBlockedByAdmin(string userName, string password)
+        {
+            bool isBlockedByAdmin = _aUsersGateway.IsBlockedByAdmin(userName, password);
+            if (!isBlockedByAdmin)
+            {
+                _aUsersGateway.UpdateLastLoginDate(userName, password);
+            }
+
+            return isBlockedByAdmin;
+        }
     }
 }
