@@ -7,90 +7,108 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineBudgetAnalysisApp {
+namespace OnlineBudgetAnalysisApp.UI {
     
     
-    public partial class Master {
+    public partial class EmailSettingsUI {
         
         /// <summary>
-        /// head control.
+        /// msgCurrentEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label msgCurrentEmail;
         
         /// <summary>
-        /// form1 control.
+        /// msgCurrentPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label msgCurrentPassword;
         
         /// <summary>
-        /// prjctAngleDown control.
+        /// txtChangeApplicationEmailPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prjctAngleDown;
+        protected global::System.Web.UI.WebControls.TextBox txtChangeApplicationEmailPassword;
         
         /// <summary>
-        /// prjctCreateLi control.
+        /// txtConfirmChangeApplicationEmailPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prjctCreateLi;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmChangeApplicationEmailPassword;
         
         /// <summary>
-        /// uploadLi control.
+        /// btnCHangedPasswordSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl uploadLi;
+        protected global::System.Web.UI.WebControls.Button btnCHangedPasswordSubmit;
         
         /// <summary>
-        /// pendingApprovalsLi control.
+        /// txtNewEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pendingApprovalsLi;
+        protected global::System.Web.UI.WebControls.TextBox txtNewEmail;
         
         /// <summary>
-        /// userAccessLi control.
+        /// txtNewEmailPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userAccessLi;
+        protected global::System.Web.UI.WebControls.TextBox txtNewEmailPassword;
         
         /// <summary>
-        /// emailSettingsLi control.
+        /// txtConfirmNewEmailPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emailSettingsLi;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmNewEmailPassword;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// btnNewEmailAndPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnNewEmailAndPassword;
+        
+        /// <summary>
+        /// msgGridEmailListsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgGridEmailListsLabel;
+        
+        /// <summary>
+        /// ApplicationEmailListsGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ApplicationEmailListsGridView;
     }
 }

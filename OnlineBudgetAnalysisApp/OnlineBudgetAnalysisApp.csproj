@@ -740,6 +740,7 @@
     <Content Include="Scripts\ckeditor\ckeditor_php4.php" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="UI\EmailSettingsUI.aspx" />
     <Content Include="UI\UserAccessControl.aspx" />
     <Content Include="UI\YearWiseReportUI.aspx" />
     <Content Include="Upload.ashx" />
@@ -987,6 +988,13 @@
     </Compile>
     <Compile Include="UI\RegistrationUi.aspx.designer.cs">
       <DependentUpon>RegistrationUi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmailSettingsUI.aspx.cs">
+      <DependentUpon>EmailSettingsUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EmailSettingsUI.aspx.designer.cs">
+      <DependentUpon>EmailSettingsUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\UserAccessControl.aspx.cs">
       <DependentUpon>UserAccessControl.aspx</DependentUpon>
