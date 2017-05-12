@@ -49,5 +49,10 @@ namespace OnlineBudgetAnalysisApp.UI
             Response.Redirect("NormalUserAccessUI.aspx");
         }
 
+        protected void btnBlockedUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("BlockedUserUI.aspx");
+        }
+
     }
 }

@@ -54,7 +54,7 @@
         </div>
         
         <div class="row" style="padding: 5px">
-            <asp:Button ID="btnBlockedUsers" CssClass="btn btn-danger" runat="server" Text="Blocked Users" />
+            <asp:Button ID="btnBlockedUsers" CssClass="btn btn-danger" runat="server" Text="Blocked Users" OnClick="btnBlockedUsers_Click" />
         </div>
         
         <div class="row" style="padding: 5px">
