@@ -58,6 +58,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.Button btnCHangedPasswordSubmit;
         
         /// <summary>
+        /// chngPasswordLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label chngPasswordLabel;
+        
+        /// <summary>
         /// txtNewEmail control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNewEmailAndPassword;
+        
+        /// <summary>
+        /// msgchngEmailLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgchngEmailLabel;
         
         /// <summary>
         /// msgGridEmailListsLabel control.

@@ -21,7 +21,7 @@ namespace OnlineBudgetAnalysisApp.UI
             int noOfTotalUsers = _accessControlManager.GetNoOfTotalUser();
             txtNoTotalUser.Text = noOfTotalUsers.ToString();
 
-            string roleNameFirst = "Co-Admin";
+            string roleNameFirst = "CoAdmin";
             int noOfCoAdmins = _accessControlManager.GetNoOfCoAdmins(roleNameFirst);
             txtNoCoAdmin.Text = noOfCoAdmins.ToString();
 

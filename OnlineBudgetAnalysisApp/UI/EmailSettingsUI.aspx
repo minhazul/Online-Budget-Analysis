@@ -50,8 +50,9 @@
         </div>    
         
         <div class="row" style="padding-left: 5px;padding-top: 5px">
-            <div class="col-sm-2">
-                <asp:Button ID="btnCHangedPasswordSubmit" CssClass="btn btn-danger" runat="server" Text="Submit" />
+            <div class="col-sm-8">
+                <asp:Button ID="btnCHangedPasswordSubmit" CssClass="btn btn-danger" runat="server" Text="Submit" OnClick="btnCHangedPasswordSubmit_Click" />&nbsp;&nbsp;
+                <asp:Label ID="chngPasswordLabel" runat="server" Text=""></asp:Label>
             </div>
         </div>
         
@@ -74,21 +75,22 @@
         
         <div class="row" style="padding: 5px">
             <div class="col-sm-6">
-                <label style="padding-right: 30px"><b>Enter Password</b></label>
+                <label style="padding-right: 31px"><b>Enter Password</b></label>
                 <asp:TextBox ID="txtNewEmailPassword" runat="server"></asp:TextBox>
             </div>
         </div>
         
-        <div class="row" style="padding: 11px">
+        <div class="row" style="padding: 5px">
             <div class="col-sm-6">
-                <label style="padding-right: 5px"><b>Confirm Password</b></label>
+                <label style="padding-right:11px"><b>Confirm Password</b></label>
                 <asp:TextBox ID="txtConfirmNewEmailPassword" runat="server"></asp:TextBox>
             </div>
         </div>
         
         <div class="row" style="padding: 5px">
-            <div class="col-sm-1">
-                <asp:Button ID="btnNewEmailAndPassword" CssClass="btn btn-danger" runat="server" Text="Submit" />
+            <div class="col-sm-8">
+                <asp:Button ID="btnNewEmailAndPassword" CssClass="btn btn-danger" runat="server" Text="Submit" OnClick="btnNewEmailAndPassword_Click" />&nbsp;&nbsp;
+                <asp:Label ID="msgchngEmailLabel" runat="server" Text=""></asp:Label>
             </div>
         </div>
         
@@ -96,21 +98,42 @@
             <hr/>
         </div>
 
-        <div class="row" style="padding: 5px">
-            <div class="col-sm-5"></div>
-            <div class="col-sm-5">
-                <span class="label label-info">Application Email Lists</span>
-            </div>            
+        <div class="row" style="padding: 5px;text-align: center">
+           <span class="label label-info">Application Email Lists</span>           
         </div>        
         
-        <div class="row" style="text-align: center">
+        <div class="row" style="text-align: center;padding: 5px">
             <asp:Label ID="msgGridEmailListsLabel" runat="server" Text=""></asp:Label>
         </div>
         
-        <div class="row">
+        <div class="row" style="padding-top: 20px">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <asp:GridView ID="ApplicationEmailListsGridView" AutoGenerateColumns="False" runat="server"></asp:GridView>
+                <asp:GridView ID="ApplicationEmailListsGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
+                    <Columns>
+                        <asp:TemplateField HeaderText="SL#">
+                            <ItemTemplate>
+                                <%#Container.DataItemIndex+1 %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Email">
+                        <ItemTemplate>
+                            <asp:HiddenField ID="idHiddenField" Value='<%#Eval("Id") %>' runat="server"/>
+                            <asp:Label runat="server" Text='<%#Eval("EmailName") %>'></asp:Label>
+                        </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Password">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("Password") %>'></asp:Label>
+                        </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Activation">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="activateLinkButton" Text="Activate" OnClick="activateLinkButton_OnClick" runat="server"></asp:LinkButton>
+                        </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
             </div>
             <div class="col-sm-2"></div>
         </div>

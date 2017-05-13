@@ -51,7 +51,7 @@ namespace OnlineBudgetAnalysisApp
             {
                 Email aEmail=new Email();
                 EmailManager aEmailManager = new EmailManager();
-                aEmail = aEmailManager.GetEmailAndPass();
+                aEmail = aEmailManager.GetCurrentEmailAndPassword();
 
                 _aUsers.FullName = txtFullName.Text;
                 _aUsers.UserName = userNameTextBox.Text;

@@ -35,7 +35,7 @@ namespace OnlineBudgetAnalysisApp
                 {
                         Email aEmail = new Email();
                         EmailManager aEmailManager = new EmailManager();
-                        aEmail = aEmailManager.GetEmailAndPass();
+                        aEmail = aEmailManager.GetCurrentEmailAndPassword();
                   
                         var msg = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
