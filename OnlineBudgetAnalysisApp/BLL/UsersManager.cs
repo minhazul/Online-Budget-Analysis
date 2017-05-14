@@ -174,5 +174,10 @@ namespace OnlineBudgetAnalysisApp.BLL
 
             return isBlockedByAdmin;
         }
+
+        public int GetUserIdByUserName(string userName)
+        {
+            return _aUsersGateway.GetUserIdByUserName(userName);
+        }
     }
 }

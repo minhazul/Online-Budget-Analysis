@@ -742,6 +742,7 @@
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="UI\EmailSettingsUI.aspx" />
+    <Content Include="UI\UploadActivityUI.aspx" />
     <Content Include="UI\UserAccessControl.aspx" />
     <Content Include="UI\YearWiseReportUI.aspx" />
     <Content Include="Upload.ashx" />
@@ -806,6 +807,7 @@
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="BLL\ProjectManager.cs" />
     <Compile Include="BLL\ReportManager.cs" />
+    <Compile Include="BLL\UploadActivityManager.cs" />
     <Compile Include="BLL\UserAccessControlManager.cs" />
     <Compile Include="BLL\UsersManager.cs" />
     <Compile Include="DAL\Gateway\AllUsersInfoViewGateway.cs" />
@@ -819,6 +821,7 @@
     <Compile Include="DAL\Gateway\ProductGateway.cs" />
     <Compile Include="DAL\Gateway\ProjectGateway.cs" />
     <Compile Include="DAL\Gateway\ReportGateway.cs" />
+    <Compile Include="DAL\Gateway\UploadActivityGateway.cs" />
     <Compile Include="DAL\Gateway\UserAccessControlGateway.cs" />
     <Compile Include="DAL\Gateway\UsersGateway.cs" />
     <Compile Include="DAL\Model\Designation.cs" />
@@ -827,6 +830,7 @@
     <Compile Include="DAL\Model\Month.cs" />
     <Compile Include="DAL\Model\ProductInfo.cs" />
     <Compile Include="DAL\Model\Projects.cs" />
+    <Compile Include="DAL\Model\UploadActivity.cs" />
     <Compile Include="DAL\Model\Users.cs" />
     <Compile Include="DAL\Model\Year.cs" />
     <Compile Include="DAL\ViewModel\AllowOrDelete.cs" />
@@ -1006,6 +1010,13 @@
     </Compile>
     <Compile Include="UI\EmailSettingsUI.aspx.designer.cs">
       <DependentUpon>EmailSettingsUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UploadActivityUI.aspx.cs">
+      <DependentUpon>UploadActivityUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UploadActivityUI.aspx.designer.cs">
+      <DependentUpon>UploadActivityUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\UserAccessControl.aspx.cs">
       <DependentUpon>UserAccessControl.aspx</DependentUpon>

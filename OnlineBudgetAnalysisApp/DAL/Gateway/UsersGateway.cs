@@ -462,5 +462,35 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return isBlockedByAdmin;
         }
+
+        public int GetUserIdByUserName(string userName)
+        {
+            Query = "Select Id From Users Where UserName=@UserName";
+
+            Command=new SqlCommand(Query,Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("UserName", SqlDbType.VarChar);
+            Command.Parameters["UserName"].Value = userName;
+
+            Connection.Open();
+
+            Reader = Command.ExecuteReader();
+
+            int userId=0;
+
+            while (Reader.Read())
+            {
+                if (Reader.HasRows)
+                {
+                    userId = Convert.ToInt32(Reader["Id"]);
+                }
+            }
+
+            Reader.Close();
+            Connection.Close();
+
+            return userId;
+        }
     }
 }

@@ -17,10 +17,17 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         ProductManager _aProductManager=new ProductManager();
         ProjectManager _aProjectManager=new ProjectManager();
+        UsersManager _aUsersManager=new UsersManager();
+        UploadActivityManager _activityManager=new UploadActivityManager();
+
+        private string userName;
+        private int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userName = Session["UserName"].ToString();
+            userId = _aUsersManager.GetUserIdByUserName(userName);
             if (!IsPostBack)
-            {
+            {                
                 PopulateProjectDropdownList();
             }
         }
@@ -64,6 +71,7 @@ namespace OnlineBudgetAnalysisApp.UI
                 daGetExcel.Fill(dsRecords, "Sheet1");
 
                 foreach (DataRow myDataRow in dsRecords.Tables["Sheet1"].Rows)
+                
                 {
                     ProductInfo aProductInfo = new ProductInfo();
 
@@ -96,6 +104,9 @@ namespace OnlineBudgetAnalysisApp.UI
                 {
                     string message = _aProductManager.UpdateProductInfo(productInfos);
                     msgPrdctInfoLabel.Text = message;
+
+                    string activity = "Product Information file uploaded";
+                    _activityManager.UpdateActivityTable(userId, activity);
                 }
 
                 
@@ -149,6 +160,9 @@ namespace OnlineBudgetAnalysisApp.UI
                 {
                     string message = _aProductManager.DailyInventoryEntries(inventories);
                     msgDailyInventoryUpload.Text = message;
+
+                    string activity = "Daily Inventory file uploaded";
+                    _activityManager.UpdateActivityTable(userId, activity);
                 }
             }
             catch (Exception)

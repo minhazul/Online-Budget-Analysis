@@ -58,7 +58,7 @@
         </div>
         
         <div class="row" style="padding: 5px">
-            <asp:Button ID="btnUserActivity" CssClass="btn btn-primary" runat="server" Text="User Activity" />
+            <asp:Button ID="btnUserActivity" CssClass="btn btn-primary" runat="server" Text="Upload Activity" OnClick="btnUserActivity_Click" />
         </div>
     </div>
 </asp:Content>
