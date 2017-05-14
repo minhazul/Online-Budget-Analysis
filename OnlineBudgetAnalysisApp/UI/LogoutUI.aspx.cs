@@ -11,7 +11,13 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Session.Remove("UserName");
+
+            HttpCookie myCookie = new HttpCookie("Login");
+            myCookie.Expires = DateTime.Now.AddDays(-30d);
+            Response.Cookies.Add(myCookie);
+
             Response.Redirect("LoginUI.aspx");
         }
     }

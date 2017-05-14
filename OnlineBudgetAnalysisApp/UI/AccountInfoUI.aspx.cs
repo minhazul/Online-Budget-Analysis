@@ -17,6 +17,7 @@ namespace OnlineBudgetAnalysisApp.UI
         UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
             userName = Session["UserName"].ToString();
             //userName = "minhaz-abir";
             
@@ -35,6 +36,14 @@ namespace OnlineBudgetAnalysisApp.UI
             else
             {
                 GenerateInformation(userName);
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

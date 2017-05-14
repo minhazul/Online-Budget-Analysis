@@ -16,8 +16,16 @@ namespace OnlineBudgetAnalysisApp.UI
         ProjectManager _aProjectManager = new ProjectManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             userName = Session["UserName"].ToString();
             PopulateProjectListGridViewi();
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+                Response.Redirect("HomeUI.aspx");
         }
 
         private void PopulateProjectListGridViewi()

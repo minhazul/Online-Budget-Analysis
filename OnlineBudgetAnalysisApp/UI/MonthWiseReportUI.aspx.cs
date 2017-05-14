@@ -18,6 +18,8 @@ namespace OnlineBudgetAnalysisApp.UI
         ReportManager _aReportManager = new ReportManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
                 userName = Session["UserName"].ToString();
@@ -26,6 +28,14 @@ namespace OnlineBudgetAnalysisApp.UI
 
                 PopulateMonthDropDown();
                 PopulateYearDropDown();
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"]==null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

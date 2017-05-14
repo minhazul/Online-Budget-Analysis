@@ -14,9 +14,19 @@ namespace OnlineBudgetAnalysisApp.UI
         UploadActivityManager _activityManager=new UploadActivityManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
                 PopulateUploadActivityGridView();
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

@@ -16,8 +16,18 @@ namespace OnlineBudgetAnalysisApp.UI
         ProductManager _aProductManager = new ProductManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             userName = Session["UserName"].ToString();
             PopulatePrdctListGridView();
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
+            }
         }
 
         private void PopulatePrdctListGridView()

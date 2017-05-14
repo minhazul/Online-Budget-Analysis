@@ -14,10 +14,19 @@ namespace OnlineBudgetAnalysisApp.UI
         BlockedUserManager _aBlockedUserManager=new BlockedUserManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
-
                 PopulateBlockedUserGridView();
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

@@ -14,9 +14,19 @@ namespace OnlineBudgetAnalysisApp.UI
         AllUsersInfoViewManager _allUsersInfoViewManager=new AllUsersInfoViewManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
                 PopulateAllUsersGridView();
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

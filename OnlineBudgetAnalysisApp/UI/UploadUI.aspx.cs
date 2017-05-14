@@ -24,11 +24,21 @@ namespace OnlineBudgetAnalysisApp.UI
         private int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             userName = Session["UserName"].ToString();
             userId = _aUsersManager.GetUserIdByUserName(userName);
             if (!IsPostBack)
             {                
                 PopulateProjectDropdownList();
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

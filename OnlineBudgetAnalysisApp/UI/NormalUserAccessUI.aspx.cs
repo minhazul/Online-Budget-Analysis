@@ -14,9 +14,19 @@ namespace OnlineBudgetAnalysisApp.UI
         UserAccessControlManager _accessControlManager = new UserAccessControlManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
                 PopulateNormalUsersGridView();
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

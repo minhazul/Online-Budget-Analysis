@@ -18,7 +18,7 @@ namespace OnlineBudgetAnalysisApp
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
             string userName = txtUsername.Value;
             string password = txtPassword.Value;
             bool isLogin = _aUsersManager.Login(userName,password);
@@ -30,6 +30,15 @@ namespace OnlineBudgetAnalysisApp
                     bool blockedByAdmin = _aUsersManager.IsBlockedByAdmin(userName, password);
                     if (!blockedByAdmin)
                     {
+                        if (chkRemember.Checked)
+                        {
+                            HttpCookie myCookie = new HttpCookie("Login");
+                            myCookie["UserName"] = userName;
+                            myCookie["Password"] = password;
+                            myCookie.Expires = DateTime.Now.AddDays(30d);
+                            Response.Cookies.Add(myCookie);
+                        }
+
                         Session["UserName"] = userName;
                         Response.Redirect("HomeUI.aspx");
                     }

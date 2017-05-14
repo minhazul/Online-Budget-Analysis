@@ -17,10 +17,17 @@ namespace OnlineBudgetAnalysisApp.UI
         UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
             if (!IsPostBack)
             {
                 PopulateDesignationDropDown();
             }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+                Response.Redirect("HomeUI.aspx");
         }
 
         protected void dropDownDesignation_SelectedIndexChanged(object sender, EventArgs e)

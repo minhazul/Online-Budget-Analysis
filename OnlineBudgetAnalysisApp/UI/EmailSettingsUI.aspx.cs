@@ -13,13 +13,22 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         EmailManager _aEmailManager=new EmailManager();
         protected void Page_Load(object sender, EventArgs e)
-        {           
+        {
+            SessionControl();
+
             if (!IsPostBack)
             {
                 GenerateCurrentEmailAndPassword();
                 PopulateAnotherEmailLists();
             }
         }
+
+        private void SessionControl()
+        {
+            if(Session["UserName"]==null)
+                Response.Redirect("HomeUI.aspx");
+        }
+
 
         private void PopulateAnotherEmailLists()
         {

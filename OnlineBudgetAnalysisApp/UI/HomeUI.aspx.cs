@@ -11,7 +11,27 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+        }
 
+        private void SessionControl()
+        {
+            string userName;
+            if (Session["UserName"] == null)
+            {
+                HttpCookie myCookie = Request.Cookies["Login"];
+                if (myCookie != null)
+                {
+                    userName = myCookie["UserName"];
+                    Session["UserName"] = userName;
+                }
+                else
+                {
+                    Response.Redirect("LoginUI.aspx");
+                }
+            }
+
+            userName = Session["UserName"].ToString();
         }
     }
 }

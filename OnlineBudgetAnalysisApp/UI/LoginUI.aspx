@@ -45,7 +45,7 @@
                    <div class="input-group">
                    <div class="checkbox">
                          <label>
-                             <input id="chkRemember" type="checkbox" name="remember" value="1" runat="server"/> Remember me
+                             <input id="chkRemember" type="checkbox" name="remember" runat="server"/> Remember me
                          </label>
                    </div>
                    </div>

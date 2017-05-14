@@ -16,9 +16,19 @@ namespace OnlineBudgetAnalysisApp.UI
         DataManager _aDataManager=new DataManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
                 PopulateProjectsControlGridVIew();                
+            }
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
             }
         }
 

@@ -15,9 +15,18 @@ namespace OnlineBudgetAnalysisApp.UI
         UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             _userName = Session["userName"].ToString();
-            //_userName = "minhaz-abir";
             _findOldPass = _aUsersManager.FindOldPass(_userName);
+        }
+
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
+            }
         }
 
         protected void btnChangePass_Click(object sender, EventArgs e)

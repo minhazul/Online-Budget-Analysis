@@ -14,13 +14,20 @@ namespace OnlineBudgetAnalysisApp.UI
         PendingUserManager aPendingUserManager = new PendingUserManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionControl();
+
             if (!IsPostBack)
             {
-
                 PopulatePendingUsersGridView();
             }
+        }
 
-
+        private void SessionControl()
+        {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("HomeUI.aspx");
+            }
         }
 
         private void PopulatePendingUsersGridView()
