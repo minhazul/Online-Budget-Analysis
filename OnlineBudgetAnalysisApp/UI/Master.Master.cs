@@ -30,13 +30,16 @@ namespace OnlineBudgetAnalysisApp
                 pendingApprovalsLi.Visible = false;
                 userAccessLi.Visible = false;
                 emailSettingsLi.Visible = false;
+                prjctAndDataContrlLi.Visible = false;
             }
             else if (roleName == "CoAdmin")
             {
                 prjctCreateLi.Visible = false;
                 prjctAngleDown.Visible = false;
+                pendingApprovalsLi.Visible = false;
                 userAccessLi.Visible = false;
                 emailSettingsLi.Visible = false;
+                prjctAndDataContrlLi.Visible = false;
             }
             else if (roleName == "SuperAdmin")
             {

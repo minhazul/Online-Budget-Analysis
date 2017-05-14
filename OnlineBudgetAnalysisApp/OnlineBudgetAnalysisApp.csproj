@@ -728,6 +728,7 @@
     <Content Include="UI\NormalUserAccessUI.aspx" />
     <Content Include="UI\PendingApprovalUI.aspx" />
     <Content Include="UI\ProductListUI.aspx" />
+    <Content Include="UI\ProjectAndDataControlUI.aspx" />
     <Content Include="UI\ProjectListUI.aspx" />
     <Content Include="UI\ProjectsUI.aspx" />
     <Content Include="UI\ProjectWiseReportsUI.aspx" />
@@ -797,6 +798,7 @@
   <ItemGroup>
     <Compile Include="BLL\AllUsersInfoViewManager.cs" />
     <Compile Include="BLL\BlockedUserManager.cs" />
+    <Compile Include="BLL\DataManager.cs" />
     <Compile Include="BLL\DateManager.cs" />
     <Compile Include="BLL\DesignationManager.cs" />
     <Compile Include="BLL\EmailManager.cs" />
@@ -808,6 +810,7 @@
     <Compile Include="BLL\UsersManager.cs" />
     <Compile Include="DAL\Gateway\AllUsersInfoViewGateway.cs" />
     <Compile Include="DAL\Gateway\BlockedUserGateway.cs" />
+    <Compile Include="DAL\Gateway\DataGateway.cs" />
     <Compile Include="DAL\Gateway\DateGateway.cs" />
     <Compile Include="DAL\Gateway\DesignationGateway.cs" />
     <Compile Include="DAL\Gateway\EmailGateway.cs" />
@@ -831,6 +834,7 @@
     <Compile Include="DAL\ViewModel\ApproveDelete.cs" />
     <Compile Include="DAL\ViewModel\BlockedUserInfo.cs" />
     <Compile Include="DAL\ViewModel\ChangeAccess.cs" />
+    <Compile Include="DAL\ViewModel\OpenOrClose.cs" />
     <Compile Include="DAL\ViewModel\PendingUsers.cs" />
     <Compile Include="DAL\ViewModel\ProjectListShow.cs" />
     <Compile Include="DAL\ViewModel\Report.cs" />
@@ -917,6 +921,13 @@
     </Compile>
     <Compile Include="UI\ProductListUI.aspx.designer.cs">
       <DependentUpon>ProductListUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProjectAndDataControlUI.aspx.cs">
+      <DependentUpon>ProjectAndDataControlUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ProjectAndDataControlUI.aspx.designer.cs">
+      <DependentUpon>ProjectAndDataControlUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\ProjectListUI.aspx.cs">
       <DependentUpon>ProjectListUI.aspx</DependentUpon>

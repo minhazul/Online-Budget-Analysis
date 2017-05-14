@@ -58,6 +58,15 @@ namespace OnlineBudgetAnalysisApp {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl uploadLi;
         
         /// <summary>
+        /// prjctAndDataContrlLi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prjctAndDataContrlLi;
+        
+        /// <summary>
         /// pendingApprovalsLi control.
         /// </summary>
         /// <remarks>

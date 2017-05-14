@@ -147,5 +147,45 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return projectListShows;
         }
+
+        public int CloseProjectById(int prjctId)
+        {
+            Query = "Update Projects Set Status=@Status Where Id=@Id";
+
+            Command=new SqlCommand(Query,Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("Status", SqlDbType.VarChar);
+            Command.Parameters["Status"].Value = "Closed";
+            Command.Parameters.Add("Id", SqlDbType.Int);
+            Command.Parameters["Id"].Value = prjctId;
+
+            Connection.Open();
+
+            int rowAffected = Command.ExecuteNonQuery();
+
+            Connection.Close();
+
+            return rowAffected;
+        }
+
+        public void OpenProjectById(int prjctId)
+        {
+            Query = "Update Projects Set Status=@Status Where Id=@Id";
+
+            Command = new SqlCommand(Query, Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("Status", SqlDbType.VarChar);
+            Command.Parameters["Status"].Value = "Open";
+            Command.Parameters.Add("Id", SqlDbType.Int);
+            Command.Parameters["Id"].Value = prjctId;
+
+            Connection.Open();
+
+            Command.ExecuteNonQuery();
+
+            Connection.Close();
+        }
     }
 }

@@ -47,5 +47,24 @@ namespace OnlineBudgetAnalysisApp.BLL
         {
             return _aProjectGateway.GetAllProjectListsWithProjectHeadName();
         }
+
+        public string CloseProjectById(int prjctId)
+        {
+            int rowAffected = _aProjectGateway.CloseProjectById(prjctId);
+
+            if (rowAffected > 0)
+            {
+                return "Selected project closed successfully";
+            }
+            else
+            {
+                return "Failed to close the project";
+            }
+        }
+
+        public void OpenProjectIdById(int prjctId)
+        {
+            _aProjectGateway.OpenProjectById(prjctId);
+        }
     }
 }
