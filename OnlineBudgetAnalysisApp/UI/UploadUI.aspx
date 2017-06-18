@@ -13,7 +13,7 @@
                     <div id="Uploadbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                <div class="panel-title">&nbsp;&nbsp;&nbsp;Upload file here(xlsx,xls or xla)</div>
+                                <div class="panel-title">&nbsp;&nbsp;&nbsp;Upload file here (xlsx,xls or xla)</div>
                             </div>
                             
                             <div class="form-horizontal" style="padding: 20px">
@@ -26,7 +26,7 @@
                                         </div>        
                                     </div>
                                     <div class="col-sm-10">
-                                        <div class="col-sm-3" style="color: black;padding-left: 6px">
+                                        <div class="col-sm-4" style="color: black;padding-left: 6px">
                                             <asp:Label ID="Label1" runat="server" Text=""><b>Choose file</b></asp:Label>
                                         </div>
                                         <div class="col-sm-6">                    
@@ -34,11 +34,11 @@
                                         </div>                        
                                     </div>
                                     <div class="col-sm-10">
-                                        <div class="col-sm-3" style="color: black;padding: 0px"></div>
+                                        <div class="col-sm-4" style="color: black;padding: 0px"></div>
                                         <div class="col-sm-2" style="padding-top: 3px;padding-left: 16px">
                                             <asp:Button ID="btnPrdctInfoUpload" CssClass="btn btn-success" runat="server" Text="Upload" OnClick="btnPrdctInfoUpload_Click" />
                                         </div>
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-4">
                                             
                                         </div>
                                     </div>

@@ -33,7 +33,7 @@
                         <label>Designation</label>
                     </div>
                     <div class="col-sm-3">
-                        <asp:DropDownList ID="dropDownDesignation" AutoPostBack="True" OnSelectedIndexChanged="dropDownDesignation_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="dropDownDesignation" AutoPostBack="True" CssClass="form-control" OnSelectedIndexChanged="dropDownDesignation_SelectedIndexChanged" runat="server"></asp:DropDownList>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <label>Project Head</label>
                     </div>
                     <div class="col-sm-3">
-                        <asp:DropDownList ID="dropDownProjectHead" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="dropDownProjectHead" CssClass="form-control" runat="server"></asp:DropDownList>
                     </div>
                 </div>
             </div>

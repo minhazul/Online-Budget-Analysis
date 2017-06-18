@@ -67,18 +67,27 @@
             
             <div class="row">
                 <div class="col-sm-4"></div>
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="text-align: center">
                     <h2>Data Control</h2>
                 </div>
                 <div class="col-sm-4"></div>
             </div> 
             
-            <div class="row">
+            <div class="row" style="padding-top: 20px;padding-bottom: 10px">
+                <div class="col-sm-3">
+                    <asp:Button ID="btnClearProductInfo" CssClass="btn btn-danger" runat="server" Text="Clear Product Information Data" OnClick="btnClearProductInfo_Click" />
+                </div>
+                <div class="col-sm-9">
+                    <asp:Label ID="msgClearProductInfoLabel" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+            
+            <div class="row" style="padding-bottom: 10px">
                 <div class="col-sm-2">
-                    <asp:Button ID="btnClearProductInfo" CssClass="btn btn-danger" runat="server" Text="ClearProduct Information Data" OnClick="btnClearProductInfo_Click" />
+                    <asp:Button ID="btnClearInventoryData" CssClass="btn btn-danger" runat="server" Text="Clear Inventory Data" OnClick="btnClearInventoryData_Click" />
                 </div>
                 <div class="col-sm-10">
-                    <asp:Label ID="msgClearProductInfoLabel" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="msgClearInventoryData" runat="server" Text=""></asp:Label>
                 </div>
             </div>
                      

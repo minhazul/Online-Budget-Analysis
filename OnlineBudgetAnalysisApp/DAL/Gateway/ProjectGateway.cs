@@ -62,8 +62,12 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
         public List<Projects> GetAllProjects()
         {
-            Query = "SELECT Id,ProjectName FROM Projects";
+            Query = "SELECT Id,ProjectName FROM Projects Where Status=@Status";
             Command = new SqlCommand(Query, Connection);
+
+            Command.Parameters.Clear();
+            Command.Parameters.Add("Status", SqlDbType.VarChar);
+            Command.Parameters["Status"].Value = "Open";
             
             List<Projects> projects=new List<Projects>();
             Projects aProjects=new Projects();

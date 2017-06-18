@@ -22,5 +22,19 @@ namespace OnlineBudgetAnalysisApp.BLL
                 return "Data couldn't be cleared. Please try again";
             }
         }
+
+        public string ClearInventoryData()
+        {
+            int rowAffected = _aDataGateway.ClearInventoryData();
+
+            if (rowAffected > 0)
+            {
+                return "Data Cleared successfully";
+            }
+            else
+            {
+                return "Data couldn't be cleared. Please try again";
+            }
+        }
     }
 }

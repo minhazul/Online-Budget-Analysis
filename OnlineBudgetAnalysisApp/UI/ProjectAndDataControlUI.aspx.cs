@@ -138,5 +138,10 @@ namespace OnlineBudgetAnalysisApp.UI
         {
             msgClearProductInfoLabel.Text = _aDataManager.ClearProductInfoData();
         }
+
+        protected void btnClearInventoryData_Click(object sender, EventArgs e)
+        {
+            msgClearInventoryData.Text = _aDataManager.ClearInventoryData();
+        }
     }
 }

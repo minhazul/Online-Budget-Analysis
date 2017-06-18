@@ -25,7 +25,7 @@
             <div class="col-sm-5"></div>
             <div class="col-sm-3">
                 <label style="padding-right: 10px;padding-left: 17px"><b>Select Year</b></label>
-                <asp:DropDownList ID="yearDropDownList" AutoPostBack="True" OnSelectedIndexChanged="dropDownYearList_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="yearDropDownList" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="dropDownYearList_SelectedIndexChanged" runat="server"></asp:DropDownList>
             </div>
             <div class="col-sm-4"></div>
         </div>

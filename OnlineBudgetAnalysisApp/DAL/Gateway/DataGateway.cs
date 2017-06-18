@@ -22,5 +22,20 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             return rowAffected;
         }
+
+        public int ClearInventoryData()
+        {
+            Query = "Delete  From Inventory";
+
+            Command = new SqlCommand(Query, Connection);
+
+            Connection.Open();
+
+            int rowAffected = Command.ExecuteNonQuery();
+
+            Connection.Close();
+
+            return rowAffected;
+        }
     }
 }
