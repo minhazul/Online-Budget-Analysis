@@ -27,11 +27,11 @@
             </div>
             <div class="col-sm-4">
                 <label style="padding-right: 2px"><b>Select Month</b></label>
-                <asp:DropDownList ID="monthDropDownList" CssClass="form-control" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="monthDropDownList" Width="200px" CssClass="form-control" runat="server"></asp:DropDownList>
             </div>
             <div class="col-sm-5">
                 <label style="padding-right: 2px"><b>Select Year</b></label>
-                <asp:DropDownList ID="yearDropDownList" CssClass="form-control" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="yearDropDownList" Width="200px" CssClass="form-control" runat="server"></asp:DropDownList>
             </div>
         </div>
         

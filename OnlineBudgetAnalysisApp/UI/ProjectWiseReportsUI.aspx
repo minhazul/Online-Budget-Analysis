@@ -21,14 +21,14 @@
         </div>
 
         <div class="row" style="padding-bottom: 50px">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-1" style="padding-left: 80px">
-                <label><b>Select Project</b></label>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-1" style="padding-left: 0px">
+                <h5><b>Select Project</b></h5>
             </div>
-            <div class="col-sm-3" style="padding-left: 100px">                
+            <div class="col-sm-3" style="padding-left: 0px;width: 200px">                
                 <asp:DropDownList ID="dropDownProjectList" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="dropDownProjectList_SelectedIndexChanged" runat="server"></asp:DropDownList>
             </div> 
-            <div class="col-sm-4"></div>
+            <div class="col-sm-3"></div>
         </div>
         
         <div class="row">

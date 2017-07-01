@@ -23,14 +23,14 @@
         
         <div class="row">
             <div class="col-sm-5"></div>
-            <div class="col-sm-3">
-                <label style="padding-right: 10px;padding-left: 17px"><b>Select Year</b></label>
-                <asp:DropDownList ID="yearDropDownList" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="dropDownYearList_SelectedIndexChanged" runat="server"></asp:DropDownList>
+            <div class="col-sm-4">
+                <label style="padding-right: 0px;padding-left: 0px"><b>Select Year</b></label>
+                <asp:DropDownList ID="yearDropDownList" Width="200px" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="dropDownYearList_SelectedIndexChanged" runat="server"></asp:DropDownList>
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-3"></div>
         </div>
         
-        <div class="row">
+        <div class="row" style="padding-bottom: 100px">
             <div class="col-sm-12">
                 <asp:GridView ID="YearWiseGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
                     <Columns>                         
