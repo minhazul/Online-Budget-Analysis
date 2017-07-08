@@ -12,13 +12,29 @@ namespace OnlineBudgetAnalysisApp.UI
     public partial class UploadActivityUI : System.Web.UI.Page
     {
         UploadActivityManager _activityManager=new UploadActivityManager();
+        UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionControl();
+            AccessControl();
 
             if (!IsPostBack)
             {
                 PopulateUploadActivityGridView();
+            }
+        }
+
+        private void AccessControl()
+        {
+            string userName = Session["UserName"].ToString();
+
+            int roleId = _aUsersManager.GetUserRoleId(userName);
+
+            string roleName = _aUsersManager.GetRoleName(roleId);
+
+            if (roleName == "CoAdmin" || roleName == "Normal")
+            {
+                Response.Redirect("ErrorUI.aspx");
             }
         }
 

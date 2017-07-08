@@ -727,6 +727,7 @@
     <Content Include="UI\CoAdminUserAccessUI.aspx" />
     <Content Include="UI\DashboardUI.aspx" />
     <Content Include="UI\DateWiseReportUI.aspx" />
+    <Content Include="UI\ErrorUI.aspx" />
     <Content Include="UI\LogoutUI.aspx" />
     <Content Include="UI\MonthWiseReportUI.aspx" />
     <Content Include="UI\NormalUserAccessUI.aspx" />
@@ -894,6 +895,13 @@
     </Compile>
     <Compile Include="UI\DateWiseReportUI.aspx.designer.cs">
       <DependentUpon>DateWiseReportUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ErrorUI.aspx.cs">
+      <DependentUpon>ErrorUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ErrorUI.aspx.designer.cs">
+      <DependentUpon>ErrorUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\LogoutUI.aspx.cs">
       <DependentUpon>LogoutUI.aspx</DependentUpon>

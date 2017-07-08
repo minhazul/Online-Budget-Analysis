@@ -25,12 +25,27 @@ namespace OnlineBudgetAnalysisApp.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionControl();
+            AccessControl();
 
             userName = Session["UserName"].ToString();
             userId = _aUsersManager.GetUserIdByUserName(userName);
             if (!IsPostBack)
             {                
                 PopulateProjectDropdownList();
+            }
+        }
+
+        private void AccessControl()
+        {
+            string userName = Session["UserName"].ToString();
+
+            int roleId = _aUsersManager.GetUserRoleId(userName);
+
+            string roleName = _aUsersManager.GetRoleName(roleId);
+
+            if (roleName == "Normal")
+            {
+                Response.Redirect("ErrorUI.aspx");
             }
         }
 

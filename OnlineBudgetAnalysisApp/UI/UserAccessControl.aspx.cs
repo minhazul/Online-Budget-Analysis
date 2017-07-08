@@ -11,11 +11,27 @@ namespace OnlineBudgetAnalysisApp.UI
     public partial class UserAccessControl : System.Web.UI.Page
     {
         UserAccessControlManager _accessControlManager=new UserAccessControlManager();
+        UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionControl();
+            AccessControl();
 
             FillNoField();
+        }
+
+        private void AccessControl()
+        {
+            string userName = Session["UserName"].ToString();
+
+            int roleId = _aUsersManager.GetUserRoleId(userName);
+
+            string roleName = _aUsersManager.GetRoleName(roleId);
+
+            if (roleName == "CoAdmin" || roleName == "Normal")
+            {
+                Response.Redirect("ErrorUI.aspx");
+            }
         }
 
         private void SessionControl()

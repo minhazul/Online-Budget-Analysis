@@ -14,13 +14,29 @@ namespace OnlineBudgetAnalysisApp.UI
     {
         ProjectManager _aProjectManager=new ProjectManager();
         DataManager _aDataManager=new DataManager();
+        UsersManager _aUsersManager=new UsersManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionControl();
+            AccessControl();
 
             if (!IsPostBack)
             {
                 PopulateProjectsControlGridVIew();                
+            }
+        }
+
+        private void AccessControl()
+        {
+            string userName = Session["UserName"].ToString();
+
+            int roleId = _aUsersManager.GetUserRoleId(userName);
+
+            string roleName = _aUsersManager.GetRoleName(roleId);
+
+            if (roleName == "CoAdmin" || roleName == "Normal")
+            {
+                Response.Redirect("ErrorUI.aspx");
             }
         }
 
