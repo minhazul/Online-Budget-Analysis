@@ -13,6 +13,12 @@
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="../Content/responsive.css" rel="stylesheet" />
+    
+   <style>
+       label.has-error {
+           color: red
+       }
+   </style>
 </head>
 <body style="background: url(../pictures/background.gif)">
     <form id="loginform" class="form-horizontal" role="form" runat="server">
@@ -34,12 +40,13 @@
                    
                    <div style="margin-bottom: 25px" class="input-group">
                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                       <input id="txtUsername" type="text" class="form-control" name="username" value="" placeholder="username" runat="server"/>                                        
+                       <input id="txtUsername" type="text" class="form-control" pattern=".{4,10}" required="" title="username should be 4 to 10 characters long" name="username" value="" placeholder="username" runat="server"/>                                        
                    </div>
                    
                    <div style="margin-bottom: 25px" class="input-group">
                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                       <input id="txtPassword" type="password" class="form-control" name="password" placeholder="password" runat="server"/>
+                       <input id="txtPassword" type="password" class="form-control" pattern=".{6,}" required="" title="password should be at least 6 characters long" name="password" placeholder="password" runat="server"/>
+                      
                    </div>
                    
                    <div class="input-group">
@@ -80,7 +87,9 @@
        </div>
    </div>
     </form>
-    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery.validate.min.js"></script>
+    
 </body>
 </html>

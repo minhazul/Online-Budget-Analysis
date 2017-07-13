@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistrationUi.aspx.cs" Inherits="OnlineBudgetAnalysisApp.RegistrationUi" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistrationUi.aspx.cs" UnobtrusiveValidationMode="none" Inherits="OnlineBudgetAnalysisApp.RegistrationUi" %>
 
 <!DOCTYPE html>
 
@@ -13,6 +13,7 @@
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="../Content/responsive.css" rel="stylesheet" />
+    
 </head>
 <body style="background: url(../pictures/background.gif)">
     <div class="container">
@@ -31,13 +32,13 @@
                <form id="form1" class="form-horizontal" style="padding: 20px" runat="server">
                    <div class="form-group">
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="userNameTextBox" Placeholder="Enter a username">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="userNameTextBox" pattern=".{4,10}" required="" title="username should be 4 to 10 characters long" Placeholder="Enter a username">
                         </asp:TextBox>
                     </div>
                   </div>
                    <div class="form-group">
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtFullName" Placeholder="Enter your full name">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtFullName" pattern=".{6,15}" required="" title="username should be 6 to 15 characters long" Placeholder="Enter your full name">
                         </asp:TextBox>
                     </div>
                   </div>
@@ -47,26 +48,40 @@
                             <asp:Label ID="Label1" runat="server" Text="Choose Designation"></asp:Label>
                         </div>
                         <div class="col-sm-5">
-                            <asp:DropDownList ID="dropDownDesignation" runat="server"></asp:DropDownList>                            
+                            <asp:DropDownList ID="dropDownDesignation" CssClass="form-control" runat="server"></asp:DropDownList>
+                            <asp:RequiredFieldValidator InitialValue="-1" 
+                            ID="validateDropdown" Display="Dynamic" 
+                            ControlToValidate="dropDownDesignation"
+                            runat="server"  Text="Please select a valid designation" 
+                            ErrorMessage="Please Select the Product"
+                            ForeColor="Red">
+                            </asp:RequiredFieldValidator>                            
                         </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" Placeholder="Enter your emailid">
+                        <asp:TextBox runat="server" CssClass="form-control" required="" TextMode="Email" ID="txtEmail" Placeholder="Enter your emailid">
                         </asp:TextBox>
+                        <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format" ToolTip="" Display="Dynamic" ForeColor="red"></asp:RegularExpressionValidator>
                     </div>
                   </div>
                   <div class="form-group">             
                     <div class="col-sm-10">
-                        <asp:TextBox ID="passTextBox" CssClass="form-control" Placeholder="Enter a password" TextMode="Password" runat="server">                           
+                        <asp:TextBox ID="passTextBox" CssClass="form-control" TextMode="Password" pattern=".{6,}" required="" title="password should be at least 6 characters long" Placeholder="Please confirm your password" runat="server">                           
                         </asp:TextBox>
                     </div>
                   </div>
                    <div class="form-group">             
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="confirmPassTextBox" Placeholder="Please confirm your password" TextMode="Password">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="confirmPassTextBox" pattern=".{6,}" required="" title="password should be at least 6 characters long" Placeholder="Please confirm your password" TextMode="Password"> 
                         </asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                        ControlToValidate="confirmPassTextBox"
+                        CssClass="ValidationError"
+                        ControlToCompare="passTextBox"
+                        ErrorMessage="Both password must be the same" 
+                        ToolTip="Both password must be the same" Display="Dynamic" ForeColor="red"/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -84,7 +99,8 @@
            </div>
        </div>
    </div> 
-    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
+    
 </body>
 </html>

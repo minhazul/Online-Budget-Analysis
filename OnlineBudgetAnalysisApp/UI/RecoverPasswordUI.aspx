@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecoverPasswordUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.RecoverPasswordUI" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecoverPasswordUI.aspx.cs" UnobtrusiveValidationMode="none" Inherits="OnlineBudgetAnalysisApp.RecoverPasswordUI" %>
 
 <!DOCTYPE html>
 
@@ -30,17 +30,18 @@
             <form id="form1" class="form-horizontal" style="padding: 20px" runat="server">
                    <div class="form-group">
                     <div class="col-sm-10">                       
-                        <input type="text" class="form-control" id="txtUserName" placeholder="Enter your username" runat="server"/>
+                        <input type="text" class="form-control" id="txtUserName" pattern=".{4,10}" required="" title="username should be 4 to 10 characters long" placeholder="Enter your username" runat="server"/>
                     </div>
                   </div>             
                   <div class="form-group">
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="txtEmail" placeholder="Enter your email" runat="server"/>
+                        <input type="email" class="form-control" required="" id="txtEmail" placeholder="Enter your email" runat="server"/>
+                        <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format" ToolTip="" Display="Dynamic" ForeColor="red"></asp:RegularExpressionValidator>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-10">
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <asp:Button ID="btnRecoverPass" runat="server" CssClass="btn btn-success" Text="Submit" OnClick="btnRecoverPass_Click" />
                         </div>
                       <div class="col-sm-7">

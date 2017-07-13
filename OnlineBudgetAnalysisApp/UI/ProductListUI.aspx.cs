@@ -41,8 +41,8 @@ namespace OnlineBudgetAnalysisApp.UI
 
             else
             {
-                string fullName = _aUsersManager.GetFullName(userName);
-                msgFullName.Text = fullName;
+                //string fullName = _aUsersManager.GetFullName(userName);
+                //msgFullName.Text = fullName;
 
                 prdctListGridview.DataSource = prdctLists;
                 prdctListGridview.DataBind();

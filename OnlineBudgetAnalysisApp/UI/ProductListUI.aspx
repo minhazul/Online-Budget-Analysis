@@ -12,14 +12,14 @@
             <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="text-align: center; padding-bottom: 50px;">
+        <<%--div class="row" style="text-align: center; padding-bottom: 50px;">
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <h3>Prepared by </h3>
                 <asp:Label ID="msgFullName" runat="server" Text=""></asp:Label>
             </div>
             <div class="col-sm-4"></div>
-        </div>
+        </div>--%>
         
         <div class="row">
             <div class="col-sm-1"></div>

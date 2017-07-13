@@ -30,7 +30,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateProjectListGridViewi()
         {
-            string fullName = _aUsersManager.GetFullName(userName);
+            //string fullName = _aUsersManager.GetFullName(userName);
 
             //List<Projects> aProjects = new List<Projects>();
             //aProjects = _aProjectManager.GetAllProjectLists();
@@ -44,7 +44,7 @@ namespace OnlineBudgetAnalysisApp.UI
             }
             else
             {
-                msgFullName.Text = fullName;
+                //msgFullName.Text = fullName;
                 prjctListGridview.DataSource = aProjectListShows;
                 prjctListGridview.DataBind();
             }
