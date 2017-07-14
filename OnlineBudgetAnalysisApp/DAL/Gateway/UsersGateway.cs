@@ -384,6 +384,11 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             List<Users> listUsers=new List<Users>();
 
+            Users bUsers = new Users();
+            bUsers.Id = -1;
+            bUsers.FullName = "--Select One--";
+            listUsers.Add(bUsers);
+
             Connection.Open();
             Reader = Command.ExecuteReader();
             while (Reader.Read())

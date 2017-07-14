@@ -71,7 +71,7 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             
             List<Projects> projects=new List<Projects>();
             Projects aProjects=new Projects();
-            aProjects.Id = -3;
+            aProjects.Id = -1;
             aProjects.ProjectName = "--Select One--";
             projects.Add(aProjects);
 

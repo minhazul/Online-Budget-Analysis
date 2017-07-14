@@ -67,14 +67,14 @@ namespace OnlineBudgetAnalysisApp.UI
             ddlpjcts.DataValueField = "Id";
             ddlpjcts.DataBind();
 
-            if (ddlpjcts.Items.Count > 1)
-            {
-                ddlpjcts.Enabled = true;
-            }
-            else
-            {
-                ddlpjcts.Enabled = false;
-            }
+            //if (ddlpjcts.Items.Count > 1)
+            //{
+            //    ddlpjcts.Enabled = true;
+            //}
+            //else
+            //{
+            //    ddlpjcts.Enabled = false;
+            //}
         }
 
         protected void btnPrdctInfoUpload_Click(object sender, EventArgs e)

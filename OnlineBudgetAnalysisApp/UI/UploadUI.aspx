@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="UploadUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.UploadUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="UploadUI.aspx.cs" UnobtrusiveValidationMode="none" Inherits="OnlineBudgetAnalysisApp.UI.UploadUI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -31,12 +31,15 @@
                                         </div>
                                         <div class="col-sm-6">                    
                                             <input id="prdctInfoUpload" type="file" name="Browse" runat="server"/>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="ProductInfo"
+                                            ControlToValidate="prdctInfoUpload" ErrorMessage="File Required!" ForeColor="red" Display="Dynamic" Font-Italic="">
+                                            </asp:RequiredFieldValidator>
                                         </div>                        
                                     </div>
                                     <div class="col-sm-10">
                                         <div class="col-sm-4" style="color: black;padding: 0px"></div>
                                         <div class="col-sm-2" style="padding-top: 3px;padding-left: 16px">
-                                            <asp:Button ID="btnPrdctInfoUpload" CssClass="btn btn-success" runat="server" Text="Upload" OnClick="btnPrdctInfoUpload_Click" />
+                                            <asp:Button ID="btnPrdctInfoUpload" CssClass="btn btn-success" runat="server" ValidationGroup="ProductInfo" Text="Upload" OnClick="btnPrdctInfoUpload_Click" />
                                         </div>
                                         <div class="col-sm-4">
                                             
@@ -61,7 +64,14 @@
                                             <asp:Label ID="Label3" runat="server" Text=""><b>Select Project</b></asp:Label>
                                         </div>
                                         <div class="col-sm-6">
-                                            <asp:DropDownList ID="ddlpjcts" runat="server" CssClass="dropdown"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlpjcts" runat="server" CssClass="form-control"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator InitialValue="-1" 
+                                            ID="validateDropdown" Display="Dynamic" 
+                                            ControlToValidate="ddlpjcts" ValidationGroup="inventory"
+                                            runat="server"  Text="Please Select a Project" 
+                                            ErrorMessage="Please Select a Project"
+                                            ForeColor="Red" Font-Italic="True">
+                                            </asp:RequiredFieldValidator> 
                                         </div>
                                     </div>
                                     <div class="col-sm-10">
@@ -70,12 +80,15 @@
                                         </div>
                                         <div class="col-sm-6">                    
                                             <input id="dailyInventoryUpload" type="file" name="Browse" runat="server"/>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="inventory"
+                                            ControlToValidate="dailyInventoryUpload" ErrorMessage="File Required!" ForeColor="red" Display="Dynamic" Font-Italic="True">
+                                            </asp:RequiredFieldValidator>
                                         </div>                        
                                     </div>
                                     <div class="col-sm-10">
                                         <div class="col-sm-4" style="color: black;padding: 0px"></div>
                                         <div class="col-sm-2" style="padding-top: 3px;padding-left: 16px">
-                                            <asp:Button ID="btnDailyInventoryUpload" CssClass="btn btn-success" runat="server" Text="Upload" OnClick="btnDailyInventoryUpload_Click" />
+                                            <asp:Button ID="btnDailyInventoryUpload" CssClass="btn btn-success" runat="server" ValidationGroup="inventory" Text="Upload" OnClick="btnDailyInventoryUpload_Click" />
                                         </div>
                                         <div class="col-sm-5">
                                             

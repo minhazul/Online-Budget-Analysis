@@ -31,6 +31,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.HtmlControls.HtmlInputFile prdctInfoUpload;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// btnPrdctInfoUpload control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.DropDownList ddlpjcts;
         
         /// <summary>
+        /// validateDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateDropdown;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile dailyInventoryUpload;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// btnDailyInventoryUpload control.

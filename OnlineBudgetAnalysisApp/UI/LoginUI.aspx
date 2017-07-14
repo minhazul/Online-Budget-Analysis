@@ -40,7 +40,7 @@
                    
                    <div style="margin-bottom: 25px" class="input-group">
                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                       <input id="txtUsername" type="text" class="form-control" pattern=".{4,10}" required="" title="username should be 4 to 10 characters long" name="username" value="" placeholder="username" runat="server"/>                                        
+                       <input id="txtUsername" type="text" class="form-control" pattern=".{4,20}" required="" title="username should be 4 to 10 characters long" name="username" value="" placeholder="username" runat="server"/>                                        
                    </div>
                    
                    <div style="margin-bottom: 25px" class="input-group">

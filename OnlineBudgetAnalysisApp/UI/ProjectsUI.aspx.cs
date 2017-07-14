@@ -54,21 +54,21 @@ namespace OnlineBudgetAnalysisApp.UI
             listUsers = _aUsersManager.GetUserByDesignationId(designationId);
 
             dropDownProjectHead.Items.Clear();
-            dropDownProjectHead.Items.Add(new ListItem("--Select One--", ""));
+            //dropDownProjectHead.Items.Add(new ListItem("--Select One--", "-1"));
 
             dropDownProjectHead.DataSource = listUsers;
             dropDownProjectHead.DataTextField = "FullName";
             dropDownProjectHead.DataValueField = "Id";
             dropDownProjectHead.DataBind();
 
-            if (dropDownProjectHead.Items.Count > 1)
-            {
-                dropDownProjectHead.Enabled = true;
-            }
-            else
-            {
-                dropDownProjectHead.Enabled = false;
-            }
+            //if (dropDownProjectHead.Items.Count > 1)
+            //{
+            //    dropDownProjectHead.Enabled = true;
+            //}
+            //else
+            //{
+            //    dropDownProjectHead.Enabled = false;
+            //}
 
         }
 

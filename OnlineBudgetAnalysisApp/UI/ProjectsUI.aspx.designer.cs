@@ -31,6 +31,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         protected global::System.Web.UI.WebControls.DropDownList dropDownDesignation;
         
         /// <summary>
+        /// validateDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateDropdown;
+        
+        /// <summary>
         /// dropDownProjectHead control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace OnlineBudgetAnalysisApp.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dropDownProjectHead;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// CKEditorControl control.
