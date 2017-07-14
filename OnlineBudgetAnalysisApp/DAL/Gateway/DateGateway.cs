@@ -16,6 +16,11 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
 
             List<Year> years=new List<Year>();
 
+            //Year bYear = new Year();
+            //bYear.Id = -1;
+            //bYear.YearNo = 0;
+            //years.Add(bYear);
+
             Connection.Open();
             Reader = Command.ExecuteReader();
 
@@ -44,6 +49,11 @@ namespace OnlineBudgetAnalysisApp.DAL.Gateway
             Command=new SqlCommand(Query,Connection);
 
             List<Month> months=new List<Month>();
+
+            Month bMonth = new Month();
+            bMonth.Id = -1;
+            bMonth.MonthName = "--Select One--";
+            months.Add(bMonth);
 
             Connection.Open();
             Reader = Command.ExecuteReader();

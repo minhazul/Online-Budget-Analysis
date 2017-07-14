@@ -71,11 +71,13 @@
                     
                     txtPassword: {
                         required: true,
-                        minlength: 6
+                        minlength: 6,
+                        maxlength: 25
                     },
                     txtConfirmPassword: {
                         required: true,
                         minlength: 6,
+                        maxlength: 25,
                         equalTo: "#txtPassword"
                     }
                     
@@ -84,11 +86,11 @@
                     
                     txtPassword: {
                         required: "Please enter a new password",
-                        minlength: "Your password must be at least 6 characters long"
+                        minlength: "Your password must be 6 to 25 characters long"
                     },
                     txtConfirmPassword: {
                         required: "Please confirm password",
-                        minlength: "Your password must be at least 6 characters long",
+                        minlength: "Your password must be 6 to 25 characters long",
                         equalTo: "Please enter the same password as above"
                     }
                     

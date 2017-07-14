@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="ProjectWiseReportsUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.ProjectWiseReportsUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" UnobtrusiveValidationMode="none" CodeBehind="ProjectWiseReportsUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.ProjectWiseReportsUI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -27,6 +27,13 @@
             </div>
             <div class="col-sm-3" style="padding-left: 0px;width: 200px">                
                 <asp:DropDownList ID="dropDownProjectList" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="dropDownProjectList_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                <asp:RequiredFieldValidator InitialValue="-1" 
+                                            ID="validateDropdown" Display="Dynamic" 
+                                            ControlToValidate="dropDownProjectList"
+                                            runat="server"  Text="Please Select a Project" 
+                                            ErrorMessage="Please Select a Project"
+                                            ForeColor="Red" Font-Italic="True">
+                                            </asp:RequiredFieldValidator>
             </div> 
             <div class="col-sm-3"></div>
         </div>

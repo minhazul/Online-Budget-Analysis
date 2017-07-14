@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="MonthWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.MonthWiseReportUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" UnobtrusiveValidationMode="none" CodeBehind="MonthWiseReportUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.MonthWiseReportUI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -28,10 +28,24 @@
             <div class="col-sm-4">
                 <label style="padding-right: 2px"><b>Select Month</b></label>
                 <asp:DropDownList ID="monthDropDownList" Width="200px" CssClass="form-control" runat="server"></asp:DropDownList>
+                <asp:RequiredFieldValidator InitialValue="-1" 
+                                            ID="validateDropdown" Display="Dynamic" 
+                                            ControlToValidate="monthDropDownList"
+                                            runat="server"  Text="Please Select a month" 
+                                            ErrorMessage="Please Select a month"
+                                            ForeColor="Red" Font-Italic="True">
+                                            </asp:RequiredFieldValidator> 
             </div>
             <div class="col-sm-5">
                 <label style="padding-right: 2px"><b>Select Year</b></label>
                 <asp:DropDownList ID="yearDropDownList" Width="200px" CssClass="form-control" runat="server"></asp:DropDownList>
+                <%--<asp:RequiredFieldValidator InitialValue="0" 
+                                            ID="RequiredFieldValidator1" Display="Dynamic" 
+                                            ControlToValidate="yearDropDownList"
+                                            runat="server"  Text="Please Select a year" 
+                                            ErrorMessage="Please Select a year"
+                                            ForeColor="Red" Font-Italic="True">
+                                            </asp:RequiredFieldValidator>--%>
             </div>
         </div>
         

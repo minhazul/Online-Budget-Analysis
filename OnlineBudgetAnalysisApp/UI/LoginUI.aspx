@@ -40,12 +40,12 @@
                    
                    <div style="margin-bottom: 25px" class="input-group">
                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                       <input id="txtUsername" type="text" class="form-control" pattern=".{4,20}" required="" title="username should be 4 to 10 characters long" name="username" value="" placeholder="username" runat="server"/>                                        
+                       <input id="txtUsername" type="text" class="form-control" pattern=".{4,15}" required="" title="username should be 4 to 15 characters long" name="username" value="" placeholder="username" runat="server"/>                                        
                    </div>
                    
                    <div style="margin-bottom: 25px" class="input-group">
                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                       <input id="txtPassword" type="password" class="form-control" pattern=".{6,}" required="" title="password should be at least 6 characters long" name="password" placeholder="password" runat="server"/>
+                       <input id="txtPassword" type="password" class="form-control" pattern=".{6,25}" required="" title="password should be 6 to 25 characters long" name="password" placeholder="password" runat="server"/>
                       
                    </div>
                    

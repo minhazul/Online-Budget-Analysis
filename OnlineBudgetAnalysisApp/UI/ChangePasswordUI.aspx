@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" CodeBehind="ChangePasswordUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.ChangePasswordUI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/Master.Master" AutoEventWireup="true" UnobtrusiveValidationMode="none" CodeBehind="ChangePasswordUI.aspx.cs" Inherits="OnlineBudgetAnalysisApp.UI.ChangePasswordUI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -18,17 +18,23 @@
                     <div class="form-horizontal" style="padding: 20px">
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <input class="form-control" type="password" id="txtOldPass" placeholder="Enter old password" runat="server"/>
+                                <input class="form-control" type="password" id="txtOldPass" pattern=".{6,25}" required="" title="password should be 6 to 25 characters long" placeholder="Enter old password" runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <input class="form-control" type="password" id="txtNewPassword" placeholder="Enter new password" runat="server"/>
+                                <input class="form-control" type="password" id="txtNewPassword" pattern=".{6,25}" required="" title="password should be 6 to 25 characters long" placeholder="Enter new password" runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <input class="form-control" type="password" id="txtConfirmPassword" placeholder="Confirm password"/>
+                                <input class="form-control" type="password" id="txtConfirmPassword" pattern=".{6,25}" required="" title="password should be 6 to 25 characters long" placeholder="Confirm password" runat="server"/>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                                ControlToValidate="txtConfirmPassword"
+                                CssClass="ValidationError"
+                                ControlToCompare="txtNewPassword"
+                                ErrorMessage="Both password must be the same" 
+                                ToolTip="Both password must be the same" Display="Dynamic" ForeColor="red" Font-Italic="True"/>
                             </div>
                         </div>
                         <div class="form-group">

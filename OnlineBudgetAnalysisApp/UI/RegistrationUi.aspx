@@ -32,13 +32,13 @@
                <form id="form1" class="form-horizontal" style="padding: 20px" runat="server">
                    <div class="form-group">
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="userNameTextBox" pattern=".{4,10}" required="" title="username should be 4 to 10 characters long" Placeholder="Enter a username">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="userNameTextBox" pattern=".{4,15}" required="" title="username should be 4 to 15 characters long" Placeholder="Enter a username">
                         </asp:TextBox>
                     </div>
                   </div>
                    <div class="form-group">
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtFullName" pattern=".{6,15}" required="" title="username should be 6 to 15 characters long" Placeholder="Enter your full name">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtFullName" pattern=".{6,28}" required="" title="Full should be 6 to 28 characters long" Placeholder="Enter your full name">
                         </asp:TextBox>
                     </div>
                   </div>
@@ -68,13 +68,13 @@
                   </div>
                   <div class="form-group">             
                     <div class="col-sm-10">
-                        <asp:TextBox ID="passTextBox" CssClass="form-control" TextMode="Password" pattern=".{6,}" required="" title="password should be at least 6 characters long" Placeholder="Please confirm your password" runat="server">                           
+                        <asp:TextBox ID="passTextBox" CssClass="form-control" TextMode="Password" pattern=".{6,25}" required="" title="password should be 6 to 25 characters long" Placeholder="Please confirm your password" runat="server">                           
                         </asp:TextBox>
                     </div>
                   </div>
                    <div class="form-group">             
                     <div class="col-sm-10">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="confirmPassTextBox" pattern=".{6,}" required="" title="password should be at least 6 characters long" Placeholder="Please confirm your password" TextMode="Password"> 
+                        <asp:TextBox runat="server" CssClass="form-control" ID="confirmPassTextBox" pattern=".{6,25}" required="" title="password should be 6 to 25 characters long" Placeholder="Please confirm your password" TextMode="Password"> 
                         </asp:TextBox>
                         <asp:CompareValidator ID="CompareValidator1" runat="server" 
                         ControlToValidate="confirmPassTextBox"

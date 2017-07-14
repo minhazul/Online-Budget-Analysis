@@ -50,13 +50,13 @@
                     <label><b>Start Date</b></label>
                 </div>
                 <div class="col-sm-4" style="padding: 2px">                   
-                    <asp:TextBox ID="StartTextBox" runat="server" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
+                    <asp:TextBox ID="StartTextBox" runat="server" required="" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
                 </div>
                 <div class="col-sm-1" style="padding: 2px;padding-right: 3px">
                     <label><b>End Date</b></label>
                 </div>
                 <div class="col-sm-4" style="padding: 2px">              
-                    <asp:TextBox ID="EndTextBox" runat="server" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
+                    <asp:TextBox ID="EndTextBox" runat="server" required="" CssClass="m-wrap span12 date form_datetime"></asp:TextBox>
                 </div>
             </div>
         </div>

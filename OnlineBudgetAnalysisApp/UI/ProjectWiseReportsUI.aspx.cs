@@ -48,12 +48,12 @@ namespace OnlineBudgetAnalysisApp.UI
             dropDownProjectList.DataValueField = "Id";
             dropDownProjectList.DataBind();
 
-            if (dropDownProjectList.Items.Count > 1)
-            {
-                dropDownProjectList.Enabled = true;
-            }
-            else
-                dropDownProjectList.Enabled = false;
+            //if (dropDownProjectList.Items.Count > 1)
+            //{
+            //    dropDownProjectList.Enabled = true;
+            //}
+            //else
+            //    dropDownProjectList.Enabled = false;
         }
 
         protected void dropDownProjectList_SelectedIndexChanged(object sender, EventArgs e)
