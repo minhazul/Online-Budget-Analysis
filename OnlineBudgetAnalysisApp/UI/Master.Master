@@ -92,15 +92,14 @@
         <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12" style="text-align: center">
                     &copy; 2017 <a target="_blank" href="#" title="#">Minhazul Islam</a>. All Rights Reserved.
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
+                <div class="col-sm-0">
+                    <%--<<ul class="pull-right">
                         <li><a href="HomeUI.aspx">Home</a></li>
                         
-                        <li><a href="LogoutUI.aspx">Logout</a></li>
-                    </ul>
+                    </ul>--%>
                 </div>
             </div>
         </div>

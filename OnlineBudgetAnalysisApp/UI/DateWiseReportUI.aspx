@@ -66,6 +66,14 @@
             <asp:Label ID="msgError" runat="server" Text=""></asp:Label>
         </div>
         
+        <div class="row" style="text-align: center; padding-bottom: 50px;">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4" style="text-align: center">
+                <asp:Label ID="msgLists" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>
+        
         <div class="row">
             <asp:GridView ID="DateWiseReportGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
                 <Columns>

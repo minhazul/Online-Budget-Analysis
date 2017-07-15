@@ -40,7 +40,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
             if (aProjectListShows.Count == 0)
             {
-                Response.Write("Project list is empty");
+                msgLists.Text = "Project list is empty";
             }
             else
             {

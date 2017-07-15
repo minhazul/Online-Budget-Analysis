@@ -19,7 +19,7 @@ namespace OnlineBudgetAnalysisApp.BLL
             }
             else
             {
-                return "Data couldn't be cleared. Please try again";
+                return "Data couldn't be cleared or the list is already empty";
             }
         }
 
@@ -33,7 +33,7 @@ namespace OnlineBudgetAnalysisApp.BLL
             }
             else
             {
-                return "Data couldn't be cleared. Please try again";
+                return "Data couldn't be cleared or the list is already empty";
             }
         }
     }

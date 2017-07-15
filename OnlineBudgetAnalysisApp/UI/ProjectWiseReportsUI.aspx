@@ -38,6 +38,14 @@
             <div class="col-sm-3"></div>
         </div>
         
+        <div class="row" style="text-align: center; padding-bottom: 50px;">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4" style="text-align: center">
+                <asp:Label ID="msgLists" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>
+        
         <div class="row">
             <div class="col-sm-12">
                 <asp:GridView ID="prjctWiseRepotGridView" CssClass="manageDataTable" AutoGenerateColumns="False" runat="server">

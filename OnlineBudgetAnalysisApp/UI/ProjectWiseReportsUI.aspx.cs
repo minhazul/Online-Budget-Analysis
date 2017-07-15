@@ -67,8 +67,18 @@ namespace OnlineBudgetAnalysisApp.UI
             List<Report> projectWiseReports = new List<Report>();
             projectWiseReports = _aReportManager.GetProjectWiseReport(projectId);
 
-            prjctWiseRepotGridView.DataSource = projectWiseReports;
-            prjctWiseRepotGridView.DataBind();
+            if (projectWiseReports.Count == 0)
+            {
+                msgLists.Text = "The list is empty";
+            }
+            else
+            {
+                //msgFullName.Text = fullName;
+                prjctWiseRepotGridView.DataSource = projectWiseReports;
+                prjctWiseRepotGridView.DataBind();
+            }
+
+            
         }
     }
 }

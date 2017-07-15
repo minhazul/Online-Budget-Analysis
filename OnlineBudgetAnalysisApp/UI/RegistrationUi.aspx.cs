@@ -63,6 +63,8 @@ namespace OnlineBudgetAnalysisApp
                 _aUsers.RoleId = _aUsersManager.GetRoleId(RoleName);
                 
                 string registerUser = _aUsersManager.RegisterUser(_aUsers);
+                msgLabel.Text = registerUser;
+
                 if (registerUser == "success")
                 {                                       
 

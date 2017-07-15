@@ -13,6 +13,15 @@ namespace OnlineBudgetAnalysisApp.UI {
     public partial class ProductListUI {
         
         /// <summary>
+        /// msgLists control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgLists;
+        
+        /// <summary>
         /// prdctListGridview control.
         /// </summary>
         /// <remarks>

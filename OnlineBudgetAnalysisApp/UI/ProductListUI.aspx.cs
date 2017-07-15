@@ -36,7 +36,7 @@ namespace OnlineBudgetAnalysisApp.UI
 
             if (prdctLists.Count == 0)
             {
-                Response.Write("Product List is empty");
+                msgLists.Text = "Product list is empty";
             }
 
             else

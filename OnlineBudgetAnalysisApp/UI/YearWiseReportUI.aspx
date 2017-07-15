@@ -30,6 +30,14 @@
             <div class="col-sm-3"></div>
         </div>
         
+        <div class="row" style="text-align: center; padding-bottom: 50px;">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4" style="text-align: center">
+                <asp:Label ID="msgLists" runat="server" Text=""></asp:Label>
+                </div>
+                <h2></h2><div class="col-sm-4"></div>
+        </div>
+        
         <div class="row" style="padding-bottom: 100px">
             <div class="col-sm-12">
                 <asp:GridView ID="YearWiseGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">

@@ -54,8 +54,18 @@ namespace OnlineBudgetAnalysisApp.UI
             List<Report> reports = new List<Report>();
             reports = _aReportManager.GetReportByDate(startDate, endDate);
 
-            DateWiseReportGridView.DataSource = reports;
-            DateWiseReportGridView.DataBind();
+            if (reports.Count == 0)
+            {
+                msgLists.Text = "The list is empty";
+            }
+            else
+            {
+                //msgFullName.Text = fullName;
+                DateWiseReportGridView.DataSource = reports;
+                DateWiseReportGridView.DataBind();
+            }
+
+            
         }
     }
 }

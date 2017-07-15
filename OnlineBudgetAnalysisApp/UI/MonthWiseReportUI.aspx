@@ -53,6 +53,14 @@
             <asp:Button ID="btnGenerate" CssClass="btn btn-success" runat="server" Text="Generate" OnClick="btnGenerate_Click" />
         </div>
         
+        <div class="row" style="text-align: center; padding-bottom: 50px;">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4" style="text-align: center">
+                <asp:Label ID="msgLists" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>
+        
         <div class="row">
             <asp:GridView ID="MonthWiseReportGridView" CssClass="manageDataTable" AutoGenerateColumns="False" runat="server">
                 <Columns>

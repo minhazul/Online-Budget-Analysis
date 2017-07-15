@@ -69,8 +69,17 @@ namespace OnlineBudgetAnalysisApp.UI
             List<Report> reports = new List<Report>();
             reports = _aReportManager.GetReportByMonth(month, year);
 
-            MonthWiseReportGridView.DataSource = reports;
-            MonthWiseReportGridView.DataBind();
+            if (reports.Count == 0)
+            {
+                msgLists.Text = "The list is empty";
+            }
+            else
+            {
+                //msgFullName.Text = fullName;
+                MonthWiseReportGridView.DataSource = reports;
+                MonthWiseReportGridView.DataBind();
+            }
+
         }
     }
 }

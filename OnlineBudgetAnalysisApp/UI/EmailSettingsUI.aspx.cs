@@ -83,6 +83,8 @@ namespace OnlineBudgetAnalysisApp.UI
             {
                 string message = _aEmailManager.ChangePassword(aEmail.Id, newPassword);
                 chngPasswordLabel.Text = message;
+                GenerateCurrentEmailAndPassword();
+
             }
             else
             {
@@ -105,6 +107,8 @@ namespace OnlineBudgetAnalysisApp.UI
             {
                 string message = _aEmailManager.ChangeEmailAndPassword(currentEmailId,newEmail,newEmailPassword);
                 msgchngEmailLabel.Text = message;
+                GenerateCurrentEmailAndPassword();
+                PopulateAnotherEmailLists();
             }
             else
             {
