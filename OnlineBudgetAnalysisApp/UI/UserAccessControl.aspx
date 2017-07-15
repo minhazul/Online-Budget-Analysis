@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container" style="padding-bottom: 20px">
         <div class="row" style="padding-top: 20px;padding-bottom: 70px">
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">

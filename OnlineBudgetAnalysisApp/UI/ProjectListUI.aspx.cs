@@ -41,12 +41,31 @@ namespace OnlineBudgetAnalysisApp.UI
             if (aProjectListShows.Count == 0)
             {
                 msgLists.Text = "Project list is empty";
+
+                paddingControl.Style.Add("padding-bottom","264px");
             }
             else
             {
                 //msgFullName.Text = fullName;
                 prjctListGridview.DataSource = aProjectListShows;
                 prjctListGridview.DataBind();
+
+                if (aProjectListShows.Count==1)
+                {
+                    paddingControl1.Style.Add("padding-bottom", "128px");
+                }
+                else if (aProjectListShows.Count == 2)
+                {
+                    paddingControl1.Style.Add("padding-bottom", "88px");
+                }
+                else if (aProjectListShows.Count == 3)
+                {
+                    paddingControl1.Style.Add("padding-bottom", "48px");
+                }
+                else if (aProjectListShows.Count == 4)
+                {
+                    paddingControl1.Style.Add("padding-bottom", "8px");
+                }
             }
         }
     }

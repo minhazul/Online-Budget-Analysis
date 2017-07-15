@@ -37,6 +37,7 @@ namespace OnlineBudgetAnalysisApp.UI
             if (prdctLists.Count == 0)
             {
                 msgLists.Text = "Product list is empty";
+                paddingControl.Style.Add("padding-bottom", "225px");
             }
 
             else
@@ -46,6 +47,15 @@ namespace OnlineBudgetAnalysisApp.UI
 
                 prdctListGridview.DataSource = prdctLists;
                 prdctListGridview.DataBind();
+
+                if (prdctLists.Count == 1)
+                {
+                    paddingControl1.Style.Add("padding-bottom", "60px");
+                }
+                else if (prdctLists.Count == 2)
+                {
+                    paddingControl1.Style.Add("padding-bottom", "20px");
+                }
             }
         }
     }
