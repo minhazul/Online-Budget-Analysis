@@ -30,7 +30,7 @@ namespace OnlineBudgetAnalysisApp.UI
                 passLabel.Visible = true;
                 txtPassword.Visible = true;
                 btnSave.Visible = true;
-                btnCancelPass.Visible = true;
+                //btnCancelPass.Visible = true;
 
             }
             else
@@ -94,9 +94,9 @@ namespace OnlineBudgetAnalysisApp.UI
             }
         }
 
-        protected void btnCancelPass_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AccountInfoUI.aspx");
-        }
+        //protected void btnCancelPass_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("AccountInfoUI.aspx");
+        //}
     }
 }

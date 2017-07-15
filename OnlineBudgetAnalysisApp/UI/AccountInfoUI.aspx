@@ -79,11 +79,11 @@
                                     <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-danger" Text="Edit" OnClick="btnEdit_Click"/>
                                 </div>
                                 <div class="col-sm-3" style="padding: 2px">
-                                    <asp:Button ID="btnSave" Visible="False" runat="server" CssClass="btn btn-success" ValidationGroup="update" Text="Save" OnClick="btnSave_Click"/>
+                                    <asp:Button ID="btnSave" Visible="False" runat="server" CssClass="btn btn-success" Text="Save" OnClick="btnSave_Click"/>
                                 </div>
-                                <div class="col-sm-4" style="padding: 2px">
-                                    <asp:Button ID="btnCancelPass" Visible="False" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelPass_Click"/>
-                                </div>                 
+                                <%--<div class="col-sm-4" style="padding: 2px">
+                                    <asp:Button ID="btnCancelPass" Visible="False" runat="server" ValidationGroup="cancel" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelPass_Click"/>
+                                </div>--%>                 
                             </div>
                         </div>
                         <div class="form-group">

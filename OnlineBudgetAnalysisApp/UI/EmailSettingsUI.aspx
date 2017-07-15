@@ -118,7 +118,7 @@
         </div>
 
         <div class="row" style="padding: 5px;text-align: center">
-           <span class="label label-info">Application Email Lists</span>           
+           <span class="label label-info">Application Gmail Lists</span>           
         </div>        
         
         <div class="row" style="text-align: center;padding: 5px">

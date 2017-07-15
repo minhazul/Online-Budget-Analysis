@@ -30,7 +30,7 @@
             <form id="form1" class="form-horizontal" style="padding: 20px" runat="server">
                    <div class="form-group">
                     <div class="col-sm-10">                       
-                        <input type="text" class="form-control" id="txtUserName" pattern=".{4,10}" required="" title="username should be 4 to 10 characters long" placeholder="Enter your username" runat="server"/>
+                        <input type="text" class="form-control" id="txtUserName" pattern=".{4,15}" required="" title="username should be 4 to 15 characters long" placeholder="Enter your username" runat="server"/>
                     </div>
                   </div>             
                   <div class="form-group">
