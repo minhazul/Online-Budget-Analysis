@@ -26,10 +26,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
+        
+        <div class="row" style="padding-top: 50px;padding-bottom: 20px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h3>Standard Deviation of Sales Data report is calculated by <b>Product Information & Daily Inventory Data</b> from <b>one day to another day.</b></h3>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
         <div class="row">
             <div class="col-sm-4"></div>
                 <div class="col-sm-4" style="text-align: center">
-                    <h2>Standard Deviations of Sales Data</h2>
+                    <h2><u>Standard Deviations of Sales Data</u></h2>
                 </div>
             <div class="col-sm-4"></div>
         </div>
@@ -61,7 +70,7 @@
             </div>
         </div>
         
-        <div class="row" style="text-align: center; padding-top: 20px;padding-bottom: 50px">
+        <div class="row" style="text-align: center; padding-top: 20px;padding-bottom: 50px" runat="server" ID="paddingControl">
             <asp:Button ID="btnGenerate" runat="server" CssClass="btn btn-success" Text="Generate" OnClick="btnGenerate_Click" />&nbsp;&nbsp;
             <asp:Label ID="msgError" runat="server" Text=""></asp:Label>
         </div>

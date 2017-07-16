@@ -51,6 +51,10 @@ namespace OnlineBudgetAnalysisApp.UI
 
         private void PopulateDateWiseDridView(string startDate, string endDate)
         {
+            msgLists.Text=String.Empty;
+            DateWiseReportGridView.DataSource = null;
+            DateWiseReportGridView.DataBind();
+
             List<Report> reports = new List<Report>();
             reports = _aReportManager.GetReportByDate(startDate, endDate);
 
@@ -60,6 +64,8 @@ namespace OnlineBudgetAnalysisApp.UI
             }
             else
             {
+                paddingControl.Style.Add("padding-bottom", "0px");
+
                 //msgFullName.Text = fullName;
                 DateWiseReportGridView.DataSource = reports;
                 DateWiseReportGridView.DataBind();

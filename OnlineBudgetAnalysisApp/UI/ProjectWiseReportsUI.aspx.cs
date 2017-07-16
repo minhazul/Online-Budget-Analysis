@@ -26,7 +26,11 @@ namespace OnlineBudgetAnalysisApp.UI
                 string fullName = _aUsersManager.GetFullName(userName);
                 msgFullName.Text = fullName;
                 PopulateProjectDropdown();
+
+                
             }
+
+            
         }
 
 
@@ -58,6 +62,9 @@ namespace OnlineBudgetAnalysisApp.UI
 
         protected void dropDownProjectList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            prjctWiseRepotGridView.DataSource = null;
+            prjctWiseRepotGridView.DataBind();
+
             int projectId = Convert.ToInt32(dropDownProjectList.SelectedValue);
             PopulateProjectWiseReportGridView(projectId);
         }
@@ -70,9 +77,15 @@ namespace OnlineBudgetAnalysisApp.UI
             if (projectWiseReports.Count == 0)
             {
                 msgLists.Text = "The list is empty";
+
+                paddingControl1.Style.Add("padding-bottom", "55px");
+                paddingControl.Style.Add("padding-bottom", "55px");
             }
             else
             {
+                paddingControl1.Style.Add("padding-bottom", "20px");
+                msgLists.Text=String.Empty;
+
                 //msgFullName.Text = fullName;
                 prjctWiseRepotGridView.DataSource = projectWiseReports;
                 prjctWiseRepotGridView.DataBind();
