@@ -11,7 +11,7 @@
             <div class="col-sm-5"></div>
         </div>
         
-        <div class="row">
+        <div class="row" runat="server" ID="paddingControl">
             <asp:GridView ID="allUsersInfoGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">

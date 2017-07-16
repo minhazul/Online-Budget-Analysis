@@ -54,6 +54,58 @@ namespace OnlineBudgetAnalysisApp.UI
             if (blockedUserInfos.Count == 0)
             {
                 msgLabel.Text = "The list is empty";
+                paddingControl1.Style.Add("padding-bottom", "400px");
+            }
+
+            else if (blockedUserInfos.Count == 1)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "360px");
+            }
+            else if (blockedUserInfos.Count == 2)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "320px");
+            }
+            else if (blockedUserInfos.Count == 3)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "280px");
+            }
+            else if (blockedUserInfos.Count == 4)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "240px");
+            }
+            else if (blockedUserInfos.Count == 5)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "200px");
+            }
+            else if (blockedUserInfos.Count == 6)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "160px");
+            }
+            else if (blockedUserInfos.Count == 7)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "120px");
+            }
+            else if (blockedUserInfos.Count == 8)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "80px");
+            }
+            else if (blockedUserInfos.Count == 9)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "40px");
+            }
+            else if (blockedUserInfos.Count > 9)
+            {
+
+                paddingControl.Style.Add("padding-bottom", "20px");
             }
 
             blockedUserGridView.DataSource = blockedUserInfos;

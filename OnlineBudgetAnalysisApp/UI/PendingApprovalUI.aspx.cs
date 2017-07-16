@@ -54,6 +54,7 @@ namespace OnlineBudgetAnalysisApp.UI
             if (pendingUsers.Count == 0)
             {
                 msgLabel.Text = "The list is empty";
+                paddingControl.Style.Add("padding-bottom", "330px");
             }
             else if (pendingUsers.Count == 1)
             {

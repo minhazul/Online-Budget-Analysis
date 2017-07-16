@@ -11,7 +11,7 @@
             <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="padding-bottom: 345px;padding-top: 20px" runat="server" ID="paddingControl">
+        <div class="row" style="padding-bottom: 0px;padding-top: 20px" runat="server" ID="paddingControl">
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>

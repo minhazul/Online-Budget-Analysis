@@ -51,6 +51,39 @@ namespace OnlineBudgetAnalysisApp.UI
             List<AllUsersInfo> allUsersInfos=new List<AllUsersInfo>();
             allUsersInfos = _allUsersInfoViewManager.GetAllUsersInfo();
 
+            if (allUsersInfos.Count == 1)
+            {
+                paddingControl.Style.Add("padding-bottom", "250px");
+            }
+            else if (allUsersInfos.Count == 2)
+            {
+                paddingControl.Style.Add("padding-bottom", "210px");
+            }
+            else if (allUsersInfos.Count == 3)
+            {
+                paddingControl.Style.Add("padding-bottom", "180px");
+            }
+            else if (allUsersInfos.Count == 4)
+            {
+                paddingControl.Style.Add("padding-bottom", "140px");
+            }
+            else if (allUsersInfos.Count == 5)
+            {
+                paddingControl.Style.Add("padding-bottom", "100px");
+            }
+            else if (allUsersInfos.Count == 6)
+            {
+                paddingControl.Style.Add("padding-bottom", "80px");
+            }
+            else if (allUsersInfos.Count == 7)
+            {
+                paddingControl.Style.Add("padding-bottom", "40px");
+            }
+            else if (allUsersInfos.Count > 7)
+            {
+                paddingControl.Style.Add("padding-bottom", "20px");
+            }
+
             allUsersInfoGridView.DataSource = allUsersInfos;
             allUsersInfoGridView.DataBind();
         }

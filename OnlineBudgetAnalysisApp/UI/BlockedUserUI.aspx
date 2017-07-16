@@ -4,22 +4,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row" style="padding-bottom: 20px;padding-top: 20px">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <h2>Blocked Users List</h2>
             </div>
-            <div class="col-sm-5"></div>
+            <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="padding-bottom: 10px">
-            <div class="col-sm-3"></div>
+        <div class="row" runat="server" ID="paddingControl1">
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>
             </div>
-            <div class="col-sm-5"></div>           
+            <div class="col-sm-4"></div>           
         </div>
         
-        <div class="row">
+        <div class="row" runat="server" ID="paddingControl">
             <asp:GridView ID="blockedUserGridView" AutoGenerateColumns="False" OnRowDataBound="blockedUserGridView_RowCommand" CssClass="manageDataTable" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">

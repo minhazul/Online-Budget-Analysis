@@ -5,22 +5,22 @@
     <div class="container">
         
         <div class="row" style="padding-bottom: 20px;padding-top: 20px">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <h2>Normal User Table</h2>
             </div>
-            <div class="col-sm-5"></div>
+            <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="padding-bottom: 10px">
-            <div class="col-sm-3"></div>
+        <div class="row" runat="server" ID="paddingControl1">
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <asp:Label ID="msgNormalLabel" runat="server" Text=""></asp:Label>
             </div>
-            <div class="col-sm-5"></div>           
+            <div class="col-sm-4"></div>           
         </div>
         
-        <div class="row">
+        <div class="row" runat="server" ID="paddingControl">
             <asp:GridView ID="normalUserGridView" AutoGenerateColumns="False" CssClass="manageDataTable" OnRowDataBound="normalUserGridView_RowCommand" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">

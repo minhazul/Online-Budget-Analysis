@@ -51,6 +51,12 @@ namespace OnlineBudgetAnalysisApp.UI
             List<UploadActivity> uploadActivities=new List<UploadActivity>();
             uploadActivities = _activityManager.GetUploadActivityInfo();
 
+            if (uploadActivities.Count == 0)
+            {
+                msgLabel.Text = "Nothing Updated yet";
+                paddingControl1.Style.Add("padding-bottom", "00px");
+            }
+
             activityGridView.DataSource = uploadActivities;
             activityGridView.DataBind();
         }

@@ -4,12 +4,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row" style="padding-top: 20px;padding-bottom: 40px">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-4">
                 <h2>User Upload Activity</h2>
             </div>
-            <div class="col-sm-2"></div>            
+            <div class="col-sm-3"></div>            
         </div>
+        
+        
         
         <div class="row">
             <div class="col-sm-2"></div>

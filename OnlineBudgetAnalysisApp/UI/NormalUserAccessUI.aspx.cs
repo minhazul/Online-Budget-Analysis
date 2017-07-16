@@ -53,7 +53,60 @@ namespace OnlineBudgetAnalysisApp.UI
 
             if (allUsersInfos.Count == 0)
             {
+                
                 msgNormalLabel.Text = "Normal User List is empty";
+                paddingControl1.Style.Add("padding-bottom", "400px");
+            }
+
+            else if (allUsersInfos.Count == 1)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "360px");
+            }
+            else if (allUsersInfos.Count == 2)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "320px");
+            }
+            else if (allUsersInfos.Count == 3)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "280px");
+            }
+            else if (allUsersInfos.Count == 4)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "240px");
+            }
+            else if (allUsersInfos.Count == 5)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "200px");
+            }
+            else if (allUsersInfos.Count == 6)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "160px");
+            }
+            else if (allUsersInfos.Count == 7)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "120px");
+            }
+            else if (allUsersInfos.Count == 8)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "80px");
+            }
+            else if (allUsersInfos.Count == 9)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "40px");
+            }
+            else if (allUsersInfos.Count > 9)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "20px");
             }
 
             normalUserGridView.DataSource = allUsersInfos;
