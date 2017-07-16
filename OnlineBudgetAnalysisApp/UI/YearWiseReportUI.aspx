@@ -3,16 +3,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
-        
+     
+    <div class="row" style="padding-top: 50px;padding-bottom: 20px">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h3>Yearly Gross Rollback report is calculated by <b>Product Information & Daily Inventory Data</b> of particular a <b>year.</b></h3>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>    
+           
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4" style="text-align: center">
-            <h2>Yearly Gross Rollback</h2>
+            <h2><u>Yearly Gross Rollback</u></h2>
         </div>
         <div class="col-sm-4"></div>
     </div>
         
-        <div class="row" style="text-align: center; padding-bottom: 50px;">
+        <div class="row" style="text-align: center; padding-bottom: 25px;">
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <h3>Prepared by </h3>
@@ -30,7 +38,7 @@
             <div class="col-sm-3"></div>
         </div>
         
-        <div class="row" style="text-align: center; padding-bottom: 50px;">
+        <div class="row" style="text-align: center; padding-top: 35px;padding-bottom: 50px" runat="server" ID="paddingControl">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4" style="text-align: center">
                 <asp:Label ID="msgLists" runat="server" Text=""></asp:Label>
@@ -38,7 +46,7 @@
                 <h2></h2><div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="padding-bottom: 100px">
+        <div class="row" style="padding-bottom: 20px">
             <div class="col-sm-12">
                 <asp:GridView ID="YearWiseGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
                     <Columns>                         

@@ -70,10 +70,17 @@ namespace OnlineBudgetAnalysisApp.UI
 
             if (reports.Count == 0)
             {
+                YearWiseGridView.DataSource = null;
+                YearWiseGridView.DataBind();
+
                 msgLists.Text = "The list is empty";
             }
             else
             {
+                msgLists.Text=String.Empty;
+                paddingControl.Style.Add("padding-bottom", "0px");
+                paddingControl.Style.Add("padding-bottom", "0px");
+
                 //msgFullName.Text = fullName;
                 YearWiseGridView.DataSource = reports;
                 YearWiseGridView.DataBind();

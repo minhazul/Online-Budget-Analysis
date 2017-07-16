@@ -71,10 +71,19 @@ namespace OnlineBudgetAnalysisApp.UI
 
             if (reports.Count == 0)
             {
+                MonthWiseReportGridView.DataSource = null;
+                MonthWiseReportGridView.DataBind();
+
                 msgLists.Text = "The list is empty";
             }
             else
             {
+                msgLists.Text=String.Empty;
+
+                paddingControl.Style.Add("padding-top", "15px");
+                paddingControl.Style.Add("padding-bottom", "15px");
+                
+
                 //msgFullName.Text = fullName;
                 MonthWiseReportGridView.DataSource = reports;
                 MonthWiseReportGridView.DataBind();

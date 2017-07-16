@@ -62,10 +62,11 @@ namespace OnlineBudgetAnalysisApp.UI
                 {
                     paddingControl1.Style.Add("padding-bottom", "48px");
                 }
-                else if (aProjectListShows.Count == 4)
+                else if (aProjectListShows.Count > 3)
                 {
-                    paddingControl1.Style.Add("padding-bottom", "8px");
-                }
+                    paddingControl1.Style.Add("padding-bottom", "20px");
+                }             
+               
             }
         }
     }

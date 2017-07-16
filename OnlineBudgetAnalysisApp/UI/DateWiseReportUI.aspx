@@ -83,7 +83,7 @@
                 <div class="col-sm-4"></div>
         </div>
         
-        <div class="row">
+        <div class="row" style="padding-bottom: 20px">
             <asp:GridView ID="DateWiseReportGridView" AutoGenerateColumns="False" CssClass="manageDataTable" runat="server">
                 <Columns>
                         <asp:TemplateField HeaderText="Date">

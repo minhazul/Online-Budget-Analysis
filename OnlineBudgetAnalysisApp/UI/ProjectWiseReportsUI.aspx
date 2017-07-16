@@ -57,7 +57,7 @@
                 <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" runat="server">
+        <div class="row" style="padding-bottom: 20px">
             <div class="col-sm-12">
                 <asp:GridView ID="prjctWiseRepotGridView" CssClass="manageDataTable" AutoGenerateColumns="False" runat="server">
                     <Columns>
