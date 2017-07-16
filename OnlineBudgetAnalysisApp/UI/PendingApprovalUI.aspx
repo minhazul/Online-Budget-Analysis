@@ -4,23 +4,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row" style="padding-bottom: 20px;padding-top: 20px">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
-                <h2>Pending User Approval List</h2>
+                <h2><u>Pending User Approval List</u></h2>
             </div>
-            <div class="col-sm-5"></div>
+            <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="padding-bottom: 10px">
-            <div class="col-sm-3"></div>
+        <div class="row" style="padding-bottom: 345px;padding-top: 20px" runat="server" ID="paddingControl">
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <asp:Label ID="msgLabel" runat="server" Text=""></asp:Label>
             </div>
-            <div class="col-sm-5"></div>           
+            <div class="col-sm-4"></div>           
         </div>
         
-        <div class="row" style="width: 1000px">
+        <div class="row" style="width: 1000px;padding-bottom: 20px" runat="server" ID="paddingControl1">
+            <div class="col-sm-1"></div>
             
+            <div class="col-sm-11">
                 <asp:GridView ID="pendingApprovalGridView" AutoGenerateColumns="False" OnRowDataBound="pendingApprovalGridView_RowCommand" CssClass="manageDataTable" runat="server">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
@@ -57,7 +59,8 @@
                     
                 </Columns>
             </asp:GridView>
-                           
+                </div>
+              <div class="col-sm-0"></div>             
         </div>
     </div>
 </asp:Content>

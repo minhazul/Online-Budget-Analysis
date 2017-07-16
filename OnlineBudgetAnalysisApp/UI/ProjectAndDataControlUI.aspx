@@ -6,17 +6,17 @@
         <div class="row" style="padding-bottom: 20px;padding-top: 20px">
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
-                <h2>Project Control</h2>
+                <h2><u>Project Control</u></h2>
             </div>
             <div class="col-sm-4"></div>
         </div>
         
-        <div class="row" style="padding-bottom: 10px">
-            <div class="col-sm-3"></div>
+        <div class="row" style="padding-bottom: 180px" runat="server" ID="paddingControl">
+            <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center">
                 <asp:Label ID="msgPrjctLabel" runat="server" Text=""></asp:Label>
             </div>
-            <div class="col-sm-5"></div>           
+            <div class="col-sm-4"></div>           
         </div>
         
         <div class="row">
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4" style="text-align: center">
-                    <h2>Data Control</h2>
+                    <h2><u>Data Control</u></h2>
                 </div>
                 <div class="col-sm-4"></div>
             </div> 

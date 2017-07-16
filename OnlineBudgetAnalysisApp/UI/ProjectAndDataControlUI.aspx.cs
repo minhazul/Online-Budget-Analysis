@@ -57,6 +57,18 @@ namespace OnlineBudgetAnalysisApp.UI
             {
                 msgPrjctLabel.Text = "The list is empty";
             }
+            else if(projectListShows.Count == 1)
+            {
+                paddingControl.Style.Add("padding-bottom", "45px");
+            }
+            else if (projectListShows.Count == 2)
+            {
+                paddingControl.Style.Add("padding-bottom", "5px");
+            }
+            else if (projectListShows.Count > 2)
+            {
+                paddingControl.Style.Add("padding-bottom", "0px");
+            }
 
             prjctCntrlGridView.DataSource = projectListShows;
             prjctCntrlGridView.DataBind();

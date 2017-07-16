@@ -55,6 +55,34 @@ namespace OnlineBudgetAnalysisApp.UI
             {
                 msgLabel.Text = "The list is empty";
             }
+            else if (pendingUsers.Count == 1)
+            {
+                paddingControl.Style.Add("padding-bottom", "20px");
+                paddingControl1.Style.Add("padding-bottom", "220px");
+            }
+            else if (pendingUsers.Count == 2)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "20px");
+                paddingControl1.Style.Add("padding-bottom", "175px");
+            }
+            else if (pendingUsers.Count == 3)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "20px");
+                paddingControl1.Style.Add("padding-bottom", "135px");
+            }
+            else if (pendingUsers.Count == 4)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "20px");
+                paddingControl1.Style.Add("padding-bottom", "95px");
+            }
+            else if (pendingUsers.Count > 4)
+            {
+                
+                paddingControl.Style.Add("padding-bottom", "20px");
+            }
 
             pendingApprovalGridView.DataSource = pendingUsers;
             pendingApprovalGridView.DataBind();
