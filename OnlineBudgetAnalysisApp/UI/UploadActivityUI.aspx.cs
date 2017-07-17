@@ -53,8 +53,8 @@ namespace OnlineBudgetAnalysisApp.UI
 
             if (uploadActivities.Count == 0)
             {
-                msgLabel.Text = "Nothing Updated yet";
-                paddingControl1.Style.Add("padding-bottom", "00px");
+                msgLabel.Text = "Nothing Uploaded yet";
+                
             }
 
             activityGridView.DataSource = uploadActivities;
